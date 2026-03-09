@@ -1,11 +1,17 @@
 /* custom.css - Custom styles for Bangla News Portal */
 
 /* Import Bangla Font */
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
-
-/* Base Styles */
+/* @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap'); */
+@font-face {
+    font-family: 'SolaimanLipi'; /* Name you choose to use in your CSS */
+    src: url('assets/font/SolaimanLipi.ttf') format('truetype'); /* Path to your font file */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Helps optimize font loading behavior */
+}
 * {
     font-family: 'Hind Siliguri', sans-serif;
+    font-family: "SolaimanLipi", sans-serif !important;
 }
 
 body {
