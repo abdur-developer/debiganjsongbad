@@ -79,7 +79,7 @@ body.dark-mode .bg-gray-200 {
     background-color: white;
     min-width: 180px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    z-index: 1000;
+    z-index: 9999;
     border-radius: 4px;
     top: 100%;
     left: 0;
