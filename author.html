@@ -10,8 +10,93 @@
 </head>
 <body class="bg-gray-50 text-gray-800" id="body">
 
-<!-- Same Header as index.html -->
-<header class="my-header top-0 z-50 bg-white shadow-md border-b border-gray-200">...</header>
+<!-- HEADER SECTION -->
+<header class="my-header top-0 z-50 bg-white shadow-md border-b border-gray-200 transition-colors">
+    <div class="container mx-auto px-2 sm:px-4">
+        <!-- Top Header: Date & Time + Social + Login -->
+        <div class="flex flex-wrap justify-between items-center text-xs py-1 border-b border-gray-100">
+            <div class="flex gap-2 items-center">
+                <span id="live-datetime" class="font-medium text-gray-600">শুক্রবার, ৮ মার্চ ২০২৬</span>
+                <span class="bg-red-600 text-white px-1.5 py-0.5 rounded text-[10px]">লাইভ</span>
+            </div>
+            <div class="flex gap-3 items-center">
+                <div class="flex gap-2">
+                    <a href="#" aria-label="facebook" class="text-gray-600 hover:text-blue-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                    <a href="#" aria-label="twitter" class="text-gray-600 hover:text-blue-400"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a>
+                    <a href="#" aria-label="youtube" class="text-gray-600 hover:text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+                <a href="#" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-medium hover:bg-blue-700 transition">লগইন / রেজিস্টার</a>
+            </div>
+        </div>
+        
+        <!-- Breaking News Ticker -->
+        <div class="flex items-center gap-2 py-1 overflow-hidden border-b border-gray-100 text-sm">
+            <span class="bg-red-600 text-white px-2 py-0.5 rounded font-bold whitespace-nowrap">ব্রেকিং</span>
+            <div class="overflow-hidden relative w-full h-6">
+                <div class="absolute whitespace-nowrap ticker-animate text-gray-700 font-medium" id="breaking-ticker">
+                    🔴 প্রধানমন্ত্রী আজ বিকেলে সংবাদ সম্মেলন করবেন | ❄️ শীতে কাঁপছে দেশ, তাপমাত্রা ৮ ডিগ্রি | 🏏 টি-টোয়েন্টি সিরিজ জয় বাংলাদেশের | 💰 মূল্যস্ফীতি কমতে শুরু করেছে | 🌍 জাতিসংঘে বাংলাদেশের জয়জয়কার
+                </div>
+            </div>
+        </div>
+        
+        <!-- Logo Area + Ad -->
+        <div class="flex flex-col md:flex-row justify-between items-center py-3 gap-3">
+            <div class="">
+                <img src="assets/img/logo.png" style="width: 40%"/>
+            </div>
+            <div class="bg-gray-200 w-[728px] max-w-full h-[90px] flex items-center justify-center text-xs text-gray-500 border ad-placeholder">
+                বিজ্ঞাপন ৭২৮x৯০
+            </div>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="relative flex flex-wrap items-center text-sm font-semibold gap-1 py-2 overflow-x-auto scrollbar-hide border-t border-gray-100">
+            <a href="index.html" class="nav-link active">হোম</a>
+            
+            <div class="dropdown">
+                <button class="nav-link dropdown-btn">জাতীয় <svg class="w-3 h-3 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                <div class="dropdown-content">
+                    <a href="category.html?cat=dhaka">ঢাকা</a>
+                    <a href="category.html?cat=chittagong">চট্টগ্রাম</a>
+                    <a href="category.html?cat=rajshahi">রাজশাহী</a>
+                    <a href="category.html?cat=khulna">খুলনা</a>
+                    <a href="category.html?cat=barishal">বরিশাল</a>
+                    <a href="category.html?cat=sylhet">সিলেট</a>
+                    <a href="category.html?cat=rangpur">রংপুর</a>
+                    <a href="category.html?cat=mymensingh">ময়মনসিংহ</a>
+                </div>
+            </div>
+            
+            <a href="category.html?cat=national" class="nav-link">সারাদেশ</a>
+            <a href="category.html?cat=politics" class="nav-link">রাজনীতি</a>
+            
+            <div class="dropdown">
+                <button class="nav-link dropdown-btn">আন্তর্জাতিক <svg class="w-3 h-3 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                <div class="dropdown-content">
+                    <a href="category.html?cat=asia">এশিয়া</a>
+                    <a href="category.html?cat=europe">ইউরোপ</a>
+                    <a href="category.html?cat=america">আমেরিকা</a>
+                    <a href="category.html?cat=middle-east">মধ্যপ্রাচ্য</a>
+                    <a href="category.html?cat=africa">আফ্রিকা</a>
+                </div>
+            </div>
+            
+            <a href="category.html?cat=economy" class="nav-link">অর্থনীতি</a>
+            <a href="category.html?cat=tech" class="nav-link">প্রযুক্তি</a>
+            <a href="category.html?cat=education" class="nav-link">শিক্ষা</a>
+            <a href="category.html?cat=health" class="nav-link">স্বাস্থ্য</a>
+            <a href="category.html?cat=sports" class="nav-link">খেলাধুলা</a>
+            <a href="category.html?cat=entertainment" class="nav-link">বিনোদন</a>
+            <a href="category.html?cat=lifestyle" class="nav-link">লাইফস্টাইল</a>
+            <a href="category.html?cat=religion" class="nav-link">ধর্ম</a>
+            <a href="category.html?cat=video" class="nav-link">ভিডিও</a>
+            <a href="category.html?cat=opinion" class="nav-link">মতামত</a>
+            <a href="category.html?cat=jobs" class="nav-link">চাকরি</a>
+            <a href="gallery.html" class="nav-link">ছবি</a>
+            <a href="#" class="nav-link">ই-পেপার</a>
+        </nav>
+    </div>
+</header>
 
 <main class="container mx-auto px-2 sm:px-4 py-4">
     <!-- Breadcrumb -->
@@ -24,7 +109,7 @@
     
     <!-- Author Profile Header -->
     <div class="bg-white shadow-md rounded-lg p-6 mb-6 flex flex-col md:flex-row items-center gap-6">
-        <div class="w-32 h-32 bg-gray-400 rounded-full flex items-center justify-center text-white text-4xl font-bold">আ</div>
+        <div class="w-32 h-32 bg-blue-400 rounded-full flex items-center justify-center text-white text-4xl font-bold">আ</div>
         <div class="text-center md:text-left">
             <h1 class="text-3xl font-bold">আব্দুর রহমান</h1>
             <p class="text-blue-600 mb-2">সিনিয়র রিপোর্টার | জাতীয় ও রাজনীতি</p>
@@ -62,7 +147,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Article 1 -->
         <div class="bg-white shadow-sm rounded overflow-hidden">
-            <img class="w-full h-36 object-cover lazy" data-src="https://picsum.photos/300x200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="article">
+            <img class="w-full h-36 object-cover lazy" data-src="https://picsum.photos/300/200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="article">
             <div class="p-3">
                 <span class="bg-red-600 text-white text-xs px-2 py-0.5 rounded">জাতীয়</span>
                 <h4 class="font-semibold mt-1">বন্দরে পণ্য জট, শিপমেন্ট ব্যাহত</h4>
@@ -71,7 +156,7 @@
         </div>
         <!-- Article 2 -->
         <div class="bg-white shadow-sm rounded overflow-hidden">
-            <img class="w-full h-36 object-cover lazy" data-src="https://picsum.photos/300x200?text=Article" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="article">
+            <img class="w-full h-36 object-cover lazy" data-src="https://picsum.photos/300/200?text=Article" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="article">
             <div class="p-3">
                 <span class="bg-blue-600 text-white text-xs px-2 py-0.5 rounded">রাজনীতি</span>
                 <h4 class="font-semibold mt-1">সংসদ অধিবেশন শুরু আজ</h4>
@@ -80,7 +165,7 @@
         </div>
         <!-- Article 3 -->
         <div class="bg-white shadow-sm rounded overflow-hidden">
-            <img class="w-full h-36 object-cover lazy" data-src="https://picsum.photos/300x200?text=Article" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="article">
+            <img class="w-full h-36 object-cover lazy" data-src="https://picsum.photos/300/200?text=Article" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="article">
             <div class="p-3">
                 <span class="bg-green-600 text-white text-xs px-2 py-0.5 rounded">অর্থনীতি</span>
                 <h4 class="font-semibold mt-1">বাজেট অধিবেশন শুরু</h4>
@@ -91,7 +176,61 @@
 </main>
 
 <!-- Footer (same) -->
-<footer class="bg-gray-800 text-white pt-6 pb-4 text-sm">...</footer>
+<footer class="bg-gray-800 text-white pt-6 pb-4 text-sm">
+    <div class="container mx-auto px-2 sm:px-4">
+        <!-- Footer Links -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div>
+                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">দেবীগঞ্জ সংবাদ</h5>
+                <ul class="space-y-1 text-gray-300">
+                    <li><a href="#" class="hover:text-white">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#" class="hover:text-white">যোগাযোগ</a></li>
+                    <li><a href="#" class="hover:text-white">প্রাইভেসি পলিসি</a></li>
+                    <li><a href="#" class="hover:text-white">টার্মস অফ ইউজ</a></li>
+                    <li><a href="#" class="hover:text-white">সাইটম্যাপ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">সেবা সমূহ</h5>
+                <ul class="space-y-1 text-gray-300">
+                    <li><a href="#" class="hover:text-white">বিজ্ঞাপন দিন</a></li>
+                    <li><a href="#" class="hover:text-white">নিউজলেটার</a></li>
+                    <li><a href="#" class="hover:text-white">আর্কাইভ</a></li>
+                    <li><a href="#" class="hover:text-white">আরএসএস ফিড</a></li>
+                    <li><a href="#" class="hover:text-white">মোবাইল অ্যাপ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">সংবাদ</h5>
+                <ul class="space-y-1 text-gray-300">
+                    <li><a href="#" class="hover:text-white">সর্বশেষ সংবাদ</a></li>
+                    <li><a href="gallery.html" class="hover:text-white">ছবি</a></li>
+                    <li><a href="#" class="hover:text-white">ভিডিও</a></li>
+                    <li><a href="#" class="hover:text-white">মতামত</a></li>
+                    <li><a href="#" class="hover:text-white">ই-পেপার</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">নিউজলেটার</h5>
+                <p class="text-gray-300 text-xs mb-2">দৈনিক সংবাদ পেতে সাবস্ক্রাইব করুন</p>
+                <div class="flex">
+                    <input type="email" placeholder="ইমেইল" class="p-2 text-black text-xs rounded-l w-full">
+                    <button class="bg-red-600 px-3 rounded-r text-xs hover:bg-red-700 transition">সাবস্ক্রাইব</button>
+                </div>
+                <div class="flex gap-3 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 pt-4 text-center text-gray-400 text-xs">
+            <p>© ২০২৬ দেবীগঞ্জ সংবাদ। সর্বসত্ত্ব সংরক্ষিত। ডিজাইন ও ডেভেলপমেন্ট: দেবীগঞ্জ সংবাদ টিম</p>
+        </div>
+    </div>
+</footer>
 
 <!-- Dark Mode Toggle -->
 <button id="dark-mode-toggle" class="fixed bottom-4 right-4 bg-gray-800 text-white p-3 rounded-full shadow-lg">ডার্ক</button>
