@@ -1,0 +1,56 @@
+# .htaccess - URL Rewriting for SEO Friendly URLs
+
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Remove www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# SEO Friendly URLs
+RewriteRule ^category/([a-z0-9-]+)/?$ category.php?slug=$1 [L,QSA]
+RewriteRule ^news/([0-9]+)/([a-z0-9-]+)/?$ news.php?id=$1 [L,QSA]
+RewriteRule ^author/([0-9]+)/([a-z0-9-]+)/?$ author.php?id=$1 [L,QSA]
+RewriteRule ^tag/([a-z0-9-]+)/?$ search.php?tag=$1 [L,QSA]
+RewriteRule ^archive/([0-9]{4})/([0-9]{2})/?$ archive.php?year=$1&month=$2 [L,QSA]
+
+# Pagination
+RewriteRule ^page/([0-9]+)/?$ index.php?page=$1 [L,QSA]
+
+# Cache Control
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Block bad bots
+RewriteCond %{HTTP_USER_AGENT} (ahrefs|semrush|majestic|archive) [NC]
+RewriteRule .* - [F,L]
+
+# Error Pages
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
