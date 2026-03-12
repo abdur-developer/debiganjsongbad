@@ -1,8 +1,4 @@
 <?php
-// admin/gallery/upload.php
-require_once '../includes/header.php';
-require_once '../includes/functions.php';
-
 $auth->requirePermission('gallery');
 
 $error = '';
@@ -165,5 +161,3 @@ $(document).ready(function() {
     }
 });
 </script>
-
-<?php require_once '../includes/footer.php'; ?>

@@ -1,11 +1,3 @@
-<?php
-// admin/dashboard.php
-require_once 'includes/header.php';
-require_once 'includes/functions.php';
-
-$stats = $functions->getDashboardStats();
-?>
-
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
     <!-- Total News -->
     <div class="bg-white rounded-lg shadow p-6">
@@ -122,5 +114,3 @@ $stats = $functions->getDashboardStats();
         </div>
     </div>
 </div>
-
-<?php require_once 'includes/footer.php'; ?>

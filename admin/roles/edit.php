@@ -1,10 +1,7 @@
 <?php
-// admin/roles/edit.php
-require_once '../includes/header.php';
-
 $auth->requirePermission('users');
 
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
 
 if (!$id) {
     header('Location: index.php');
@@ -135,5 +132,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </form>
 </div>
-
-<?php require_once '../includes/footer.php'; ?>

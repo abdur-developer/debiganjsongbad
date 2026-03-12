@@ -1,11 +1,7 @@
 <?php
-// admin/categories/edit.php
-require_once '../includes/header.php';
-require_once '../includes/functions.php';
-
 $auth->requirePermission('categories');
 
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
 
 if (!$id) {
     header('Location: index.php');
@@ -168,5 +164,3 @@ function generateSlug(value) {
     $('#slug').val(slug);
 }
 </script>
-
-<?php require_once '../includes/footer.php'; ?>

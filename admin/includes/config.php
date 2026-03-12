@@ -3,7 +3,8 @@
 session_start();
 
 // সাইট URL কনফিগারেশন
-define('SITE_URL', 'http://debiganjsongbad.com');
+// define('SITE_URL', 'http://debiganjsongbad.com');
+define('SITE_URL', 'http://localhost:8080/news/');
 define('ADMIN_URL', SITE_URL . '/admin');
 define('UPLOAD_PATH', $_SERVER['DOCUMENT_ROOT'] . '/uploads/');
 define('UPLOAD_URL', SITE_URL . '/uploads');

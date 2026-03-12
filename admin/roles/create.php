@@ -1,7 +1,4 @@
 <?php
-// admin/roles/create.php
-require_once '../includes/header.php';
-
 $auth->requirePermission('users');
 
 $error = '';
@@ -154,5 +151,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </form>
 </div>
-
-<?php require_once '../includes/footer.php'; ?>

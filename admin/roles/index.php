@@ -1,7 +1,4 @@
 <?php
-// admin/roles/index.php
-require_once '../includes/header.php';
-
 $auth->requirePermission('users');
 
 $sql = "SELECT * FROM roles_permissions ORDER BY id";
@@ -10,7 +7,7 @@ $result = $conn->query($sql);
 
 <div class="flex justify-between items-center mb-6">
     <h2 class="text-2xl font-bold">রোল ব্যবস্থাপনা</h2>
-    <a href="create.php" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <a href="?q=roles&create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-plus"></i> নতুন রোল
     </a>
 </div>
@@ -45,11 +42,11 @@ $result = $conn->query($sql);
                         </div>
                     </td>
                     <td class="px-4 py-2">
-                        <a href="edit.php?id=<?php echo $role['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
+                        <a href="?q=roles&edit_id=<?php echo $role['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
                             <i class="fas fa-edit"></i>
                         </a>
                         <?php if (!in_array($role['role'], ['super_admin', 'admin'])): ?>
-                        <a href="delete.php?id=<?php echo $role['id']; ?>" 
+                        <a href="?q=roles&delete_id=<?php echo $role['id']; ?>" 
                            class="text-red-600 hover:text-red-800 delete-confirm"
                            data-message="এই রোল মুছে ফেলবেন?">
                             <i class="fas fa-trash"></i>
@@ -68,5 +65,3 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 </div>
-
-<?php require_once '../includes/footer.php'; ?>

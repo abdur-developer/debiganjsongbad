@@ -1,8 +1,4 @@
 <?php
-// admin/categories/create.php
-require_once '../includes/header.php';
-require_once '../includes/functions.php';
-
 $auth->requirePermission('categories');
 
 $error = '';
@@ -148,5 +144,3 @@ function generateSlug(value) {
     $('#slug').val(slug);
 }
 </script>
-
-<?php require_once '../includes/footer.php'; ?>

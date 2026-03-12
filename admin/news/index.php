@@ -1,7 +1,4 @@
 <?php
-// admin/news/index.php
-require_once '../includes/header.php';
-
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $limit = 20;
 $offset = ($page - 1) * $limit;
@@ -40,7 +37,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
 
 <div class="flex justify-between items-center mb-6">
     <h2 class="text-2xl font-bold">সংবাদ ব্যবস্থাপনা</h2>
-    <a href="create.php" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <a href="?q=news&create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-plus"></i> নতুন সংবাদ
     </a>
 </div>
@@ -125,10 +122,10 @@ $totalPages = ceil($totalRow['total'] / $limit);
                     </td>
                     <td class="px-4 py-2"><?php echo number_format($news['views']); ?></td>
                     <td class="px-4 py-2">
-                        <a href="edit.php?id=<?php echo $news['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
+                        <a href="?q=news&edit_id=<?php echo $news['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="delete.php?id=<?php echo $news['id']; ?>" 
+                        <a href="?q=news&delete_id=<?php echo $news['id']; ?>" 
                            class="text-red-600 hover:text-red-800"
                            onclick="return confirm('নিশ্চিতভাবে মুছতে চান?')">
                             <i class="fas fa-trash"></i>
@@ -160,5 +157,3 @@ $totalPages = ceil($totalRow['total'] / $limit);
     </div>
 </div>
 <?php endif; ?>
-
-<?php require_once '../includes/footer.php'; ?>

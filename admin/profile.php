@@ -1,8 +1,4 @@
 <?php
-// admin/profile.php
-require_once 'includes/header.php';
-require_once 'includes/functions.php';
-
 $userId = $_SESSION['user_id'];
 $user = $auth->getUser($userId);
 
@@ -136,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         
                         <div>
                             <label class="block font-semibold mb-2">বায়ো</label>
-                            <textarea name="bio" rows="3" class="w-full px-3 py-2 border rounded"><?php echo htmlspecialchars($user['bio']); ?></textarea>
+                            <textarea name="bio" rows="3" class="w-full px-3 py-2 border rounded"><?= $user['bio'] ?? '' ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -176,5 +172,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </div>
-
-<?php require_once 'includes/footer.php'; ?>

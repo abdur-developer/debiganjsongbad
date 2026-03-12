@@ -1,8 +1,4 @@
 <?php
-// admin/news/create.php
-require_once '../includes/header.php';
-require_once '../includes/functions.php';
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title_bn = $conn->real_escape_string($_POST['title_bn']);
     $title_en = $conn->real_escape_string($_POST['title_en']);
@@ -214,5 +210,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             console.error(error);
         });
 </script>
-
-<?php require_once '../includes/footer.php'; ?>

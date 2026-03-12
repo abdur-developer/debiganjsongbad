@@ -1,7 +1,4 @@
 <?php
-// admin/settings/index.php
-require_once '../includes/header.php';
-
 $auth->requirePermission('settings');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -174,5 +171,3 @@ while ($row = $result->fetch_assoc()) {
         </button>
     </div>
 </form>
-
-<?php require_once '../includes/footer.php'; ?>

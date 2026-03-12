@@ -1,7 +1,4 @@
 <?php
-// admin/gallery/index.php
-require_once '../includes/header.php';
-
 $auth->requirePermission('gallery');
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -28,7 +25,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
 
 <div class="flex justify-between items-center mb-6">
     <h2 class="text-2xl font-bold">ছবি গ্যালারি</h2>
-    <a href="upload.php" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <a href="?q=gallery&upload" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-upload"></i> নতুন ছবি আপলোড
     </a>
 </div>
@@ -43,7 +40,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
             <i class="fas fa-search"></i> সার্চ
         </button>
         <?php if ($search): ?>
-        <a href="index.php" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">
+        <a href="?q=gallery" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">
             <i class="fas fa-times"></i> রিসেট
         </a>
         <?php endif; ?>
@@ -99,10 +96,10 @@ $totalPages = ceil($totalRow['total'] / $limit);
                 <p class="text-xs text-gray-400"><?php echo date('d/m/Y', strtotime($image['created_at'])); ?></p>
                 
                 <div class="flex justify-end gap-2 mt-2">
-                    <a href="edit.php?id=<?php echo $image['id']; ?>" class="text-blue-600 hover:text-blue-800 text-sm" title="এডিট">
+                    <a href="?q=gallery&edit_id=<?php echo $image['id']; ?>" class="text-blue-600 hover:text-blue-800 text-sm" title="এডিট">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a href="delete.php?id=<?php echo $image['id']; ?>" 
+                    <a href="?q=gallery&delete_id=<?php echo $image['id']; ?>" 
                        class="text-red-600 hover:text-red-800 text-sm delete-confirm"
                        data-message="এই ছবি মুছে ফেলবেন?">
                         <i class="fas fa-trash"></i>
@@ -115,7 +112,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
         <div class="col-span-full text-center py-12 text-gray-500">
             <i class="fas fa-images text-5xl mb-3 text-gray-300"></i>
             <p>কোনো ছবি পাওয়া যায়নি</p>
-            <a href="upload.php" class="inline-block mt-3 text-blue-600 hover:underline">প্রথম ছবি আপলোড করুন</a>
+            <a href="?q=gallery&upload" class="inline-block mt-3 text-blue-600 hover:underline">প্রথম ছবি আপলোড করুন</a>
         </div>
     <?php endif; ?>
 </div>
@@ -202,7 +199,7 @@ $(document).ready(function() {
         
         if (confirm('নির্বাচিত আইটেমগুলিতে অ্যাকশন প্রয়োগ করবেন?')) {
             $.ajax({
-                url: '../ajax/batch-action.php',
+                url: './ajax/batch-action.php',
                 method: 'POST',
                 data: {
                     action: action,
@@ -236,5 +233,3 @@ function closePreview() {
     $('#preview-modal').addClass('hidden');
 }
 </script>
-
-<?php require_once '../includes/footer.php'; ?>

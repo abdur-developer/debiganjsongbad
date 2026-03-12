@@ -1,7 +1,4 @@
 <?php
-// admin/categories/index.php
-require_once '../includes/header.php';
-
 $auth->requirePermission('categories');
 
 // ক্যাটাগরি লিস্ট
@@ -15,7 +12,7 @@ $result = $conn->query($sql);
 
 <div class="flex justify-between items-center mb-6">
     <h2 class="text-2xl font-bold">ক্যাটাগরি ব্যবস্থাপনা</h2>
-    <a href="create.php" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <a href="?q=categories&create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-plus"></i> নতুন ক্যাটাগরি
     </a>
 </div>
@@ -87,11 +84,11 @@ $result = $conn->query($sql);
                     <td class="px-4 py-2"><?php echo $cat['sort_order']; ?></td>
                     <td class="px-4 py-2 text-sm"><?php echo $cat['creator_name']; ?></td>
                     <td class="px-4 py-2">
-                        <a href="edit.php?id=<?php echo $cat['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2" title="এডিট">
+                        <a href="?q=categories&edit_id=<?php echo $cat['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2" title="এডিট">
                             <i class="fas fa-edit"></i>
                         </a>
                         <?php if ($cat['news_count'] == 0): ?>
-                        <a href="delete.php?id=<?php echo $cat['id']; ?>" 
+                        <a href="?q=categories&delete_id=<?php echo $cat['id']; ?>" 
                            class="text-red-600 hover:text-red-800 delete-confirm" 
                            title="ডিলিট"
                            data-message="এই ক্যাটাগরি মুছে ফেলবেন?">
@@ -179,7 +176,7 @@ $(document).ready(function() {
         
         if (confirm(confirmMessage)) {
             $.ajax({
-                url: '../ajax/batch-action.php',
+                url: './ajax/batch-action.php',
                 method: 'POST',
                 data: {
                     action: action,
@@ -199,5 +196,3 @@ $(document).ready(function() {
     });
 });
 </script>
-
-<?php require_once '../includes/footer.php'; ?>

@@ -107,7 +107,7 @@ class Auth {
         $this->requireLogin();
         
         if (!$this->hasPermission($permission)) {
-            header('Location: dashboard.php?error=permission_denied');
+            header('Location: ./?error=permission_denied');
             exit();
         }
     }

@@ -1,8 +1,4 @@
 <?php
-// admin/users/create.php
-require_once '../includes/header.php';
-require_once '../includes/functions.php';
-
 $auth->requirePermission('users');
 
 $error = '';
@@ -145,5 +141,3 @@ $roles = ['super_admin', 'admin', 'editor', 'reporter', 'moderator'];
         </div>
     </form>
 </div>
-
-<?php require_once '../includes/footer.php'; ?>

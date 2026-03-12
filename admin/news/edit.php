@@ -1,11 +1,7 @@
 <?php
-// admin/news/edit.php
-require_once '../includes/header.php';
-require_once '../includes/functions.php';
-
 $auth->requirePermission('news');
 
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
 
 if (!$id) {
     header('Location: index.php');
@@ -296,5 +292,3 @@ ClassicEditor
         console.error(error);
     });
 </script>
-
-<?php require_once '../includes/footer.php'; ?>

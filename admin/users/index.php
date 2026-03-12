@@ -1,7 +1,4 @@
 <?php
-// admin/users/index.php
-require_once '../includes/header.php';
-
 $auth->requirePermission('users');
 
 $sql = "SELECT * FROM users ORDER BY created_at DESC";
@@ -10,7 +7,7 @@ $result = $conn->query($sql);
 
 <div class="flex justify-between items-center mb-6">
     <h2 class="text-2xl font-bold">ব্যবহারকারী ব্যবস্থাপনা</h2>
-    <a href="create.php" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <a href="?q=users&create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-plus"></i> নতুন ব্যবহারকারী
     </a>
 </div>
@@ -91,11 +88,11 @@ $result = $conn->query($sql);
                     <?php echo $user['last_login'] ? date('d/m/Y h:i A', strtotime($user['last_login'])) : '-'; ?>
                 </td>
                 <td class="px-4 py-2">
-                    <a href="edit.php?id=<?php echo $user['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
+                    <a href="?q=users&edit_id=<?php echo $user['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
                         <i class="fas fa-edit"></i>
                     </a>
                     <?php if ($user['id'] != $_SESSION['user_id']): ?>
-                    <a href="delete.php?id=<?php echo $user['id']; ?>" 
+                    <a href="?q=users&delete_id=<?php echo $user['id']; ?>" 
                        class="text-red-600 hover:text-red-800"
                        onclick="return confirm('নিশ্চিতভাবে মুছতে চান?')">
                         <i class="fas fa-trash"></i>
@@ -107,5 +104,3 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 </div>
-
-<?php require_once '../includes/footer.php'; ?>
