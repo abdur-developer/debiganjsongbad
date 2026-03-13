@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <div class="max-w-4xl mx-auto">
-    <h2 class="text-2xl font-bold mb-6">আমার প্রোফাইল</h2>
+    <h2 class="text-lg md:text-2xl font-bold mb-6">আমার প্রোফাইল</h2>
     
     <?php if (isset($success)): ?>
     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">

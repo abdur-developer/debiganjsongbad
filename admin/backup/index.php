@@ -13,8 +13,8 @@ usort($backups, function($a, $b) {
 ?>
 
 <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-bold">ডাটাবেজ ব্যাকআপ</h2>
-    <button id="create-backup" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <h2 class="text-lg md:text-2xl font-bold">ডাটাবেজ ব্যাকআপ</h2>
+    <button id="create-backup" class="bg-green-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-database"></i> নতুন ব্যাকআপ তৈরি
     </button>
 </div>

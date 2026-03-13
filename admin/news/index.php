@@ -36,8 +36,8 @@ $totalPages = ceil($totalRow['total'] / $limit);
 ?>
 
 <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-bold">সংবাদ ব্যবস্থাপনা</h2>
-    <a href="?q=news&create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <h2 class="text-lg md:text-2xl font-bold">সংবাদ ব্যবস্থাপনা</h2>
+    <a href="?q=news&create" class="bg-green-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-plus"></i> নতুন সংবাদ
     </a>
 </div>
@@ -85,13 +85,13 @@ $totalPages = ceil($totalRow['total'] / $limit);
     <table class="w-full">
         <thead class="bg-gray-50">
             <tr>
-                <th class="px-4 py-3 text-left">ছবি</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">ছবি</th>
                 <th class="px-4 py-3 text-left">শিরোনাম</th>
-                <th class="px-4 py-3 text-left">ক্যাটাগরি</th>
-                <th class="px-4 py-3 text-left">লেখক</th>
-                <th class="px-4 py-3 text-left">তারিখ</th>
-                <th class="px-4 py-3 text-left">স্ট্যাটাস</th>
-                <th class="px-4 py-3 text-left">ভিউ</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">ক্যাটাগরি</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">লেখক</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">তারিখ</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">স্ট্যাটাস</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">ভিউ</th>
                 <th class="px-4 py-3 text-left">অ্যাকশন</th>
             </tr>
         </thead>
@@ -99,15 +99,15 @@ $totalPages = ceil($totalRow['total'] / $limit);
             <?php if ($result && $result->num_rows > 0): ?>
                 <?php while ($news = $result->fetch_assoc()): ?>
                 <tr class="border-t hover:bg-gray-50">
-                    <td class="px-4 py-2">
+                    <td class="px-4 py-2 hidden md:table-cell">
                         <img src="<?php echo $news['featured_image'] ?: 'https://via.placeholder.com/50'; ?>" 
                              class="w-12 h-12 object-cover rounded" alt="">
                     </td>
                     <td class="px-4 py-2 font-semibold"><?php echo $news['title_bn']; ?></td>
-                    <td class="px-4 py-2"><?php echo $news['category_name']; ?></td>
-                    <td class="px-4 py-2"><?php echo $news['author_name']; ?></td>
-                    <td class="px-4 py-2 text-sm"><?php echo date('d/m/Y', strtotime($news['created_at'])); ?></td>
-                    <td class="px-4 py-2">
+                    <td class="px-4 py-2 hidden md:table-cell"><?php echo $news['category_name']; ?></td>
+                    <td class="px-4 py-2 hidden md:table-cell"><?php echo $news['author_name']; ?></td>
+                    <td class="px-4 py-2 hidden md:table-cell text-sm"><?php echo date('d/m/Y', strtotime($news['created_at'])); ?></td>
+                    <td class="px-4 py-2 hidden md:table-cell">
                         <?php if ($news['status'] == 'published'): ?>
                             <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">প্রকাশিত</span>
                         <?php elseif ($news['status'] == 'draft'): ?>
@@ -120,7 +120,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
                             <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs ml-1">ব্রেকিং</span>
                         <?php endif; ?>
                     </td>
-                    <td class="px-4 py-2"><?php echo number_format($news['views']); ?></td>
+                    <td class="px-4 py-2 hidden md:table-cell"><?php echo number_format($news['views']); ?></td>
                     <td class="px-4 py-2">
                         <a href="?q=news&edit_id=<?php echo $news['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
                             <i class="fas fa-edit"></i>

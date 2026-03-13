@@ -37,7 +37,7 @@ while ($row = $result->fetch_assoc()) {
 ?>
 
 <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-bold">সেটিংস</h2>
+    <h2 class="text-lg md:text-2xl font-bold">সেটিংস</h2>
 </div>
 
 <?php if (isset($_SESSION['success'])): ?>

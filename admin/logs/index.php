@@ -37,7 +37,7 @@ $userResult = $conn->query($userSql);
 ?>
 
 <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-bold">অ্যাক্টিভিটি লগ</h2>
+    <h2 class="text-lg md:text-2xl font-bold">অ্যাক্টিভিটি লগ</h2>
 </div>
 
 <!-- ফিল্টার -->

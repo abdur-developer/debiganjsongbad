@@ -54,25 +54,37 @@ $warning_message = $_SESSION['warning'] ?? '';
 </head>
 <body class="bg-gray-100">
     <div class="flex h-screen">
-        <!-- Sidebar -->
-        <div class="w-64 bg-gray-900 text-white flex flex-col">
-            <div class="p-4 border-b border-gray-800">
+        <!-- Sidebar - রেস্পন্সিভ ডিজাইন -->
+        <div class="fixed md:static inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition duration-200 ease-in-out z-30 w-64 bg-gray-900 text-white flex flex-col h-full" id="sidebar">
+            <!-- মোবাইল হেডার - শুধু মোবাইলে দেখাবে -->
+            <div class="md:hidden p-4 border-b border-gray-800 flex justify-between items-center">
+                <h2 class="text-xl font-bold text-red-500">দেবীগঞ্জ সংবাদ</h2>
+                <button id="close-sidebar" class="text-gray-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- ডেস্কটপ হেডার - শুধু ডেস্কটপে দেখাবে -->
+            <div class="hidden md:block p-4 border-b border-gray-800">
                 <h2 class="text-xl font-bold text-red-500">দেবীগঞ্জ সংবাদ</h2>
                 <p class="text-xs text-gray-400 mt-1">অ্যাডমিন প্যানেল</p>
             </div>
             
+            <!-- ইউজার ইনফো - সব ডিভাইসে দেখাবে -->
             <div class="p-4 border-b border-gray-800">
                 <div class="flex items-center">
-                    <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center overflow-hidden">
+                    <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                         <?php if ($currentUser['avatar']): ?>
                         <img src="<?php echo $currentUser['avatar']; ?>" class="w-full h-full object-cover" alt="">
                         <?php else: ?>
                         <i class="fas fa-user text-gray-300 text-xl"></i>
                         <?php endif; ?>
                     </div>
-                    <div class="ml-3">
-                        <p class="font-semibold text-sm"><?php echo htmlspecialchars($currentUser['full_name']); ?></p>
-                        <p class="text-xs text-gray-400">
+                    <div class="ml-3 min-w-0 flex-1">
+                        <p class="font-semibold text-sm truncate"><?php echo htmlspecialchars($currentUser['full_name']); ?></p>
+                        <p class="text-xs text-gray-400 truncate">
                             <?php 
                             $roleNames = [
                                 'super_admin' => 'সুপার অ্যাডমিন',
@@ -87,6 +99,7 @@ $warning_message = $_SESSION['warning'] ?? '';
                     </div>
                 </div>
             </div>
+            
             <style>
                 .active-nav {
                     --tw-bg-opacity: 1;
@@ -94,96 +107,132 @@ $warning_message = $_SESSION['warning'] ?? '';
                     background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
                     color: rgb(239 68 68 / var(--tw-text-opacity, 1));
                 }
+                
+                /* সক্রিয় নেভিগেশন আইকনের জন্যও */
+                .active-nav i {
+                    color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+                }
+                
+                /* মোবাইলে সাইডবার ওপেন */
+                .sidebar-open {
+                    overflow: hidden;
+                }
+                
+                .sidebar-open #sidebar {
+                    transform: translateX(0);
+                }
+                
+                .sidebar-open #sidebar-overlay {
+                    display: block;
+                }
             </style>
             
-            <nav class="flex-1 p-4 overflow-y-auto">
+            <!-- নেভিগেশন মেনু - স্ক্রলযোগ্য -->
+            <nav class="flex-1 overflow-y-auto p-4" style="scrollbar-width: thin; scrollbar-color: #4a5568 #2d3748;">
                 <?php $active = $_GET['q'] ?? 'dashboard'; ?>
                 <ul class="space-y-1">
                     <li>
-                        <a href="./" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'dashboard' ? 'active-nav' : '' ?>">
-                            <i class="fas fa-tachometer-alt w-6"></i>
-                            <span>ড্যাশবোর্ড</span>
+                        <a href="./" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'dashboard' ? 'active-nav' : '' ?> transition-colors">
+                            <i class="fas fa-tachometer-alt w-6 text-base <?= $active === 'dashboard' ? 'text-red-500' : 'text-gray-400' ?>"></i>
+                            <span class="ml-2 text-sm truncate">ড্যাশবোর্ড</span>
                         </a>
                     </li>
                     
                     <li class="pt-4 mt-2 border-t border-gray-800">
-                        <p class="text-xs text-gray-500 mb-2 px-2">কন্টেন্ট</p>
+                        <p class="text-xs text-gray-500 mb-2 px-2 uppercase tracking-wider">কন্টেন্ট</p>
                     </li>
                     
                     <li>
-                        <a href="../index.php" target="_blank" class="flex items-center p-2 hover:bg-gray-800 rounded">
-                            <i class="fas fa-globe w-6"></i>
-                            <span>ওয়েবসাইট দেখুন</span>
+                        <a href="../index.php" target="_blank" class="flex items-center p-2 hover:bg-gray-800 rounded transition-colors">
+                            <i class="fas fa-globe w-6 text-base text-gray-400"></i>
+                            <span class="ml-2 text-sm truncate">ওয়েবসাইট দেখুন</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a href="?q=news" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'news' ? 'active-nav' : '' ?>">
-                            <i class="fas fa-newspaper w-6"></i>
-                            <span>সংবাদ</span>
+                        <a href="?q=news" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'news' ? 'active-nav' : '' ?> transition-colors">
+                            <i class="fas fa-newspaper w-6 text-base <?= $active === 'news' ? 'text-red-500' : 'text-gray-400' ?>"></i>
+                            <span class="ml-2 text-sm truncate">সংবাদ</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a href="?q=categories" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'categories' ? 'active-nav' : '' ?>">
-                            <i class="fas fa-tags w-6"></i>
-                            <span>ক্যাটাগরি</span>
+                        <a href="?q=categories" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'categories' ? 'active-nav' : '' ?> transition-colors">
+                            <i class="fas fa-tags w-6 text-base <?= $active === 'categories' ? 'text-red-500' : 'text-gray-400' ?>"></i>
+                            <span class="ml-2 text-sm truncate">ক্যাটাগরি</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a href="?q=gallery" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'gallery' ? 'active-nav' : '' ?>">
-                            <i class="fas fa-images w-6"></i>
-                            <span>গ্যালারি</span>
+                        <a href="?q=gallery" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'gallery' ? 'active-nav' : '' ?> transition-colors">
+                            <i class="fas fa-images w-6 text-base <?= $active === 'gallery' ? 'text-red-500' : 'text-gray-400' ?>"></i>
+                            <span class="ml-2 text-sm truncate">গ্যালারি</span>
                         </a>
                     </li>
                     
-                    <!-- <li>
+                    <!-- মন্তব্য - কমেন্ট আউট করা আছে -->
+                    <!--
+                    <li>
                         <a href="?q=comments" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'comments' ? 'active-nav' : '' ?>">
                             <i class="fas fa-comments w-6"></i>
                             <span>মন্তব্য</span>
                         </a>
-                    </li> -->
+                    </li>
+                    -->
                     
                     <li class="pt-4 mt-2 border-t border-gray-800">
-                        <p class="text-xs text-gray-500 mb-2 px-2">ব্যবস্থাপনা</p>
+                        <p class="text-xs text-gray-500 mb-2 px-2 uppercase tracking-wider">ব্যবস্থাপনা</p>
                     </li>
                     
                     <?php if ($auth->hasPermission('users')): ?>
-                    <!-- <li>
+                    <!-- ব্যবহারকারী - কমেন্ট আউট করা আছে -->
+                    <!--
+                    <li>
                         <a href="?q=users" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'users' ? 'active-nav' : '' ?>">
                             <i class="fas fa-users w-6"></i>
                             <span>ব্যবহারকারী</span>
                         </a>
-                    </li> -->
+                    </li>
+                    -->
                     <?php endif; ?>
                     
-                    <!-- <li>
+                    <!-- রোল - কমেন্ট আউট করা আছে -->
+                    <!--
+                    <li>
                         <a href="?q=roles" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'roles' ? 'active-nav' : '' ?>">
                             <i class="fas fa-user-tag w-6"></i>
                             <span>রোল ও পারমিশন</span>
                         </a>
-                    </li> -->
+                    </li>
+                    -->
                     
                     <?php if ($auth->hasPermission('ads')): ?>
-                    <!-- <li>
+                    <!-- বিজ্ঞাপন - কমেন্ট আউট করা আছে -->
+                    <!--
+                    <li>
                         <a href="?q=ads" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'ads' ? 'active-nav' : '' ?>">
                             <i class="fas fa-ad w-6"></i>
                             <span>বিজ্ঞাপন</span>
                         </a>
-                    </li> -->
+                    </li>
+                    -->
                     <?php endif; ?>
                     
                     <?php if ($auth->hasPermission('settings')): ?>
-                    <!-- <li>
+                    <!-- সেটিংস - কমেন্ট আউট করা আছে -->
+                    <!--
+                    <li>
                         <a href="?q=settings" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'settings' ? 'active-nav' : '' ?>">
                             <i class="fas fa-cog w-6"></i>
                             <span>সেটিংস</span>
                         </a>
-                    </li> -->
+                    </li>
+                    -->
                     <?php endif; ?>
                     
-                    <!-- <li class="pt-4 mt-2 border-t border-gray-800">
+                    <!-- টুলস সেকশন - কমেন্ট আউট -->
+                    <!--
+                    <li class="pt-4 mt-2 border-t border-gray-800">
                         <p class="text-xs text-gray-500 mb-2 px-2">টুলস</p>
                     </li>
                     
@@ -199,38 +248,51 @@ $warning_message = $_SESSION['warning'] ?? '';
                             <i class="fas fa-history w-6"></i>
                             <span>অ্যাক্টিভিটি লগ</span>
                         </a>
-                    </li> -->
+                    </li>
+                    -->
                 </ul>
             </nav>
             
+            <!-- নিচের মেনু -->
             <div class="p-4 border-t border-gray-800">
-                <a href="?q=profile" class="flex items-center p-2 hover:bg-gray-800 rounded mb-1">
-                    <i class="fas fa-user-circle w-6"></i>
-                    <span>প্রোফাইল</span>
+                <a href="?q=profile" class="flex items-center p-2 hover:bg-gray-800 rounded mb-1 transition-colors <?= $active === 'profile' ? 'active-nav' : '' ?>">
+                    <i class="fas fa-user-circle w-6 text-base <?= $active === 'profile' ? 'text-red-500' : 'text-gray-400' ?>"></i>
+                    <span class="ml-2 text-sm truncate">প্রোফাইল</span>
                 </a>
-                <a href="logout.php" class="flex items-center p-2 hover:bg-gray-800 rounded text-red-400">
-                    <i class="fas fa-sign-out-alt w-6"></i>
-                    <span>লগআউট</span>
+                <a href="logout.php" class="flex items-center p-2 hover:bg-gray-800 rounded text-red-400 hover:text-red-300 transition-colors">
+                    <i class="fas fa-sign-out-alt w-6 text-base"></i>
+                    <span class="ml-2 text-sm truncate">লগআউট</span>
                 </a>
             </div>
         </div>
-        
-        <!-- Main Content -->
-        <div class="flex-1 flex flex-col overflow-hidden">
-            <!-- Top Bar -->
-            <div class="bg-white shadow-sm px-6 py-3 flex justify-between items-center">
-                <h1 class="text-xl font-semibold">
+
+        <!-- মোবাইল সাইডবার ওভারলে -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden transition-opacity"></div>
+
+        <!-- মোবাইল টপবার - শুধু মোবাইলে দেখাবে -->
+        <!-- <div class="md:hidden bg-white shadow-sm px-4 py-2 flex items-center justify-between sticky top-0 z-10">
+            <button id="menu-toggle" class="p-2 text-gray-600 hover:text-red-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <h2 class="text-lg font-semibold text-red-600">দেবীগঞ্জ সংবাদ</h2>
+            <a href="../index.php" target="_blank" class="p-2 text-gray-600 hover:text-blue-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+            </a>
+        </div> -->
+
+        <!-- Main Content - রেস্পন্সিভ টেক্সট সাইজ -->
+        <div class="flex-1 flex flex-col overflow-hidden <?= $active === 'dashboard' ? '' : '' ?>">
+            <!-- টপ বার - ডেস্কটপে দেখাবে, মোবাইলে হাইড (মোবাইল টপবার আলাদা আছে) -->
+            <div class="hidden md:flex bg-white shadow-sm px-6 py-3 justify-between items-center">
+                <h1 class="text-xl font-semibold text-gray-800">
                     <?php
-                    $pageTitle = basename($_SERVER['PHP_SELF']);
-                    $pathParts = explode('/', $_SERVER['PHP_SELF']);
-                    $section = $pathParts[count($pathParts)-2] ?? '';
-                    
                     $titles = [
-                        'profile.php' => 'আমার প্রোফাইল',
-                        'index.php' => 'ড্যাশবোর্ড'
-                    ];
-                    
-                    $sectionTitles = [
+                        'profile' => 'আমার প্রোফাইল',
+                        'dashboard' => 'ড্যাশবোর্ড',
                         'news' => 'সংবাদ ব্যবস্থাপনা',
                         'categories' => 'ক্যাটাগরি ব্যবস্থাপনা',
                         'gallery' => 'ছবি গ্যালারি',
@@ -240,18 +302,7 @@ $warning_message = $_SESSION['warning'] ?? '';
                         'ads' => 'বিজ্ঞাপন ব্যবস্থাপনা',
                         'settings' => 'সেটিংস'
                     ];
-                    
-                    if (isset($titles[$pageTitle])) {
-                        echo $titles[$pageTitle];
-                    } elseif (isset($sectionTitles[$section])) {
-                        echo $sectionTitles[$section];
-                        
-                        // সাব-পেজ টাইটেল
-                        if ($pageTitle == 'create.php') echo ' - নতুন যোগ';
-                        elseif ($pageTitle == 'edit.php') echo ' - সম্পাদনা';
-                    } else {
-                        echo 'অ্যাডমিন প্যানেল';
-                    }
+                    echo $titles[$active] ?? 'অ্যাডমিন প্যানেল';
                     ?>
                 </h1>
                 
@@ -265,18 +316,35 @@ $warning_message = $_SESSION['warning'] ?? '';
                         echo $days[$date['wday']] . ', ' . $date['mday'] . ' ' . $months[$date['mon']-1] . ' ' . $date['year'];
                         ?>
                     </div>
-                    <a href="../index.php" target="_blank" class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700">
+                    <a href="../index.php" target="_blank" class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700 transition">
                         <i class="fas fa-external-link-alt mr-1"></i> সাইট দেখুন
                     </a>
                 </div>
             </div>
             
-            <!-- Content Area -->
-            <div class="flex-1 overflow-y-auto p-6">
-                <!-- হিডেন সেশন ডাটা (footer এ দেখানোর জন্য) -->
+            <!-- মোবাইল পেজ টাইটেল - শুধু মোবাইলে দেখাবে -->
+            <div class="flex md:hidden bg-white px-4 py-2 border-b border-gray-800 items-center justify-between">
+                <button id="menu-toggle" class="p-2 text-gray-600 hover:text-red-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <h1 class="text-base font-semibold text-gray-800">
+                    <?php echo $titles[$active] ?? 'অ্যাডমিন প্যানেল'; ?>
+                </h1>
+                <a href="../index.php" target="_blank" class="p-2 text-gray-600 hover:text-blue-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- কন্টেন্ট এরিয়া - রেস্পন্সিভ প্যাডিং -->
+            <div class="flex-1 overflow-y-auto p-4 md:p-6">
+                <!-- হিডেন সেশন ডাটা -->
                 <div id="session-data" 
-                     data-success="<?php echo htmlspecialchars($success_message); ?>"
-                     data-error="<?php echo htmlspecialchars($error_message); ?>"
-                     data-warning="<?php echo htmlspecialchars($warning_message); ?>"
-                     class="hidden">
+                    data-success="<?php echo htmlspecialchars($success_message); ?>"
+                    data-error="<?php echo htmlspecialchars($error_message); ?>"
+                    data-warning="<?php echo htmlspecialchars($warning_message); ?>"
+                    class="hidden">
                 </div>

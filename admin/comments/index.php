@@ -33,7 +33,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
 ?>
 
 <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-bold">মন্তব্য ব্যবস্থাপনা</h2>
+    <h2 class="text-lg md:text-2xl font-bold">মন্তব্য ব্যবস্থাপনা</h2>
 </div>
 
 <!-- ফিল্টার -->

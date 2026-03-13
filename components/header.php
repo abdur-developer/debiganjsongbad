@@ -1,3 +1,8 @@
+<?php
+    // ক্যাটাগরি লোড
+    $catSql = "SELECT * FROM categories WHERE status = 'active' AND parent_id = 0 ORDER BY sort_order, name_bn LIMIT 12";
+    $catResult = $conn->query($catSql);
+?>
 <!-- HEADER SECTION -->
 <header class="my-header top-0 z-50 bg-white shadow-md border-b border-gray-200 transition-colors">
     <div class="container mx-auto px-2 sm:px-4">
@@ -31,7 +36,7 @@
         <div class="flex flex-col md:flex-row justify-between items-center py-3 gap-3">
             <div class="flex items-center gap-4">
                 <button id="menuBtn" class="md:hidden p-2 text-xl">☰</button>
-                <img src="assets/img/logo.png" style="width: 40%"/>
+                <img src="<?=$logo?>" style="width: 40%"/>
             </div>
             <div class="bg-gray-200 w-[728px] max-w-full h-[90px] flex items-center justify-center text-xs text-gray-500 border ad-placeholder">
                 বিজ্ঞাপন ৭২৮x৯০

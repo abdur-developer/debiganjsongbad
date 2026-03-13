@@ -6,8 +6,8 @@ $result = $conn->query($sql);
 ?>
 
 <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-bold">ব্যবহারকারী ব্যবস্থাপনা</h2>
-    <a href="?q=users&create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <h2 class="text-lg md:text-2xl font-bold">ব্যবহারকারী ব্যবস্থাপনা</h2>
+    <a href="?q=users&create" class="bg-green-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-plus"></i> নতুন ব্যবহারকারী
     </a>
 </div>

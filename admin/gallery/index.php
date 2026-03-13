@@ -24,8 +24,8 @@ $totalPages = ceil($totalRow['total'] / $limit);
 ?>
 
 <div class="flex justify-between items-center mb-6">
-    <h2 class="text-2xl font-bold">ছবি গ্যালারি</h2>
-    <a href="?q=gallery&upload" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <h2 class="text-lg md:text-2xl font-bold">ছবি গ্যালারি</h2>
+    <a href="?q=gallery&upload" class="bg-green-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-upload"></i> নতুন ছবি আপলোড
     </a>
 </div>

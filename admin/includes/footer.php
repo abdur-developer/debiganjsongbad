@@ -202,5 +202,130 @@
             }
         }
     </style>
+    <script>
+        // মোবাইল সাইডবার টগল
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const closeSidebar = document.getElementById('close-sidebar');
+            
+            function openSidebar() {
+                sidebar.classList.add('translate-x-0');
+                sidebar.classList.remove('-translate-x-full');
+                sidebarOverlay.classList.remove('hidden');
+                document.body.classList.add('sidebar-open');
+            }
+            
+            function closeSidebarFunc() {
+                sidebar.classList.remove('translate-x-0');
+                sidebar.classList.add('-translate-x-full');
+                sidebarOverlay.classList.add('hidden');
+                document.body.classList.remove('sidebar-open');
+            }
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', openSidebar);
+            }
+            
+            if (closeSidebar) {
+                closeSidebar.addEventListener('click', closeSidebarFunc);
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', closeSidebarFunc);
+            }
+            
+            // উইন্ডো রিসাইজ হলে মোবাইল সাইডবার বন্ধ
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) {
+                    closeSidebarFunc();
+                }
+            });
+            
+            // নোটিফিকেশন ফাংশন
+            window.showNotification = function(message, type = 'success') {
+                const sessionData = document.getElementById('session-data');
+                if (sessionData) {
+                    // সেশন ডাটা থেকে মেসেজ দেখানো হবে
+                }
+                
+                const bgColor = type === 'success' ? 'bg-green-100 border-green-400 text-green-700' : 
+                                type === 'error' ? 'bg-red-100 border-red-400 text-red-700' :
+                                'bg-yellow-100 border-yellow-400 text-yellow-700';
+                
+                const icon = type === 'success' ? 'check-circle' : 
+                            type === 'error' ? 'exclamation-circle' : 'exclamation-triangle';
+                
+                const notification = document.createElement('div');
+                notification.className = `${bgColor} border px-4 py-3 rounded-lg shadow-lg mb-2 flex items-center animate-fade-in text-sm md:text-base`;
+                notification.innerHTML = `<i class="fas fa-${icon} mr-2"></i><span>${message}</span>`;
+                
+                const container = document.getElementById('toast-container');
+                if (!container) {
+                    const newContainer = document.createElement('div');
+                    newContainer.id = 'toast-container';
+                    newContainer.className = 'fixed top-4 right-4 z-50 w-11/12 max-w-sm';
+                    document.body.appendChild(newContainer);
+                    newContainer.appendChild(notification);
+                } else {
+                    container.appendChild(notification);
+                }
+                
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                    notification.style.transition = 'opacity 0.5s';
+                    setTimeout(() => notification.remove(), 500);
+                }, 3000);
+            };
+            
+            // সেশন ডাটা দেখান
+            const sessionData = document.getElementById('session-data');
+            if (sessionData) {
+                const success = sessionData.dataset.success;
+                const error = sessionData.dataset.error;
+                const warning = sessionData.dataset.warning;
+                
+                if (success) showNotification(success, 'success');
+                if (error) showNotification(error, 'error');
+                if (warning) showNotification(warning, 'warning');
+            }
+            
+            // ডিলিট কনফার্মেশন
+            document.querySelectorAll('.delete-confirm').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const message = this.dataset.message || 'আপনি কি নিশ্চিত? এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।';
+                    
+                    if (confirm(message)) {
+                        window.location.href = href;
+                    }
+                });
+            });
+        });
+
+        // অ্যানিমেশন সিএসএস
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-fade-in {
+                animation: fadeIn 0.3s ease-in;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            /* মোবাইলের জন্য সাইডবার ট্রানজিশন */
+            @media (max-width: 767px) {
+                #sidebar {
+                    transition: transform 0.3s ease-in-out;
+                    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        </script>
 </body>
 </html>

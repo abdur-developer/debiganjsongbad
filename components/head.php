@@ -62,8 +62,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="tailwind.css">
     
     <!-- ========== স্কিমা ডট অর্গ মার্কআপ (Structured Data) ========== -->
     <script type="application/ld+json">
@@ -159,9 +157,9 @@
     <!-- আপনার ফেসবুক পিক্সেল আইডি থাকলে এখানে বসাবেন -->
     
     <!-- ========== ভারিফিকেশন মেটা ========== -->
-    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
+    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
     <meta name="facebook-domain-verification" content="YOUR_FACEBOOK_VERIFICATION_CODE">
-    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE"> -->
     
     <!-- ========== পিডেট ========== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
