@@ -47,10 +47,7 @@
                 </div>
                 <!-- Share Buttons -->
                 <div class="flex gap-2 mb-6 justify-end">
-                    <!-- ShareThis BEGINS -->
-                    <div class="sharethis-inline-share-buttons"></div>
-                    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69b4572d4e4ca8ffb8ee5b35&product=sop' async='async'></script>
-                    <!-- ShareThis ENDS -->
+                    <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
                 </div>
             </header>
             
