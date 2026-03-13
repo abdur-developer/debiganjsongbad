@@ -48,14 +48,7 @@
                 <!-- Share Buttons -->
                 <div class="flex gap-2 mb-6 justify-end">
                     <!-- ShareThis BEGINS -->
-                    <div class="sharethis-share-buttons" data-type="inline-share-buttons" data-labels="counts" data-show_total="true" data-size="medium">
-                        <span data-network="facebook"></span>
-                        <span data-network="messenger"></span>
-                        <span data-network="whatsapp"></span>
-                        <span data-network="linkedin"></span>
-                        <span data-network="copy"></span>
-                        <span data-network="print"></span>
-                    </div>
+                    <div class="sharethis-inline-share-buttons"></div>
                     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=69b4572d4e4ca8ffb8ee5b35&product=sop' async='async'></script>
                     <!-- ShareThis ENDS -->
                 </div>
