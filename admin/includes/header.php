@@ -17,6 +17,8 @@ $warning_message = $_SESSION['warning'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>অ্যাডমিন প্যানেল - দেবীগঞ্জ সংবাদ</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -173,12 +175,12 @@ $warning_message = $_SESSION['warning'] ?? '';
                     <?php endif; ?>
                     
                     <?php if ($auth->hasPermission('settings')): ?>
-                    <li>
+                    <!-- <li>
                         <a href="?q=settings" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'settings' ? 'active-nav' : '' ?>">
                             <i class="fas fa-cog w-6"></i>
                             <span>সেটিংস</span>
                         </a>
-                    </li>
+                    </li> -->
                     <?php endif; ?>
                     
                     <!-- <li class="pt-4 mt-2 border-t border-gray-800">

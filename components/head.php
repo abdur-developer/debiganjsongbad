@@ -18,16 +18,16 @@
     <meta name="copyright" content="© ২০২৬ দেবীগঞ্জ সংবাদ">
     
     <!-- ========== ক্যাননিক্যাল URL ========== -->
-    <link rel="canonical" href="http://debiganjsongbad.com/">
-    <meta name="url" content="http://debiganjsongbad.com/">
+    <link rel="canonical" href="https://debiganjsongbad.com/">
+    <meta name="url" content="https://debiganjsongbad.com/">
     
     <!-- ========== ওপেন গ্রাফ মেটা ট্যাগ (Facebook, LinkedIn, WhatsApp) ========== -->
     <meta property="og:site_name" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://debiganjsongbad.com/">
+    <meta property="og:url" content="https://debiganjsongbad.com/">
     <meta property="og:title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad - বাংলা নিউজ পোর্টাল">
     <meta property="og:description" content="দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।">
-    <meta property="og:image" content="http://debiganjsongbad.com/assets/images/og-image.jpg">
+    <meta property="og:image" content="https://debiganjsongbad.com/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="দেবীগঞ্জ সংবাদ - Debiganj Songbad Logo">
@@ -38,24 +38,24 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@debiganjsongbad">
     <meta name="twitter:creator" content="@debiganjsongbad">
-    <meta name="twitter:url" content="http://debiganjsongbad.com/">
+    <meta name="twitter:url" content="https://debiganjsongbad.com/">
     <meta name="twitter:title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad - বাংলা নিউজ পোর্টাল">
     <meta name="twitter:description" content="দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।">
-    <meta name="twitter:image" content="http://debiganjsongbad.com/assets/images/twitter-image.jpg">
+    <meta name="twitter:image" content="https://debiganjsongbad.com/assets/images/twitter-image.jpg">
     <meta name="twitter:image:alt" content="দেবীগঞ্জ সংবাদ - Debiganj Songbad Logo">
     
     <!-- ========== হোয়াটসঅ্যাপ / মেসেঞ্জার শেয়ার ========== -->
     <meta property="og:whatsapp:title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad">
     <meta property="og:whatsapp:description" content="দেবীগঞ্জের সর্বশেষ সংবাদ - দ্রুত ও নির্ভরযোগ্য">
-    <meta property="og:whatsapp:image" content="http://debiganjsongbad.com/assets/images/whatsapp-share.jpg">
+    <meta property="og:whatsapp:image" content="https://debiganjsongbad.com/assets/images/whatsapp-share.jpg">
     
     <!-- ========== আইকন ও অ্যাপেল টাচ আইকন ========== -->
-    <link rel="icon" type="image/png" sizes="32x32" href="http://debiganjsongbad.com/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="http://debiganjsongbad.com/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="http://debiganjsongbad.com/apple-touch-icon.png">
-    <link rel="mask-icon" href="http://debiganjsongbad.com/safari-pinned-tab.svg" color="#dc2626">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
+    <link rel="mask-icon" href="https://debiganjsongbad.com/safari-pinned-tab.svg" color="#dc2626">
     <meta name="msapplication-TileColor" content="#dc2626">
-    <meta name="msapplication-TileImage" content="http://debiganjsongbad.com/mstile-144x144.png">
+    <meta name="msapplication-TileImage" content="https://debiganjsongbad.com/mstile-144x144.png">
     <meta name="theme-color" content="#dc2626">
     
     <!-- ========== ফন্ট ও সিএসএস ========== -->
@@ -70,13 +70,13 @@
     {
         "@context": "https://schema.org",
         "@type": "NewsMediaOrganization",
-        "@id": "http://debiganjsongbad.com/#organization",
+        "@id": "https://debiganjsongbad.com/#organization",
         "name": "দেবীগঞ্জ সংবাদ",
         "alternateName": "Debiganj Songbad",
-        "url": "http://debiganjsongbad.com/",
+        "url": "https://debiganjsongbad.com/",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://debiganjsongbad.com/assets/images/logo.png",
+            "url": "https://debiganjsongbad.com/assets/images/logo.png",
             "width": 600,
             "height": 60
         },
@@ -105,18 +105,18 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "@id": "http://debiganjsongbad.com/#website",
-        "url": "http://debiganjsongbad.com/",
+        "@id": "https://debiganjsongbad.com/#website",
+        "url": "https://debiganjsongbad.com/",
         "name": "দেবীগঞ্জ সংবাদ",
         "description": "দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।",
         "publisher": {
-            "@id": "http://debiganjsongbad.com/#organization"
+            "@id": "https://debiganjsongbad.com/#organization"
         },
         "potentialAction": {
             "@type": "SearchAction",
             "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "http://debiganjsongbad.com/search?q={search_term_string}"
+                "urlTemplate": "https://debiganjsongbad.com/search?q={search_term_string}"
             },
             "query-input": "required name=search_term_string"
         }
@@ -130,24 +130,24 @@
         "@id": "#article",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://debiganjsongbad.com/"
+            "@id": "https://debiganjsongbad.com/"
         },
         "headline": "দেবীগঞ্জ সংবাদ - বাংলা নিউজ পোর্টাল",
         "description": "দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।",
         "image": [
-            "http://debiganjsongbad.com/assets/images/og-image.jpg",
-            "http://debiganjsongbad.com/assets/images/featured-1.jpg",
-            "http://debiganjsongbad.com/assets/images/featured-2.jpg"
+            "https://debiganjsongbad.com/assets/images/og-image.jpg",
+            "https://debiganjsongbad.com/assets/images/featured-1.jpg",
+            "https://debiganjsongbad.com/assets/images/featured-2.jpg"
         ],
         "datePublished": "2026-03-10T12:00:00+06:00",
         "dateModified": "2026-03-10T12:00:00+06:00",
         "author": {
             "@type": "Organization",
             "name": "দেবীগঞ্জ সংবাদ কর্তৃপক্ষ",
-            "url": "http://debiganjsongbad.com/author/editor"
+            "url": "https://debiganjsongbad.com/author/editor"
         },
         "publisher": {
-            "@id": "http://debiganjsongbad.com/#organization"
+            "@id": "https://debiganjsongbad.com/#organization"
         }
     }
     </script>
