@@ -4,7 +4,7 @@ $auth->requirePermission('users');
 $id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
 
 if (!$id) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=roles';</script>";
     exit();
 }
 
@@ -12,7 +12,7 @@ $sql = "SELECT * FROM roles_permissions WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=roles';</script>";
     exit();
 }
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if ($conn->query($updateSql)) {
                 $_SESSION['success'] = 'রোল আপডেট হয়েছে';
-                header('Location: index.php');
+                echo "<script>window.location.href = 'index.php?q=roles';</script>";
                 exit();
             } else {
                 $error = 'ত্রুটি: ' . $conn->error;

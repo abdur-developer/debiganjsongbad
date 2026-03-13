@@ -85,11 +85,20 @@ $warning_message = $_SESSION['warning'] ?? '';
                     </div>
                 </div>
             </div>
+            <style>
+                .active-nav {
+                    --tw-bg-opacity: 1;
+                    --tw-text-opacity: 1;
+                    background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+                    color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+                }
+            </style>
             
             <nav class="flex-1 p-4 overflow-y-auto">
+                <?php $active = $_GET['q'] ?? 'dashboard'; ?>
                 <ul class="space-y-1">
                     <li>
-                        <a href="./" class="flex items-center p-2 hover:bg-gray-800 rounded <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'bg-gray-800 text-red-500' : ''; ?>">
+                        <a href="./" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'dashboard' ? 'active-nav' : '' ?>">
                             <i class="fas fa-tachometer-alt w-6"></i>
                             <span>ড্যাশবোর্ড</span>
                         </a>
@@ -107,72 +116,72 @@ $warning_message = $_SESSION['warning'] ?? '';
                     </li>
                     
                     <li>
-                        <a href="?q=news" class="flex items-center p-2 hover:bg-gray-800 rounded <?php echo strpos($_SERVER['PHP_SELF'], 'news/') !== false ? 'bg-gray-800 text-red-500' : ''; ?>">
+                        <a href="?q=news" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'news' ? 'active-nav' : '' ?>">
                             <i class="fas fa-newspaper w-6"></i>
                             <span>সংবাদ</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a href="?q=categories" class="flex items-center p-2 hover:bg-gray-800 rounded <?php echo strpos($_SERVER['PHP_SELF'], 'categories/') !== false ? 'bg-gray-800 text-red-500' : ''; ?>">
+                        <a href="?q=categories" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'categories' ? 'active-nav' : '' ?>">
                             <i class="fas fa-tags w-6"></i>
                             <span>ক্যাটাগরি</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a href="?q=gallery" class="flex items-center p-2 hover:bg-gray-800 rounded <?php echo strpos($_SERVER['PHP_SELF'], 'gallery/') !== false ? 'bg-gray-800 text-red-500' : ''; ?>">
+                        <a href="?q=gallery" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'gallery' ? 'active-nav' : '' ?>">
                             <i class="fas fa-images w-6"></i>
                             <span>গ্যালারি</span>
                         </a>
                     </li>
                     
-                    <li>
-                        <a href="?q=comments" class="flex items-center p-2 hover:bg-gray-800 rounded <?php echo strpos($_SERVER['PHP_SELF'], 'comments/') !== false ? 'bg-gray-800 text-red-500' : ''; ?>">
+                    <!-- <li>
+                        <a href="?q=comments" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'comments' ? 'active-nav' : '' ?>">
                             <i class="fas fa-comments w-6"></i>
                             <span>মন্তব্য</span>
                         </a>
-                    </li>
+                    </li> -->
                     
                     <li class="pt-4 mt-2 border-t border-gray-800">
                         <p class="text-xs text-gray-500 mb-2 px-2">ব্যবস্থাপনা</p>
                     </li>
                     
                     <?php if ($auth->hasPermission('users')): ?>
-                    <li>
-                        <a href="?q=users" class="flex items-center p-2 hover:bg-gray-800 rounded <?php echo strpos($_SERVER['PHP_SELF'], 'users/') !== false ? 'bg-gray-800 text-red-500' : ''; ?>">
+                    <!-- <li>
+                        <a href="?q=users" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'users' ? 'active-nav' : '' ?>">
                             <i class="fas fa-users w-6"></i>
                             <span>ব্যবহারকারী</span>
                         </a>
-                    </li>
+                    </li> -->
                     <?php endif; ?>
                     
-                    <li>
-                        <a href="?q=roles" class="flex items-center p-2 hover:bg-gray-800 rounded <?php echo strpos($_SERVER['PHP_SELF'], 'roles/') !== false ? 'bg-gray-800 text-red-500' : ''; ?>">
+                    <!-- <li>
+                        <a href="?q=roles" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'roles' ? 'active-nav' : '' ?>">
                             <i class="fas fa-user-tag w-6"></i>
                             <span>রোল ও পারমিশন</span>
                         </a>
-                    </li>
+                    </li> -->
                     
                     <?php if ($auth->hasPermission('ads')): ?>
-                    <li>
-                        <a href="?q=ads" class="flex items-center p-2 hover:bg-gray-800 rounded <?php echo strpos($_SERVER['PHP_SELF'], 'ads/') !== false ? 'bg-gray-800 text-red-500' : ''; ?>">
+                    <!-- <li>
+                        <a href="?q=ads" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'ads' ? 'active-nav' : '' ?>">
                             <i class="fas fa-ad w-6"></i>
                             <span>বিজ্ঞাপন</span>
                         </a>
-                    </li>
+                    </li> -->
                     <?php endif; ?>
                     
                     <?php if ($auth->hasPermission('settings')): ?>
                     <li>
-                        <a href="?q=settings" class="flex items-center p-2 hover:bg-gray-800 rounded <?php echo strpos($_SERVER['PHP_SELF'], 'settings/') !== false ? 'bg-gray-800 text-red-500' : ''; ?>">
+                        <a href="?q=settings" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'settings' ? 'active-nav' : '' ?>">
                             <i class="fas fa-cog w-6"></i>
                             <span>সেটিংস</span>
                         </a>
                     </li>
                     <?php endif; ?>
                     
-                    <li class="pt-4 mt-2 border-t border-gray-800">
+                    <!-- <li class="pt-4 mt-2 border-t border-gray-800">
                         <p class="text-xs text-gray-500 mb-2 px-2">টুলস</p>
                     </li>
                     
@@ -188,7 +197,7 @@ $warning_message = $_SESSION['warning'] ?? '';
                             <i class="fas fa-history w-6"></i>
                             <span>অ্যাক্টিভিটি লগ</span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
             

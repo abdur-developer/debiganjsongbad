@@ -4,7 +4,7 @@ $auth->requirePermission('news');
 $id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
 
 if (!$id) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=news';</script>";
     exit();
 }
 
@@ -15,7 +15,7 @@ $sql = "SELECT n.*, u.full_name as author_name
 $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=news';</script>";
     exit();
 }
 
@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         if ($conn->query($sql)) {
             $_SESSION['success'] = 'সংবাদ আপডেট হয়েছে';
-            header('Location: index.php');
+            echo "<script>window.location.href = 'index.php?q=news';</script>";
             exit();
         } else {
             $error = 'ত্রুটি: ' . $conn->error;

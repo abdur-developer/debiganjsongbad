@@ -4,7 +4,7 @@ $auth->requirePermission('gallery');
 $id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
 
 if (!$id) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=gallery';</script>";
     exit();
 }
 
@@ -12,7 +12,7 @@ $sql = "SELECT * FROM gallery WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=gallery';</script>";
     exit();
 }
 
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if ($conn->query($sql)) {
                 $_SESSION['success'] = 'ছবির তথ্য আপডেট হয়েছে';
-                header('Location: index.php');
+                echo "<script>window.location.href = 'index.php?q=gallery';</script>";
                 exit();
             } else {
                 $error = 'ত্রুটি: ' . $conn->error;

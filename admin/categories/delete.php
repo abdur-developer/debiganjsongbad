@@ -1,15 +1,10 @@
 <?php
-// admin/categories/delete.php
-require_once '../includes/config.php';
-require_once '../includes/db.php';
-require_once '../includes/auth.php';
-
 $auth->requirePermission('categories');
 
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$id = isset($_GET['delete_id']) ? intval($_GET['delete_id']) : 0;
 
 if (!$id) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=categories';</script>";
     exit();
 }
 
@@ -20,7 +15,7 @@ $checkRow = $checkResult->fetch_assoc();
 
 if ($checkRow['total'] > 0) {
     $_SESSION['error'] = 'এই ক্যাটাগরিতে নিউজ আছে, আগে নিউজ সরান';
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=categories';</script>";
     exit();
 }
 
@@ -33,5 +28,5 @@ if ($conn->query($sql)) {
     $_SESSION['error'] = 'ত্রুটি: ' . $conn->error;
 }
 
-header('Location: index.php');
+echo "<script>window.location.href = 'index.php?q=categories';</script>";
 exit();

@@ -1,276 +1,16 @@
+<?php require_once "root.php"; ?>
 <!DOCTYPE html>
 <html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    
-    <!-- ========== প্রাইমারি মেটা ট্যাগ ========== -->
-    <title>দেবীগঞ্জ সংবাদ | Debiganj Songbad - বাংলা নিউজ পোর্টাল</title>
-    <meta name="title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad - বাংলা নিউজ পোর্টাল">
-    <meta name="description" content="দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল। দেবীগঞ্জ সংবাদ - Debiganj Songbad">
-    <meta name="keywords" content="দেবীগঞ্জ সংবাদ, Debiganj News, দেবীগঞ্জের খবর, Debiganj Songbad, বাংলা নিউজ, জাতীয় সংবাদ, আন্তর্জাতিক খবর, খেলাধুলা, বিনোদন, প্রযুক্তি, বাংলাদেশ সংবাদ">
-    <meta name="news_keywords" content="দেবীগঞ্জ, Debiganj, ঠাকুরগাঁও, পঞ্চগড়, দিনাজপুর, বাংলা সংবাদ">
-    <meta name="author" content="দেবীগঞ্জ সংবাদ কর্তৃপক্ষ">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta name="language" content="Bengali">
-    <meta name="geo.region" content="BD-53">
-    <meta name="geo.placename" content="Debiganj, Panchagarh, Bangladesh">
-    <meta name="revisit-after" content="1 day">
-    <meta name="copyright" content="© ২০২৬ দেবীগঞ্জ সংবাদ">
-    
-    <!-- ========== ক্যাননিক্যাল URL ========== -->
-    <link rel="canonical" href="http://debiganjsongbad.com/">
-    <meta name="url" content="http://debiganjsongbad.com/">
-    
-    <!-- ========== ওপেন গ্রাফ মেটা ট্যাগ (Facebook, LinkedIn, WhatsApp) ========== -->
-    <meta property="og:site_name" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://debiganjsongbad.com/">
-    <meta property="og:title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad - বাংলা নিউজ পোর্টাল">
-    <meta property="og:description" content="দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।">
-    <meta property="og:image" content="http://debiganjsongbad.com/assets/images/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="দেবীগঞ্জ সংবাদ - Debiganj Songbad Logo">
-    <meta property="og:locale" content="bn_BD">
-    <meta property="og:locale:alternate" content="en_US">
-    
-    <!-- ========== টুইটার কার্ড মেটা ট্যাগ ========== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@debiganjsongbad">
-    <meta name="twitter:creator" content="@debiganjsongbad">
-    <meta name="twitter:url" content="http://debiganjsongbad.com/">
-    <meta name="twitter:title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad - বাংলা নিউজ পোর্টাল">
-    <meta name="twitter:description" content="দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।">
-    <meta name="twitter:image" content="http://debiganjsongbad.com/assets/images/twitter-image.jpg">
-    <meta name="twitter:image:alt" content="দেবীগঞ্জ সংবাদ - Debiganj Songbad Logo">
-    
-    <!-- ========== হোয়াটসঅ্যাপ / মেসেঞ্জার শেয়ার ========== -->
-    <meta property="og:whatsapp:title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad">
-    <meta property="og:whatsapp:description" content="দেবীগঞ্জের সর্বশেষ সংবাদ - দ্রুত ও নির্ভরযোগ্য">
-    <meta property="og:whatsapp:image" content="http://debiganjsongbad.com/assets/images/whatsapp-share.jpg">
-    
-    <!-- ========== আইকন ও অ্যাপেল টাচ আইকন ========== -->
-    <link rel="icon" type="image/png" sizes="32x32" href="http://debiganjsongbad.com/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="http://debiganjsongbad.com/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="http://debiganjsongbad.com/apple-touch-icon.png">
-    <link rel="mask-icon" href="http://debiganjsongbad.com/safari-pinned-tab.svg" color="#dc2626">
-    <meta name="msapplication-TileColor" content="#dc2626">
-    <meta name="msapplication-TileImage" content="http://debiganjsongbad.com/mstile-144x144.png">
-    <meta name="theme-color" content="#dc2626">
-    
-    <!-- ========== ফন্ট ও সিএসএস ========== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="tailwind.css">
-    
-    <!-- ========== স্কিমা ডট অর্গ মার্কআপ (Structured Data) ========== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "NewsMediaOrganization",
-        "@id": "http://debiganjsongbad.com/#organization",
-        "name": "দেবীগঞ্জ সংবাদ",
-        "alternateName": "Debiganj Songbad",
-        "url": "http://debiganjsongbad.com/",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "http://debiganjsongbad.com/assets/images/logo.png",
-            "width": 600,
-            "height": 60
-        },
-        "sameAs": [
-            "https://www.facebook.com/debiganjsongbad",
-            "https://www.twitter.com/debiganjsongbad",
-            "https://www.youtube.com/debiganjsongbad",
-            "https://www.instagram.com/debiganjsongbad"
-        ],
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Debiganj",
-            "addressRegion": "Panchagarh",
-            "addressCountry": "Bangladesh"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+88017XXXXXXXX",
-            "contactType": "newsroom",
-            "email": "contact@debiganjsongbad.com"
-        }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "http://debiganjsongbad.com/#website",
-        "url": "http://debiganjsongbad.com/",
-        "name": "দেবীগঞ্জ সংবাদ",
-        "description": "দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।",
-        "publisher": {
-            "@id": "http://debiganjsongbad.com/#organization"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "http://debiganjsongbad.com/search?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "@id": "#article",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "http://debiganjsongbad.com/"
-        },
-        "headline": "দেবীগঞ্জ সংবাদ - বাংলা নিউজ পোর্টাল",
-        "description": "দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।",
-        "image": [
-            "http://debiganjsongbad.com/assets/images/og-image.jpg",
-            "http://debiganjsongbad.com/assets/images/featured-1.jpg",
-            "http://debiganjsongbad.com/assets/images/featured-2.jpg"
-        ],
-        "datePublished": "2026-03-10T12:00:00+06:00",
-        "dateModified": "2026-03-10T12:00:00+06:00",
-        "author": {
-            "@type": "Organization",
-            "name": "দেবীগঞ্জ সংবাদ কর্তৃপক্ষ",
-            "url": "http://debiganjsongbad.com/author/editor"
-        },
-        "publisher": {
-            "@id": "http://debiganjsongbad.com/#organization"
-        }
-    }
-    </script>
-    
-    <!-- ========== গুগল নিউজ স্ট্যান্ডার্ড ========== -->
-    <meta name="google-news-stand" content="debiganjsongbad">
-    
-    <!-- ========== ফেসবুক পিক্সেল / অ্যানালিটিক্স (ঐচ্ছিক) ========== -->
-    <!-- আপনার ফেসবুক পিক্সেল আইডি থাকলে এখানে বসাবেন -->
-    
-    <!-- ========== ভারিফিকেশন মেটা ========== -->
-    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
-    <meta name="facebook-domain-verification" content="YOUR_FACEBOOK_VERIFICATION_CODE">
-    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
-    
-    <!-- ========== পিডেট ========== -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="HandheldFriendly" content="true">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+<?php require_once "components/head.php"; ?>
 <body class="bg-gray-50 text-gray-800 antialiased" id="body">
 
-<!-- HEADER SECTION -->
-<header class="my-header top-0 z-50 bg-white shadow-md border-b border-gray-200 transition-colors">
-    <div class="container mx-auto px-2 sm:px-4">
-        <!-- Top Header: Date & Time + Social + Login -->
-        <div class="flex flex-wrap justify-between items-center text-xs py-1 border-b border-gray-100">
-            <div class="flex gap-2 items-center">
-                <span id="live-datetime" class="font-medium text-gray-600">শুক্রবার, ৮ মার্চ ২০২৬</span>
-                <span class="bg-red-600 text-white px-1.5 py-0.5 rounded text-[10px]">লাইভ</span>
-            </div>
-            <div class="flex gap-3 items-center">
-                <div class="flex gap-2">
-                    <a href="#" aria-label="facebook" class="text-gray-600 hover:text-blue-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
-                    <a href="#" aria-label="twitter" class="text-gray-600 hover:text-blue-400"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a>
-                    <a href="#" aria-label="youtube" class="text-gray-600 hover:text-red-600"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                </div>
-                <a href="#" class="bg-blue-600 text-white px-3 py-1 rounded text-xs font-medium hover:bg-blue-700 transition">লগইন / রেজিস্টার</a>
-            </div>
-        </div>
-        
-        <!-- Breaking News Ticker -->
-        <div class="flex items-center gap-2 py-1 overflow-hidden border-b border-gray-100 text-sm">
-            <span class="bg-red-600 text-white px-2 py-0.5 rounded font-bold whitespace-nowrap">ব্রেকিং</span>
-            <div class="overflow-hidden relative w-full h-6">
-                <div class="absolute whitespace-nowrap ticker-animate text-gray-700 font-medium" id="breaking-ticker">
-                    🔴 প্রধানমন্ত্রী আজ বিকেলে সংবাদ সম্মেলন করবেন | ❄️ শীতে কাঁপছে দেশ, তাপমাত্রা ৮ ডিগ্রি | 🏏 টি-টোয়েন্টি সিরিজ জয় বাংলাদেশের | 💰 মূল্যস্ফীতি কমতে শুরু করেছে | 🌍 জাতিসংঘে বাংলাদেশের জয়জয়কার
-                </div>
-            </div>
-        </div>
-        
-        <!-- Logo Area + Ad -->
-        <div class="flex flex-col md:flex-row justify-between items-center py-3 gap-3">
-            <div class="">
-                <img src="assets/img/logo.png" style="width: 40%"/>
-            </div>
-            <div class="bg-gray-200 w-[728px] max-w-full h-[90px] flex items-center justify-center text-xs text-gray-500 border ad-placeholder">
-                বিজ্ঞাপন ৭২৮x৯০
-            </div>
-        </div>
-        
-        <!-- Navigation Menu -->
-        <nav class="relative flex flex-wrap items-center text-sm font-semibold gap-1 py-2 overflow-x-auto scrollbar-hide border-t border-gray-100">
-            <a href="index.html" class="nav-link active">হোম</a>
-            
-            <div class="dropdown">
-                <button class="nav-link dropdown-btn">জাতীয় <svg class="w-3 h-3 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-                <div class="dropdown-content">
-                    <a href="category.html?cat=dhaka">ঢাকা</a>
-                    <a href="category.html?cat=chittagong">চট্টগ্রাম</a>
-                    <a href="category.html?cat=rajshahi">রাজশাহী</a>
-                    <a href="category.html?cat=khulna">খুলনা</a>
-                    <a href="category.html?cat=barishal">বরিশাল</a>
-                    <a href="category.html?cat=sylhet">সিলেট</a>
-                    <a href="category.html?cat=rangpur">রংপুর</a>
-                    <a href="category.html?cat=mymensingh">ময়মনসিংহ</a>
-                </div>
-            </div>
-            
-            <a href="category.html?cat=national" class="nav-link">সারাদেশ</a>
-            <a href="category.html?cat=politics" class="nav-link">রাজনীতি</a>
-            
-            <div class="dropdown">
-                <button class="nav-link dropdown-btn">আন্তর্জাতিক <svg class="w-3 h-3 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-                <div class="dropdown-content">
-                    <a href="category.html?cat=asia">এশিয়া</a>
-                    <a href="category.html?cat=europe">ইউরোপ</a>
-                    <a href="category.html?cat=america">আমেরিকা</a>
-                    <a href="category.html?cat=middle-east">মধ্যপ্রাচ্য</a>
-                    <a href="category.html?cat=africa">আফ্রিকা</a>
-                </div>
-            </div>
-            
-            <a href="category.html?cat=economy" class="nav-link">অর্থনীতি</a>
-            <a href="category.html?cat=tech" class="nav-link">প্রযুক্তি</a>
-            <a href="category.html?cat=education" class="nav-link">শিক্ষা</a>
-            <a href="category.html?cat=health" class="nav-link">স্বাস্থ্য</a>
-            <a href="category.html?cat=sports" class="nav-link">খেলাধুলা</a>
-            <a href="category.html?cat=entertainment" class="nav-link">বিনোদন</a>
-            <a href="category.html?cat=lifestyle" class="nav-link">লাইফস্টাইল</a>
-            <a href="category.html?cat=religion" class="nav-link">ধর্ম</a>
-            <a href="category.html?cat=video" class="nav-link">ভিডিও</a>
-            <a href="category.html?cat=opinion" class="nav-link">মতামত</a>
-            <a href="category.html?cat=jobs" class="nav-link">চাকরি</a>
-            <a href="gallery.html" class="nav-link">ছবি</a>
-            <a href="#" class="nav-link">ই-পেপার</a>
-        </nav>
-    </div>
-</header>
+<?php require_once "components/header.php"; ?>
 
 <!-- MAIN CONTENT -->
 <main class="container mx-auto px-2 sm:px-4 py-3">
     
     <!-- Search Bar (Live Search) -->
-    <div class="mb-4 relative">
+    <div class="hidden mb-4 relative">
         <div class="flex">
             <input type="text" id="search-input" class="w-full border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:border-blue-500" placeholder="সার্চ করুন...">
             <button class="bg-blue-600 text-white px-6 py-2 rounded-r-lg hover:bg-blue-700 transition" id="search-btn">সার্চ</button>
@@ -345,42 +85,32 @@
             <a href="#" class="text-sm text-blue-600 hover:underline">আরও দেখুন</a>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            <div class="trending-card bg-white shadow-sm rounded overflow-hidden">
-                <img class="w-full h-20 object-cover lazy" data-src="https://picsum.photos/200/120?text=Trend+1" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
+            <?php 
+            if ($trendingResult->num_rows > 0) {
+                while ($trend = $trendingResult->fetch_assoc()) {
+            ?>
+            <div class="trending-card bg-white shadow-sm rounded overflow-hidden min-w-[110px]">
+                <img class="w-full h-16 md:h-20 object-cover lazy" data-src="https://picsum.photos/200/120?random=<?php echo $trend['id']; ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
                 <div class="p-1">
-                    <h4 class="text-xs font-semibold">সড়ক দুর্ঘটনায় ৩ নিহত</h4>
+                    <h4 class="text-xs font-semibold line-clamp-2"><?php echo $trend['title_bn']; ?></h4>
                 </div>
             </div>
-            <div class="trending-card bg-white shadow-sm rounded overflow-hidden">
-                <img class="w-full h-20 object-cover lazy" data-src="https://picsum.photos/200/120?text=Trend+2" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
+            <?php 
+                }
+            } else {
+                // ডেমো ডাটা
+                for ($i=1; $i<=6; $i++) {
+            ?>
+            <div class="trending-card bg-white shadow-sm rounded overflow-hidden min-w-[110px]">
+                <img class="w-full h-16 md:h-20 object-cover lazy" data-src="https://picsum.photos/200/120?random=<?php echo $i; ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
                 <div class="p-1">
-                    <h4 class="text-xs font-semibold">শীতে কাঁপছে দেশ</h4>
+                    <h4 class="text-xs font-semibold line-clamp-2">ট্রেন্ডিং নিউজ <?php echo $i; ?></h4>
                 </div>
             </div>
-            <div class="trending-card bg-white shadow-sm rounded overflow-hidden">
-                <img class="w-full h-20 object-cover lazy" data-src="https://picsum.photos/200/120?text=Trend+3" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
-                <div class="p-1">
-                    <h4 class="text-xs font-semibold">নির্বাচনী তফসিল ঘোষণা</h4>
-                </div>
-            </div>
-            <div class="trending-card bg-white shadow-sm rounded overflow-hidden">
-                <img class="w-full h-20 object-cover lazy" data-src="https://picsum.photos/200/120?text=Trend+4" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
-                <div class="p-1">
-                    <h4 class="text-xs font-semibold">শেয়ারবাজারে ধস</h4>
-                </div>
-            </div>
-            <div class="trending-card bg-white shadow-sm rounded overflow-hidden">
-                <img class="w-full h-20 object-cover lazy" data-src="https://picsum.photos/200/120?text=Trend+5" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
-                <div class="p-1">
-                    <h4 class="text-xs font-semibold">চ্যাম্পিয়ন্স ট্রফির প্রস্তুতি</h4>
-                </div>
-            </div>
-            <div class="trending-card bg-white shadow-sm rounded overflow-hidden">
-                <img class="w-full h-20 object-cover lazy" data-src="https://picsum.photos/200/120?text=Trend+6" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
-                <div class="p-1">
-                    <h4 class="text-xs font-semibold">ঈদের বাজার চাঙা</h4>
-                </div>
-            </div>
+            <?php
+                }
+            }
+            ?>
         </div>
     </section>
     
@@ -395,66 +125,42 @@
                     <a href="#" class="text-sm text-blue-600 hover:underline">সবগুলো</a>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <?php 
+                    if ($latestResult->num_rows > 0) {
+                        $count = 0;
+                        while ($news = $latestResult->fetch_assoc()) {
+                            if ($count++ >= 6) break;
+                    ?>
                     <article class="news-card bg-white shadow-sm rounded overflow-hidden">
-                        <img class="w-full h-28 object-cover lazy" data-src="https://picsum.photos/300/180?text=News+1" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
+                        <img class="w-full h-24 md:h-28 object-cover lazy" data-src="<?php echo $news['featured_image']; ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
                         <div class="p-2">
-                            <h4 class="text-sm font-semibold line-clamp-2">রাজধানীতে বাসের ধাক্কায় নিহত ২, আহত ৫</h4>
+                            <h4 class="text-xs md:text-sm font-semibold line-clamp-2"><?php echo $news['title_bn']; ?></h4>
                             <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
-                                <span>১০ মিনিট আগে</span>
+                                <span><?php echo timeAgo($news['created_at']); ?></span>
+                                <span class="bg-gray-100 px-1 rounded"><?php echo $news['category_name']; ?></span>
+                            </div>
+                        </div>
+                    </article>
+                    <?php 
+                        }
+                    } else {
+                        // ডেমো ডাটা
+                        for ($i=1; $i<=6; $i++) {
+                    ?>
+                    <article class="news-card bg-white shadow-sm rounded overflow-hidden">
+                        <img class="w-full h-24 md:h-28 object-cover lazy" data-src="https://picsum.photos/300/180?random=<?php echo $i; ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
+                        <div class="p-2">
+                            <h4 class="text-xs md:text-sm font-semibold line-clamp-2">সর্বশেষ সংবাদ <?php echo $i; ?></h4>
+                            <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
+                                <span><?php echo $i; ?> ঘন্টা আগে</span>
                                 <span class="bg-gray-100 px-1 rounded">জাতীয়</span>
                             </div>
                         </div>
                     </article>
-                    <article class="news-card bg-white shadow-sm rounded overflow-hidden">
-                        <img class="w-full h-28 object-cover lazy" data-src="https://picsum.photos/300/180?text=News+2" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
-                        <div class="p-2">
-                            <h4 class="text-sm font-semibold line-clamp-2">মন্ত্রী বললেন, মূল্যস্ফীতি নিয়ন্ত্রণে আসছে</h4>
-                            <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
-                                <span>২৫ মিনিট আগে</span>
-                                <span class="bg-gray-100 px-1 rounded">অর্থনীতি</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="news-card bg-white shadow-sm rounded overflow-hidden">
-                        <img class="w-full h-28 object-cover lazy" data-src="https://picsum.photos/300/180?text=News+3" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
-                        <div class="p-2">
-                            <h4 class="text-sm font-semibold line-clamp-2">চাঁপাইনবাবগঞ্জে আমের মুকুল, বাম্পার ফলনের আশা</h4>
-                            <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
-                                <span>৪৫ মিনিট আগে</span>
-                                <span class="bg-gray-100 px-1 rounded">সারাদেশ</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="news-card bg-white shadow-sm rounded overflow-hidden">
-                        <img class="w-full h-28 object-cover lazy" data-src="https://picsum.photos/300/180?text=News+4" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
-                        <div class="p-2">
-                            <h4 class="text-sm font-semibold line-clamp-2">টি-টোয়েন্টিতে স্বাগতিকদের হারিয়ে সিরিজ জয়</h4>
-                            <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
-                                <span>১ ঘন্টা আগে</span>
-                                <span class="bg-gray-100 px-1 rounded">খেলাধুলা</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="news-card bg-white shadow-sm rounded overflow-hidden">
-                        <img class="w-full h-28 object-cover lazy" data-src="https://picsum.photos/300/180?text=News+5" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
-                        <div class="p-2">
-                            <h4 class="text-sm font-semibold line-clamp-2">স্মার্টফোনের দাম বাড়ছে, নতুন মডেল আসছে</h4>
-                            <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
-                                <span>২ ঘন্টা আগে</span>
-                                <span class="bg-gray-100 px-1 rounded">প্রযুক্তি</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="news-card bg-white shadow-sm rounded overflow-hidden">
-                        <img class="w-full h-28 object-cover lazy" data-src="https://picsum.photos/300/180?text=News+6" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
-                        <div class="p-2">
-                            <h4 class="text-sm font-semibold line-clamp-2">ভিসা প্রক্রিয়া সহজ হচ্ছে, নতুন নির্দেশনা</h4>
-                            <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
-                                <span>৩ ঘন্টা আগে</span>
-                                <span class="bg-gray-100 px-1 rounded">আন্তর্জাতিক</span>
-                            </div>
-                        </div>
-                    </article>
+                    <?php
+                        }
+                    }
+                    ?>
                 </div>
                 
                 <!-- Between Sections Ad -->
@@ -701,62 +407,7 @@
     </nav>
 </main>
 
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white pt-6 pb-4 text-sm">
-    <div class="container mx-auto px-2 sm:px-4">
-        <!-- Footer Links -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div>
-                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">দেবীগঞ্জ সংবাদ</h5>
-                <ul class="space-y-1 text-gray-300">
-                    <li><a href="#" class="hover:text-white">আমাদের সম্পর্কে</a></li>
-                    <li><a href="#" class="hover:text-white">যোগাযোগ</a></li>
-                    <li><a href="#" class="hover:text-white">প্রাইভেসি পলিসি</a></li>
-                    <li><a href="#" class="hover:text-white">টার্মস অফ ইউজ</a></li>
-                    <li><a href="#" class="hover:text-white">সাইটম্যাপ</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">সেবা সমূহ</h5>
-                <ul class="space-y-1 text-gray-300">
-                    <li><a href="#" class="hover:text-white">বিজ্ঞাপন দিন</a></li>
-                    <li><a href="#" class="hover:text-white">নিউজলেটার</a></li>
-                    <li><a href="#" class="hover:text-white">আর্কাইভ</a></li>
-                    <li><a href="#" class="hover:text-white">আরএসএস ফিড</a></li>
-                    <li><a href="#" class="hover:text-white">মোবাইল অ্যাপ</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">সংবাদ</h5>
-                <ul class="space-y-1 text-gray-300">
-                    <li><a href="#" class="hover:text-white">সর্বশেষ সংবাদ</a></li>
-                    <li><a href="gallery.html" class="hover:text-white">ছবি</a></li>
-                    <li><a href="#" class="hover:text-white">ভিডিও</a></li>
-                    <li><a href="#" class="hover:text-white">মতামত</a></li>
-                    <li><a href="#" class="hover:text-white">ই-পেপার</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">নিউজলেটার</h5>
-                <p class="text-gray-300 text-xs mb-2">দৈনিক সংবাদ পেতে সাবস্ক্রাইব করুন</p>
-                <div class="flex">
-                    <input type="email" placeholder="ইমেইল" class="p-2 text-black text-xs rounded-l w-full">
-                    <button class="bg-red-600 px-3 rounded-r text-xs hover:bg-red-700 transition">সাবস্ক্রাইব</button>
-                </div>
-                <div class="flex gap-3 mt-4">
-                    <a href="#" class="text-gray-300 hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
-                    <a href="#" class="text-gray-300 hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a>
-                    <a href="#" class="text-gray-300 hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Copyright -->
-        <div class="border-t border-gray-700 pt-4 text-center text-gray-400 text-xs">
-            <p>© ২০২৬ দেবীগঞ্জ সংবাদ। সর্বসত্ত্ব সংরক্ষিত। ডিজাইন ও ডেভেলপমেন্ট: দেবীগঞ্জ সংবাদ টিম</p>
-        </div>
-    </div>
-</footer>
+<?php require_once "components/footer.php"; ?>
 
 <!-- Dark Mode Toggle Button -->
 <!-- <button id="dark-mode-toggle" class="fixed bottom-4 right-4 bg-gray-800 text-white p-3 rounded-full shadow-lg z-50 hover:bg-gray-700 transition" aria-label="Toggle Dark Mode">

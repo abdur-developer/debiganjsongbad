@@ -1,16 +1,11 @@
 <?php
-// admin/users/delete.php
-require_once '../includes/config.php';
-require_once '../includes/db.php';
-require_once '../includes/auth.php';
-
 $auth->requirePermission('users');
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if (!$id || $id == 1 || $id == $_SESSION['user_id']) {
     $_SESSION['error'] = 'এই ব্যবহারকারী ডিলিট করা যাবে না';
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=users';</script>";
     exit();
 }
 
@@ -36,5 +31,5 @@ if ($conn->query($sql)) {
     $_SESSION['error'] = 'ত্রুটি: ' . $conn->error;
 }
 
-header('Location: index.php');
+echo "<script>window.location.href = 'index.php?q=users';</script>";
 exit();

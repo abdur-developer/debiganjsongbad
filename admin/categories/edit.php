@@ -4,7 +4,7 @@ $auth->requirePermission('categories');
 $id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
 
 if (!$id) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=categories';</script>";
     exit();
 }
 
@@ -13,7 +13,7 @@ $sql = "SELECT * FROM categories WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=categories';</script>";
     exit();
 }
 
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if ($conn->query($sql)) {
                 $_SESSION['success'] = 'ক্যাটাগরি আপডেট হয়েছে';
-                header('Location: index.php');
+                echo "<script>window.location.href = 'index.php?q=categories';</script>";
                 exit();
             } else {
                 $error = 'ত্রুটি: ' . $conn->error;

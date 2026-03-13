@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if ($conn->query($sql)) {
                 $_SESSION['success'] = 'ক্যাটাগরি সফলভাবে যোগ করা হয়েছে';
-                header('Location: index.php');
+                echo "<script>window.location.href = 'index.php?q=categories';</script>";
                 exit();
             } else {
                 $error = 'ত্রুটি: ' . $conn->error;

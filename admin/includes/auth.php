@@ -98,7 +98,7 @@ class Auth {
     
     public function requireLogin() {
         if (!$this->isLoggedIn()) {
-            header('Location: index.php');
+            header('Location: login.php');
             exit();
         }
     }
@@ -107,7 +107,7 @@ class Auth {
         $this->requireLogin();
         
         if (!$this->hasPermission($permission)) {
-            header('Location: ./?error=permission_denied');
+            echo '<script>window.location.href = "./?error=permission_denied";</script>';
             exit();
         }
     }

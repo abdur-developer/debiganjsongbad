@@ -1,15 +1,10 @@
 <?php
-// admin/gallery/delete.php
-require_once '../includes/config.php';
-require_once '../includes/db.php';
-require_once '../includes/auth.php';
-
 $auth->requirePermission('gallery');
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if (!$id) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=gallery';</script>";
     exit();
 }
 
@@ -40,5 +35,5 @@ if ($result->num_rows > 0) {
     $_SESSION['error'] = 'ছবি পাওয়া যায়নি';
 }
 
-header('Location: index.php');
+echo "<script>window.location.href = 'index.php?q=gallery';</script>";
 exit();

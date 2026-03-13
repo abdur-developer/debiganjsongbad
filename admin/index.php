@@ -8,7 +8,7 @@ $stats = $functions->getDashboardStats();
     if(isset($_GET['q'])){
         $q = $_GET['q'];
         if($q == 'profile') {
-            require_once 'profile.php';
+            require_once 'profile/index.php';
 
         }else if($q == 'settings') {
             require_once 'settings/index.php';
@@ -44,8 +44,15 @@ $stats = $functions->getDashboardStats();
                 require_once 'gallery/index.php';
             }
         }else if($q == 'comments') {
-            require_once 'comments/index.php';
-
+            if(isset($_GET['approve_id'])) {
+                require_once 'comments/approve.php';
+            }else if(isset($_GET['spam_id'])) {
+                require_once 'comments/spam.php';
+            }else if(isset($_GET['delete_id'])) {
+                require_once 'comments/delete.php';
+            }else{
+                require_once 'comments/index.php';
+            }
         }else if($q == 'users') {
             if(isset($_GET['create'])) {
                 require_once 'users/create.php';
@@ -68,14 +75,24 @@ $stats = $functions->getDashboardStats();
             }
             
         }else if($q == 'ads') {
-            require_once 'ads/index.php';
-
+            if(isset($_GET['create'])) {
+                require_once 'ads/create.php';
+            }else if(isset($_GET['edit_id'])) {
+                require_once 'ads/edit.php';
+            }else if(isset($_GET['delete_id'])) {
+                require_once 'ads/delete.php';
+            }else{
+                require_once 'ads/index.php';
+            }
         }else if($q == 'logs') {
             require_once 'logs/index.php';
 
         }else if($q == 'backup') {
-            require_once 'backup/index.php';
-
+            if(isset($_GET['delete_file'])) {
+                require_once 'backup/delete.php';
+            }else{
+                require_once 'backup/index.php';
+            }
         } else {
             require_once 'dashboard.php';
         }

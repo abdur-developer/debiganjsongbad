@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if ($conn->query($sql)) {
                 $_SESSION['success'] = 'ছবি আপলোড হয়েছে';
-                header('Location: index.php');
+                echo "<script>window.location.href = 'index.php?q=gallery';</script>";
                 exit();
             } else {
                 $error = 'ডাটাবেজ ত্রুটি: ' . $conn->error;

@@ -9,7 +9,7 @@ $auth->requirePermission('news');
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if (!$id) {
-    header('Location: index.php');
+    echo "<script>window.location.href = 'index.php?q=news';</script>";
     exit();
 }
 
@@ -56,5 +56,5 @@ if ($result->num_rows > 0) {
     $_SESSION['error'] = 'সংবাদ পাওয়া যায়নি';
 }
 
-header('Location: index.php');
+echo "<script>window.location.href = 'index.php?q=news';</script>";
 exit();

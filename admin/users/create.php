@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if ($conn->query($sql)) {
                 $_SESSION['success'] = 'ব্যবহারকারী তৈরি হয়েছে';
-                header('Location: index.php');
+                echo "<script>window.location.href = 'index.php?q=users';</script>";
                 exit();
             } else {
                 $error = 'ত্রুটি: ' . $conn->error;
