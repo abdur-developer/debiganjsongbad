@@ -5,7 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $content = $conn->real_escape_string($_POST['content']);
     $summary = $conn->real_escape_string($_POST['summary']);
     $category_id = intval($_POST['category_id']);
-    $tags = isset($_POST['tags']) ? json_encode(explode(',', $_POST['tags'])) : null;
+    // $tags = isset($_POST['tags']) ? json_encode(explode(',', $_POST['tags'])) : null;
+    $tags = isset($_POST['tags']) ? json_encode(explode(',', $_POST['tags']), JSON_UNESCAPED_UNICODE) : null;
+
     $is_breaking = isset($_POST['is_breaking']) ? 1 : 0;
     $is_featured = isset($_POST['is_featured']) ? 1 : 0;
     $is_trending = isset($_POST['is_trending']) ? 1 : 0;
@@ -48,7 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     
-    $gallery_json = !empty($gallery_images) ? json_encode($gallery_images) : null;
+    // $gallery_json = !empty($gallery_images) ? json_encode($gallery_images) : null;
+    $gallery_json = !empty($gallery_images) ? json_encode($gallery_images, JSON_UNESCAPED_UNICODE) : '[]';
+
     
     $author_id = $_SESSION['user_id'];
     $published_at = $status == 'published' ? 'NOW()' : 'NULL';
