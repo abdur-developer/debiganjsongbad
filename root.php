@@ -45,4 +45,11 @@
         $formatted = date('j F Y, g:i A', strtotime($date));
         return str_replace($en, $bn, $formatted);
     }
+    $roleNames = [
+        'super_admin' => 'সুপার অ্যাডমিন',
+        'admin' => 'অ্যাডমিন',
+        'editor' => 'এডিটর',
+        'reporter' => 'রিপোর্টার',
+        'moderator' => 'মডারেটর'
+    ];
 ?>

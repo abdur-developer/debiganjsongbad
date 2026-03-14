@@ -167,7 +167,8 @@
     <meta name="HandheldFriendly" content="true">
     
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="tailwindcss.js"></script>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">

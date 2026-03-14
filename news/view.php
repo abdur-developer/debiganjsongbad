@@ -149,7 +149,7 @@
                 <h4 class="font-bold"><?=$news['full_name']?></h4>
                 <p class="text-sm text-gray-600 mb-2"><?=$role?></p>
                 <p class="text-xs text-gray-500"><?=$news['bio']?></p>
-                <a href="../author.html?id=rahman" class="inline-block mt-3 text-blue-600 text-sm hover:underline">সব লেখা দেখুন</a>
+                <a href="../author.php?username=<?=$news['username']?>" class="inline-block mt-3 text-blue-600 text-sm hover:underline">সব লেখা দেখুন</a>
             </div>
             
             <!-- Popular News -->
