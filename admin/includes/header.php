@@ -86,14 +86,14 @@ $warning_message = $_SESSION['warning'] ?? '';
                         <p class="font-semibold text-sm truncate"><?php echo htmlspecialchars($currentUser['full_name']); ?></p>
                         <p class="text-xs text-gray-400 truncate">
                             <?php 
-                            $roleNames = [
-                                'super_admin' => 'সুপার অ্যাডমিন',
-                                'admin' => 'অ্যাডমিন',
-                                'editor' => 'এডিটর',
-                                'reporter' => 'রিপোর্টার',
-                                'moderator' => 'মডারেটর'
-                            ];
-                            echo $roleNames[$currentUser['role']] ?? $currentUser['role'];
+                                $roleNames = [
+                                    'super_admin' => 'সুপার অ্যাডমিন',
+                                    'admin' => 'অ্যাডমিন',
+                                    'editor' => 'এডিটর',
+                                    'reporter' => 'রিপোর্টার',
+                                    'moderator' => 'মডারেটর'
+                                ];
+                                echo $roleNames[$currentUser['role']] ?? $currentUser['role'];
                             ?>
                         </p>
                     </div>

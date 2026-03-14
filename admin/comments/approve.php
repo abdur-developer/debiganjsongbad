@@ -1,7 +1,7 @@
 <?php
 $auth->requirePermission('comments');
 
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$id = isset($_GET['approve_id']) ? intval($_GET['approve_id']) : 0;
 
 if ($id) {
     $sql = "UPDATE comments SET status = 'approved' WHERE id = $id";

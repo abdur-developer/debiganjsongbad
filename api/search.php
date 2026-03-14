@@ -32,7 +32,7 @@ while ($row = $result->fetch_assoc()) {
         'image' => $row['featured_image'],
         'category' => $row['category_name'],
         'date' => $row['created_at'],
-        'url' => "/news.php?id={$row['id']}"
+        'url' => "/news/?feed={$row['id']}"
     ];
 }
 

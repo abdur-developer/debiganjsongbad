@@ -4,10 +4,10 @@
     
     <!-- ========== প্রাইমারি মেটা ট্যাগ ========== -->
     <title><?=$news['title_en']?></title>
-    <meta name="title" content="<?=$news['title_en']?>">
-    <meta name="description" content="<?=$news['summary']?>">
-    <meta name="keywords" content="<?= implode(', ', json_decode($news['tags'], true))?>">
-    <meta name="news_keywords" content="<?= implode(', ', json_decode($news['tags'], true))?>">
+    <meta name="title" content="<?=$news['meta_title']?>">
+    <meta name="description" content="<?=$news['meta_description']?>">
+    <meta name="keywords" content="<?= $news['meta_keywords']?>">
+    <meta name="news_keywords" content="<?= implode(', ', $tags)?>">
     <meta name="author" content="দেবীগঞ্জ সংবাদ কর্তৃপক্ষ">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">

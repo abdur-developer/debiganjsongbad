@@ -111,7 +111,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
                     </td>
                     <td class="px-4 py-2"><?php echo $comment['id']; ?></td>
                     <td class="px-4 py-2">
-                        <a href="../news.php?id=<?php echo $comment['news_id']; ?>" target="_blank" class="text-blue-600 hover:underline">
+                        <a href="../news/?feed=<?php echo $comment['news_id']; ?>" target="_blank" class="text-blue-600 hover:underline">
                             <?php echo htmlspecialchars(substr($comment['news_title'], 0, 30) . '...'); ?>
                         </a>
                     </td>

@@ -34,7 +34,7 @@ while ($row = $result->fetch_assoc()) {
         'category' => $row['category_name'],
         'author' => $row['author_name'],
         'date' => $row['created_at'],
-        'url' => "/news.php?id={$row['id']}"
+        'url' => "/news/?feed={$row['id']}"
     ];
 }
 

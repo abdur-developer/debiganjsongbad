@@ -136,9 +136,9 @@ $catResult = $conn->query($catSql);
         <a href="index.php" class="hidden md:block bg-gray-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-gray-700">
             <i class="fas fa-arrow-left"></i> ফিরে যান
         </a>
-        <a href="../preview.php?id=<?php echo $id; ?>" target="_blank" class="bg-blue-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-blue-700">
+        <!-- <a href="../preview.php?id=<?php echo $id; ?>" target="_blank" class="bg-blue-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-blue-700">
             <i class="fas fa-eye"></i> প্রিভিউ
-        </a>
+        </a> -->
     </div>
 </div>
 

@@ -16,8 +16,8 @@
     <!-- Breadcrumb -->
     <nav class="text-sm mb-4" aria-label="Breadcrumb">
         <ol class="list-none p-0 inline-flex flex-wrap">
-            <li class="flex items-center"><a href="index.html" class="text-blue-600 hover:underline">হোম</a><svg class="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6v12z"/></svg></li>
-            <li class="flex items-center"><a href="category.html?cat=national" class="text-blue-600 hover:underline"><?= $news['category_name'] ?></a><svg class="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6v12z"/></svg></li>
+            <li class="flex items-center"><a href="../" class="text-blue-600 hover:underline">হোম</a><svg class="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6v12z"/></svg></li>
+            <li class="flex items-center"><a href="../category.html?cat=national" class="text-blue-600 hover:underline"><?= $news['category_name'] ?></a><svg class="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6v12z"/></svg></li>
             <li class="flex items-center text-gray-500"><?=$news['title_en']?></li>
         </ol>
     </nav>
@@ -34,20 +34,24 @@
                 <!-- Author & Date -->
                 <div class="flex flex-wrap items-center justify-between text-sm text-gray-600 border-b border-gray-200 pb-3 mb-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold">আ</div>
+                        <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold">
+                            <img class="w-full h-full object-cover rounded-full" src="<?=$news['avatar']?>" alt="Author Avatar">
+                        </div>
                         <div>
-                            <span class="font-semibold">আব্দুর রহমান</span>
-                            <span class="text-xs text-gray-500 block">নিজস্ব প্রতিবেদক</span>
+                            <span class="font-semibold"><?=$news['full_name']?></span>
+                            <span class="text-xs text-gray-500 block"><?=$role?></span>
                         </div>
                     </div>
                     <div class="flex gap-4">
-                        <span>প্রকাশ: ৮ মার্চ ২০২৬, ১০:৩০</span>
-                        <span>আপডেট: ৮ মার্চ ২০২৬, ১২:১৫</span>
+                        <span>প্রকাশ: <?php echo bn_date($news['created_at']); ?></span>          
+                        <span>আপডেট: <?php echo bn_date($news['updated_at']); ?></span>
                     </div>
                 </div>
                 <!-- Share Buttons -->
                 <div class="flex gap-2 mb-6 justify-end">
-                    <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+                    <!-- ShareThis BEGIN -->
+                    <div class="sharethis-inline-share-buttons"></div>
+                    <!-- ShareThis END -->
                 </div>
             </header>
             
@@ -65,11 +69,11 @@
                 
                 <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t">
                     <span class="text-sm font-semibold">ট্যাগ:</span>
-                    <a href="search.html?tag=বন্দর" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">বন্দর</a>
-                    <a href="search.html?tag=চট্টগ্রাম" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">চট্টগ্রাম</a>
-                    <a href="search.html?tag=শিপমেন্ট" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">শিপমেন্ট</a>
-                    <a href="search.html?tag=আমদানি" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">আমদানি</a>
-                    <a href="search.html?tag=বাণিজ্য" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">বাণিজ্য</a>
+                    <?php
+                    while($tag = array_shift($tags)){
+                        echo '<a href="search.php?tag=' . urlencode($tag) . '" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">' . htmlspecialchars($tag) . '</a>';
+                    }
+                    ?>
                 </div>
             </article>
             
@@ -89,25 +93,23 @@
                 
                 <!-- Existing Comments -->
                 <div class="space-y-4">
-                    <h4 class="font-semibold">২টি মন্তব্য</h4>
-                    
+                    <?php
+                        $sql = "SELECT * FROM comments WHERE news_id = '$news_id' ORDER BY created_at DESC";
+                        $query = $conn->query($sql);
+                    ?>
+                    <h4 class="font-semibold"><?= $query->num_rows ?> টি মন্তব্য</h4>
+                    <?php while($comment = $query->fetch_assoc()){ ?>
                     <div class="border rounded-lg p-3">
                         <div class="flex items-center gap-2 mb-2">
-                            <div class="w-6 h-6 bg-gray-400 rounded-full"></div>
-                            <span class="font-semibold">মোঃ রফিক</span>
-                            <span class="text-xs text-gray-500">২ ঘন্টা আগে</span>
+                            <div class="w-6 h-6 bg-gray-400 rounded-full">
+                                <img class="w-full h-full object-cover rounded-full" src="https://www.gravatar.com/avatar/<?= md5(strtolower(trim($comment['email']))) ?>?s=48&d=identicon" alt="User Avatar">
+                            </div>
+                            <span class="font-semibold"><?= htmlspecialchars($comment['name']) ?></span>
+                            <span class="text-xs text-gray-500"><?= timeAgo($comment['created_at']) ?></span>
                         </div>
-                        <p class="text-sm">বন্দরের এই জট দ্রুত সমাধান করা জরুরি। অর্থনীতিতে বিরূপ প্রভাব পড়ছে।</p>
+                        <p class="text-sm"> <?= htmlspecialchars($comment['comment']) ?> </p>
                     </div>
-                    
-                    <div class="border rounded-lg p-3">
-                        <div class="flex items-center gap-2 mb-2">
-                            <div class="w-6 h-6 bg-gray-400 rounded-full"></div>
-                            <span class="font-semibold">সাবরিনা চৌধুরী</span>
-                            <span class="text-xs text-gray-500">৫ ঘন্টা আগে</span>
-                        </div>
-                        <p class="text-sm">প্রতিবারই একই সমস্যা। বন্দরের সক্ষমতা বাড়ানোর কোনো উদ্যোগ নেই কেন?</p>
-                    </div>
+                    <?php } ?>                    
                 </div>
             </section>
             
@@ -115,24 +117,18 @@
             <section class="mt-8">
                 <h3 class="text-xl font-bold mb-4 border-l-4 border-red-600 pl-2">আরও পড়ুন</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    <div class="bg-white shadow-sm rounded overflow-hidden">
-                        <img class="w-full h-24 object-cover lazy" data-src="https://picsum.photos/200/120?text=News+1" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="related">
+                    <?php
+                        $sql = "SELECT id, title_bn, featured_image, slug FROM news WHERE news.category_id = '{$news['category_id']}' OR news.tags LIKE '%{$news['tags']}%' OR news.id != '$news_id' ORDER BY created_at DESC LIMIT 6";
+                        $query = $conn->query($sql);
+                    ?>
+                    <?php while($news_more = $query->fetch_assoc()){ ?>
+                    <div class="bg-white shadow-sm rounded overflow-hidden cursor-pointer" onclick="window.location.href='./?feed=<?=$news_more['id']?>&slug=<?=$news_more['slug']?>'">
+                        <img class="w-full h-24 object-cover lazy" data-src="<?=$news_more['featured_image']?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="related">
                         <div class="p-2">
-                            <h4 class="text-sm font-semibold">বন্দরে নতুন চার গ্যান্ট্রি ক্রেন</h4>
+                            <h4 class="text-sm font-semibold"><?=$news_more['title_bn']?></h4>
                         </div>
                     </div>
-                    <div class="bg-white shadow-sm rounded overflow-hidden">
-                        <img class="w-full h-24 object-cover lazy" data-src="https://picsum.photos/200/120?text=News+2" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="related">
-                        <div class="p-2">
-                            <h4 class="text-sm font-semibold">পণ্য খালাসে কাস্টমসের ধীরগতি</h4>
-                        </div>
-                    </div>
-                    <div class="bg-white shadow-sm rounded overflow-hidden">
-                        <img class="w-full h-24 object-cover lazy" data-src="https://picsum.photos/200/120?text=News+3" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="related">
-                        <div class="p-2">
-                            <h4 class="text-sm font-semibold">আমদানি বেড়েছে ২০%</h4>
-                        </div>
-                    </div>
+                    <?php } ?>  
                 </div>
             </section>
         </div>
@@ -141,11 +137,19 @@
         <aside class="lg:col-span-1 space-y-4">
             <!-- Author Info Card -->
             <div class="bg-white shadow-sm rounded p-4 text-center">
-                <div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-2xl font-bold">আ</div>
-                <h4 class="font-bold">আব্দুর রহমান</h4>
-                <p class="text-sm text-gray-600 mb-2">নিজস্ব প্রতিবেদক</p>
-                <p class="text-xs text-gray-500">জাতীয় ও রাজনীতি বিষয়ক সিনিয়র সাংবাদিক। ১০ বছরের বেশি অভিজ্ঞতা।</p>
-                <a href="author.html?id=rahman" class="inline-block mt-3 text-blue-600 text-sm hover:underline">সব লেখা দেখুন</a>
+                <div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-2xl font-bold">
+                    <?php
+                        if($news['avatar']){
+                            echo '<img class="w-full h-full object-cover rounded-full" src="' . $news['avatar'] . '" alt="Author Avatar">';
+                        } else {
+                            echo 'আ';
+                        }
+                    ?>
+                </div>
+                <h4 class="font-bold"><?=$news['full_name']?></h4>
+                <p class="text-sm text-gray-600 mb-2"><?=$role?></p>
+                <p class="text-xs text-gray-500"><?=$news['bio']?></p>
+                <a href="../author.html?id=rahman" class="inline-block mt-3 text-blue-600 text-sm hover:underline">সব লেখা দেখুন</a>
             </div>
             
             <!-- Popular News -->
