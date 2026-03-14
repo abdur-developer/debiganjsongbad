@@ -1,7 +1,7 @@
 <?php
 $auth->requirePermission('gallery');
 
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$id = isset($_GET['delete_id']) ? intval($_GET['delete_id']) : 0;
 
 if (!$id) {
     echo "<script>window.location.href = 'index.php?q=gallery';</script>";
