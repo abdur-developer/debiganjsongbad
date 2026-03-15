@@ -43,7 +43,7 @@ $rootLink = $isRoot ? "./" : "../";
         <div class="flex flex-col md:flex-row justify-between items-center py-3 gap-3">
             <div class="flex items-center gap-4">
                 <button id="menuBtn" class="md:hidden p-2 text-xl">☰</button>
-                <img src="<?=$logo?>" style="width: 40%"/>
+                <img src="<?=$logo?>" class="w-[40%] cursor-pointer" onclick="window.location.href='<?=$rootLink?>'" />
             </div>
             <div class="bg-gray-200 w-[728px] max-w-full h-[90px] flex items-center justify-center text-xs text-gray-500 border ad-placeholder">
                 বিজ্ঞাপন ৭২৮x৯০

@@ -1,6 +1,7 @@
 <?php 
     require_once "../root.php";
     $logo = "../assets/img/logo.png";
+    $all_news = "seeallnews1234";
     $isRoot = false;
     if(isset($_GET['feed']) ){
         $news_id = $_GET['feed'];
@@ -35,6 +36,7 @@
         $search_key = $_GET['search'] ?? "";
         require_once "search.php";
     }else{
-        echo "empty";
+        $search_key = $all_news;
+        require_once "search.php";
     }
 ?>
