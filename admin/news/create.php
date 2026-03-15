@@ -5,8 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $content = $conn->real_escape_string($_POST['content']);
     $summary = $conn->real_escape_string($_POST['summary']);
     $category_id = intval($_POST['category_id']);
-    // $tags = isset($_POST['tags']) ? json_encode(explode(',', $_POST['tags'])) : null;
-    $tags = isset($_POST['tags']) ? json_encode(explode(',', $_POST['tags']), JSON_UNESCAPED_UNICODE) : null;
+    $tags = isset($_POST['tags']) 
+    ? json_encode(array_map('trim', explode(',', $_POST['tags'])), JSON_UNESCAPED_UNICODE) 
+    : null;
 
     $is_breaking = isset($_POST['is_breaking']) ? 1 : 0;
     $is_featured = isset($_POST['is_featured']) ? 1 : 0;
@@ -50,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     
-    // $gallery_json = !empty($gallery_images) ? json_encode($gallery_images) : null;
     $gallery_json = !empty($gallery_images) ? json_encode($gallery_images, JSON_UNESCAPED_UNICODE) : '[]';
 
     
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             VALUES ('$title_bn', '$title_en', '$slug', '$content', '$summary', '$featured_image', 
             '$gallery_json', $category_id, '$tags', $author_id, $is_breaking, $is_featured, $is_trending, 
             '$status', '$meta_title', '$meta_description', '$meta_keywords', $published_at, NOW())";
-    
+    $conn->set_charset("utf8mb4");
     if ($conn->query($sql)) {
         $_SESSION['success'] = 'সংবাদ সফলভাবে যোগ করা হয়েছে';
         echo "<script>window.location.href = 'index.php?q=news';</script>";

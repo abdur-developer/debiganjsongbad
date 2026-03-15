@@ -33,9 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $content = $conn->real_escape_string($_POST['content']);
     $summary = $conn->real_escape_string($_POST['summary']);
     $category_id = intval($_POST['category_id']);
-    $tags_input = $_POST['tags'];
-    $tags_array = array_map('trim', explode(',', $tags_input));
-    $tags_json = json_encode($tags_array);
+    
+    $tags_json = $tags = isset($_POST['tags']) 
+    ? json_encode(array_map('trim', explode(',', $_POST['tags'])), JSON_UNESCAPED_UNICODE) 
+    : null;
+
     $is_breaking = isset($_POST['is_breaking']) ? 1 : 0;
     $is_featured = isset($_POST['is_featured']) ? 1 : 0;
     $is_trending = isset($_POST['is_trending']) ? 1 : 0;
@@ -85,7 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
         
-        $gallery_json = !empty($gallery_images) ? json_encode($gallery_images) : null;
+        $gallery_json = !empty($gallery_images) ? json_encode($gallery_images, JSON_UNESCAPED_UNICODE) : '[]';
+
         
         $published_at = ($status == 'published' && $news['status'] != 'published') ? 'NOW()' : "NULL";
         if ($status == 'published' && $news['status'] != 'published') {
@@ -114,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 published_at = $published_at,
                 updated_at = NOW()
                 WHERE id = $id";
-        
+        $conn->set_charset("utf8mb4");
         if ($conn->query($sql)) {
             $_SESSION['success'] = 'সংবাদ আপডেট হয়েছে';
             echo "<script>window.location.href = 'index.php?q=news';</script>";
