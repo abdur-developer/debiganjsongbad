@@ -2,7 +2,7 @@
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('দেবীগঞ্জ সংবাদ - জাভাস্ক্রিপ্ট লোড হয়েছে');
+    // console.log('দেবীগঞ্জ সংবাদ - জাভাস্ক্রিপ্ট লোড হয়েছে');
     
     // ==================== LAZY LOADING IMAGES ====================
     const lazyImages = document.querySelectorAll('img.lazy');
@@ -398,14 +398,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update breaking news periodically (simulate live updates)
     const breakingTicker = document.getElementById('breaking-ticker');
     if (breakingTicker) {
-        const breakingNewsList = [
-            '🔴 প্রধানমন্ত্রী আজ বিকেলে সংবাদ সম্মেলন করবেন',
-            '❄️ শীতে কাঁপছে দেশ, তাপমাত্রা ৮ ডিগ্রি',
-            '🏏 টি-টোয়েন্টি সিরিজ জয় বাংলাদেশের',
-            '💰 মূল্যস্ফীতি কমতে শুরু করেছে',
-            '🌍 জাতিসংঘে বাংলাদেশের জয়জয়কার',
-            '🚗 এলিভেটেড এক্সপ্রেসওয়ে চালু'
-        ];
+        const breakingNewsList = breakingTicker.innerText.split(' | ').filter(item => item.trim() !== '');
         
         setInterval(() => {
             const randomIndex = Math.floor(Math.random() * breakingNewsList.length);
@@ -434,5 +427,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==================== MOBILE MENU TOGGLE (optional) ====================
     // For very small screens, could add hamburger menu, but we already have scrollable nav
     
-    console.log('দেবীগঞ্জ সংবাদ - সব ফিচার লোড হয়েছে');
+    // console.log('দেবীগঞ্জ সংবাদ - সব ফিচার লোড হয়েছে');
 });

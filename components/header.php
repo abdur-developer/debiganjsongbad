@@ -1,8 +1,3 @@
-<?php
-    // ক্যাটাগরি লোড
-    $catSql = "SELECT * FROM categories WHERE status = 'active' AND parent_id = 0 ORDER BY sort_order, name_bn LIMIT 12";
-    $catResult = $conn->query($catSql);
-?>
 <!-- HEADER SECTION -->
 <header class="my-header top-0 z-50 bg-white shadow-md border-b border-gray-200 transition-colors">
     <div class="container mx-auto px-2 sm:px-4">
@@ -27,7 +22,15 @@
             <span class="bg-red-600 text-white px-2 py-0.5 rounded font-bold whitespace-nowrap">ব্রেকিং</span>
             <div class="overflow-hidden relative w-full h-6">
                 <div class="absolute whitespace-nowrap ticker-animate text-gray-700 font-medium" id="breaking-ticker">
-                    🔴 প্রধানমন্ত্রী আজ বিকেলে সংবাদ সম্মেলন করবেন | ❄️ শীতে কাঁপছে দেশ, তাপমাত্রা ৮ ডিগ্রি | 🏏 টি-টোয়েন্টি সিরিজ জয় বাংলাদেশের | 💰 মূল্যস্ফীতি কমতে শুরু করেছে | 🌍 জাতিসংঘে বাংলাদেশের জয়জয়কার
+                    <?php
+                        // ব্রেকিং নিউজ
+                        $breakingSql = "SELECT id, title_bn, slug FROM news WHERE is_breaking = 1 AND status = 'published' ORDER BY created_at DESC LIMIT 5";
+                        $breakingResult = $conn->query($breakingSql);
+                        
+                        foreach($breakingResult as $breaking){
+                            echo "<a href='news/?feed={$breaking['id']}&slug={$breaking['slug']}' class='hover:text-blue-600'>🔴 {$breaking['title_bn']}</a> | ";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -46,7 +49,11 @@
         <!-- Navigation Menu -->
         <nav id="navMenu" class="hidden md:flex flex-wrap items-center text-sm font-semibold gap-1 py-2 border-b">
             <a href="./" class="nav-link">হোম</a>
-            
+            <?php
+                // ক্যাটাগরি লোড
+                $catSql = "SELECT * FROM categories WHERE status = 'active' AND parent_id = 0 ORDER BY sort_order, name_bn LIMIT 12";
+                $catResult = $conn->query($catSql);
+            ?>
             <?php
                 // $count = 0;
                 while ($cat = $catResult->fetch_assoc()) {

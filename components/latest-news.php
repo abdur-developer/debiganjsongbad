@@ -1,3 +1,13 @@
+<?php
+// সর্বশেষ নিউজ
+$latestSql = "SELECT n.*, c.name_bn as category_name 
+            FROM news n 
+            LEFT JOIN categories c ON n.category_id = c.id 
+            WHERE n.status = 'published' 
+            ORDER BY n.created_at DESC LIMIT 12";
+$latestResult = $conn->query($latestSql);  
+
+?>
 <!-- Latest News Grid -->
 <section class="mb-6">
     <div class="flex items-center justify-between mb-3">

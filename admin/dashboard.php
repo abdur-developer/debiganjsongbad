@@ -7,7 +7,7 @@
             </div>
             <div>
                 <p class="text-gray-500 text-sm">মোট সংবাদ</p>
-                <p class="text-2xl font-bold"><?php echo number_format($stats['total_news']); ?></p>
+                <p class="text-2xl font-bold"><?= number_format($stats['total_news']); ?></p>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
             </div>
             <div>
                 <p class="text-gray-500 text-sm">আজকের সংবাদ</p>
-                <p class="text-2xl font-bold"><?php echo number_format($stats['today_news']); ?></p>
+                <p class="text-2xl font-bold"><?= number_format($stats['today_news']); ?></p>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
             </div>
             <div>
                 <p class="text-gray-500 text-sm">পেন্ডিং মন্তব্য</p>
-                <p class="text-2xl font-bold"><?php echo number_format($stats['pending_comments']); ?></p>
+                <p class="text-2xl font-bold"><?= number_format($stats['pending_comments']); ?></p>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
             </div>
             <div>
                 <p class="text-gray-500 text-sm">মোট ব্যবহারকারী</p>
-                <p class="text-2xl font-bold"><?php echo number_format($stats['total_users']); ?></p>
+                <p class="text-2xl font-bold"><?= number_format($stats['total_users']); ?></p>
             </div>
         </div>
     </div>
@@ -96,7 +96,7 @@
             $sql = "SELECT l.*, u.username, u.full_name 
                     FROM activity_log l 
                     LEFT JOIN users u ON l.user_id = u.id 
-                    ORDER BY l.created_at DESC LIMIT 10";
+                    ORDER BY l.created_at DESC LIMIT 7";
             $result = $conn->query($sql);
             
             if ($result && $result->num_rows > 0):
