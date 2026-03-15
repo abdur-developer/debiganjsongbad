@@ -171,14 +171,14 @@ $warning_message = $_SESSION['warning'] ?? '';
                     </li>
                     
                     <!-- মন্তব্য - কমেন্ট আউট করা আছে -->
-                    <!--
+                    
                     <li>
                         <a href="?q=comments" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'comments' ? 'active-nav' : '' ?>">
                             <i class="fas fa-comments w-6"></i>
                             <span>মন্তব্য</span>
                         </a>
                     </li>
-                    -->
+                   
                     
                     <li class="pt-4 mt-2 border-t border-gray-800">
                         <p class="text-xs text-gray-500 mb-2 px-2 uppercase tracking-wider">ব্যবস্থাপনা</p>
@@ -186,14 +186,14 @@ $warning_message = $_SESSION['warning'] ?? '';
                     
                     <?php if ($auth->hasPermission('users')): ?>
                     <!-- ব্যবহারকারী - কমেন্ট আউট করা আছে -->
-                    <!--
+                    
                     <li>
                         <a href="?q=users" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'users' ? 'active-nav' : '' ?>">
                             <i class="fas fa-users w-6"></i>
-                            <span>ব্যবহারকারী</span>
+                            <span>প্রতিনিধি</span>
                         </a>
                     </li>
-                    -->
+                   
                     <?php endif; ?>
                     
                     <!-- রোল - কমেন্ট আউট করা আছে -->

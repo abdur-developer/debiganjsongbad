@@ -83,6 +83,7 @@
                 
                 <!-- Comment Form -->
                 <form class="mb-6" id="comment-form">
+                    <input type="hidden" name="news_id" value="<?=$news_id?>">
                     <textarea rows="4" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500" placeholder="আপনার মন্তব্য লিখুন..."></textarea>
                     <div class="flex gap-3 mt-2">
                         <input type="text" placeholder="আপনার নাম" class="flex-1 border border-gray-300 rounded-lg p-2 text-sm">

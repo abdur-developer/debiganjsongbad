@@ -318,6 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const name = this.querySelector('input[placeholder="আপনার নাম"]').value.trim();
             const email = this.querySelector('input[placeholder="ইমেইল"]').value.trim();
+            const news_id = this.querySelector('input[name="news_id"]').value.trim();
             const comment = this.querySelector('textarea').value.trim();
             
             if (!name || !email || !comment) {
@@ -330,7 +331,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            alert('আপনার মন্তব্য পাঠানো হয়েছে। মডারেশনের পর প্রকাশিত হবে।');
+            // Send comment to server (example API endpoint)
+            fetch('../api/comments.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ news_id, name, email, comment })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('আপনার মন্তব্য পাঠানো হয়েছে। মডারেশনের পর প্রকাশিত হবে।');
+            })
+            .catch(error => {
+                alert('মন্তব্য পাঠাতে সমস্যা হয়েছে, পরে আবার চেষ্টা করুন।');
+            });
             this.reset();
         });
     }

@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $content = $conn->real_escape_string($_POST['content']);
     $summary = $conn->real_escape_string($_POST['summary']);
     $category_id = intval($_POST['category_id']);
+    $author_id = intval($_POST['author_id']);
     $tags = isset($_POST['tags']) 
     ? json_encode(array_map('trim', explode(',', $_POST['tags'])), JSON_UNESCAPED_UNICODE) 
     : null;
@@ -54,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $gallery_json = !empty($gallery_images) ? json_encode($gallery_images, JSON_UNESCAPED_UNICODE) : '[]';
 
     
-    $author_id = $_SESSION['user_id'];
     $published_at = $status == 'published' ? 'NOW()' : 'NULL';
     
     $sql = "INSERT INTO news (title_bn, title_en, slug, content, summary, featured_image, gallery_images, 
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php if (isset($error)): ?>
 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-    <?php echo $error; ?>
+    <?= $error; ?>
 </div>
 <?php endif; ?>
 
@@ -112,7 +112,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $catResult = $conn->query($catSql);
                     while ($cat = $catResult->fetch_assoc()):
                     ?>
-                    <option value="<?php echo $cat['id']; ?>"><?php echo $cat['name_bn']; ?></option>
+                    <option value="<?= $cat['id']; ?>"><?= $cat['name_bn']; ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+            <div>
+                <label class="block font-semibold mb-2">প্রতিনিধি *</label>
+                <select name="author_id" required class="w-full px-3 py-2 border rounded">
+                    <option value="">প্রতিনিধি নির্বাচন করুন</option>
+                    <?php
+                    $authorSql = "SELECT id, full_name FROM users ORDER BY full_name";
+                    $authorResult = $conn->query($authorSql);
+                    while ($author = $authorResult->fetch_assoc()):
+                    ?>
+                    <option value="<?= $author['id']; ?>"><?= $author['full_name']; ?></option>
                     <?php endwhile; ?>
                 </select>
             </div>

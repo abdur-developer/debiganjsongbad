@@ -1,7 +1,7 @@
 <?php
 $auth->requirePermission('users');
 
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$id = isset($_GET['delete_id']) ? intval($_GET['delete_id']) : 0;
 
 if (!$id || $id == 1 || $id == $_SESSION['user_id']) {
     $_SESSION['error'] = 'এই ব্যবহারকারী ডিলিট করা যাবে না';
