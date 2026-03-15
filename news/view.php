@@ -71,7 +71,7 @@
                     <span class="text-sm font-semibold">ট্যাগ:</span>
                     <?php
                     while($tag = array_shift($tags)){
-                        echo '<a href="search.php?tag=' . urlencode($tag) . '" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">' . htmlspecialchars($tag) . '</a>';
+                        echo '<a href="search.php?tag=' . urlencode($tag) . '" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">' . e($tag) . '</a>';
                     }
                     ?>
                 </div>
@@ -104,10 +104,10 @@
                             <div class="w-6 h-6 bg-gray-400 rounded-full">
                                 <img class="w-full h-full object-cover rounded-full" src="https://www.gravatar.com/avatar/<?= md5(strtolower(trim($comment['email']))) ?>?s=48&d=identicon" alt="User Avatar">
                             </div>
-                            <span class="font-semibold"><?= htmlspecialchars($comment['name']) ?></span>
+                            <span class="font-semibold"><?= e($comment['name']) ?></span>
                             <span class="text-xs text-gray-500"><?= timeAgo($comment['created_at']) ?></span>
                         </div>
-                        <p class="text-sm"> <?= htmlspecialchars($comment['comment']) ?> </p>
+                        <p class="text-sm"> <?= e($comment['comment']) ?> </p>
                     </div>
                     <?php } ?>                    
                 </div>

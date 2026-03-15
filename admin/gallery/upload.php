@@ -56,19 +56,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
                 <label class="block font-semibold mb-2">শিরোনাম (বাংলা) *</label>
-                <input type="text" name="title_bn" value="<?php echo htmlspecialchars($_POST['title_bn'] ?? ''); ?>" required
+                <input type="text" name="title_bn" value="<?php echo e($_POST['title_bn'] ?? ''); ?>" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">শিরোনাম (ইংরেজি)</label>
-                <input type="text" name="title_en" value="<?php echo htmlspecialchars($_POST['title_en'] ?? ''); ?>"
+                <input type="text" name="title_en" value="<?php echo e($_POST['title_en'] ?? ''); ?>"
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">ক্যাটাগরি</label>
-                <input type="text" name="category" value="<?php echo htmlspecialchars($_POST['category'] ?? ''); ?>"
+                <input type="text" name="category" value="<?php echo e($_POST['category'] ?? ''); ?>"
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500"
                        placeholder="যেমন: রাজনীতি, খেলা, বিনোদন">
             </div>
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             <div class="md:col-span-2">
                 <label class="block font-semibold mb-2">বিবরণ</label>
-                <textarea name="description" rows="4" class="w-full px-3 py-2 border rounded"><?php echo htmlspecialchars($_POST['description'] ?? ''); ?></textarea>
+                <textarea name="description" rows="4" class="w-full px-3 py-2 border rounded"><?php echo e($_POST['description'] ?? ''); ?></textarea>
             </div>
         </div>
         

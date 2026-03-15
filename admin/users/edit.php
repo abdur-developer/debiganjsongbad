@@ -104,19 +104,19 @@ $roles = ['super_admin', 'admin', 'editor', 'reporter', 'moderator'];
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
                 <label class="block font-semibold mb-2">ইউজারনেম *</label>
-                <input type="text" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required
+                <input type="text" name="username" value="<?php echo e($user['username']); ?>" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">পূর্ণ নাম *</label>
-                <input type="text" name="full_name" value="<?php echo htmlspecialchars($user['full_name']); ?>" required
+                <input type="text" name="full_name" value="<?php echo e($user['full_name']); ?>" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">ইমেইল *</label>
-                <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required
+                <input type="email" name="email" value="<?php echo e($user['email']); ?>" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
@@ -129,7 +129,7 @@ $roles = ['super_admin', 'admin', 'editor', 'reporter', 'moderator'];
             
             <div>
                 <label class="block font-semibold mb-2">ফোন</label>
-                <input type="text" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>"
+                <input type="text" name="phone" value="<?php echo e($user['phone']); ?>"
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
@@ -165,7 +165,7 @@ $roles = ['super_admin', 'admin', 'editor', 'reporter', 'moderator'];
             
             <div class="md:col-span-2">
                 <label class="block font-semibold mb-2">বায়ো</label>
-                <textarea name="bio" rows="3" class="w-full px-3 py-2 border rounded"><?php echo htmlspecialchars($user['bio']); ?></textarea>
+                <textarea name="bio" rows="3" class="w-full px-3 py-2 border rounded"><?php echo e($user['bio']); ?></textarea>
             </div>
         </div>
         

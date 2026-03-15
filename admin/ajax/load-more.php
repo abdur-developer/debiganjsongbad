@@ -34,7 +34,7 @@ if ($result && $result->num_rows > 0) {
                 <img src="' . ($news['featured_image'] ?: 'https://via.placeholder.com/50') . '" 
                      class="w-12 h-12 object-cover rounded" alt="">
             </td>
-            <td class="px-4 py-2 font-semibold">' . htmlspecialchars($news['title_bn']) . '</td>
+            <td class="px-4 py-2 font-semibold">' . e($news['title_bn']) . '</td>
             <td class="px-4 py-2">' . $news['category_name'] . '</td>
             <td class="px-4 py-2">' . $news['author_name'] . '</td>
             <td class="px-4 py-2">' . date('d/m/Y', strtotime($news['created_at'])) . '</td>

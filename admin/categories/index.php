@@ -69,8 +69,8 @@ $result = $conn->query($sql);
                         <input type="checkbox" class="select-item rounded" value="<?php echo $cat['id']; ?>">
                     </td>
                     <td class="px-4 py-2 hidden md:table-cell"><?php echo $cat['id']; ?></td>
-                    <td class="px-4 py-2 font-semibold"><?php echo htmlspecialchars($cat['name_bn']); ?></td>
-                    <td class="px-4 py-2 hidden md:table-cell"><?php echo htmlspecialchars($cat['name_en']); ?></td>
+                    <td class="px-4 py-2 font-semibold"><?php echo e($cat['name_bn']); ?></td>
+                    <td class="px-4 py-2 hidden md:table-cell"><?php echo e($cat['name_en']); ?></td>
                     <td class="px-4 py-2 hidden md:table-cell text-sm"><?php echo $cat['slug']; ?></td>
                     <td class="px-4 py-2 hidden md:table-cell text-sm"><?php echo $parentName; ?></td>
                     <td class="px-4 py-2 hidden md:table-cell text-center"><?php echo $cat['news_count']; ?></td>

@@ -69,20 +69,20 @@ $parentResult = $conn->query($parentSql);
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
                 <label class="block font-semibold mb-2">নাম (বাংলা) *</label>
-                <input type="text" name="name_bn" value="<?php echo htmlspecialchars($_POST['name_bn'] ?? ''); ?>" required
+                <input type="text" name="name_bn" value="<?php echo e($_POST['name_bn'] ?? ''); ?>" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">নাম (ইংরেজি)</label>
-                <input type="text" name="name_en" value="<?php echo htmlspecialchars($_POST['name_en'] ?? ''); ?>"
+                <input type="text" name="name_en" value="<?php echo e($_POST['name_en'] ?? ''); ?>"
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500"
                        onkeyup="generateSlug(this.value)">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">স্লাগ</label>
-                <input type="text" name="slug" id="slug" value="<?php echo htmlspecialchars($_POST['slug'] ?? ''); ?>"
+                <input type="text" name="slug" id="slug" value="<?php echo e($_POST['slug'] ?? ''); ?>"
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
                 <p class="text-xs text-gray-500 mt-1">ইংরেজি নাম থেকে অটো জেনারেট হবে</p>
             </div>
@@ -93,7 +93,7 @@ $parentResult = $conn->query($parentSql);
                     <option value="0">-- মূল ক্যাটাগরি --</option>
                     <?php while ($parent = $parentResult->fetch_assoc()): ?>
                     <option value="<?php echo $parent['id']; ?>" <?php echo ($_POST['parent_id'] ?? 0) == $parent['id'] ? 'selected' : ''; ?>>
-                        <?php echo htmlspecialchars($parent['name_bn']); ?>
+                        <?php echo e($parent['name_bn']); ?>
                     </option>
                     <?php endwhile; ?>
                 </select>
@@ -101,7 +101,7 @@ $parentResult = $conn->query($parentSql);
             
             <div>
                 <label class="block font-semibold mb-2">সর্ডার অর্ডার</label>
-                <input type="number" name="sort_order" value="<?php echo htmlspecialchars($_POST['sort_order'] ?? '0'); ?>"
+                <input type="number" name="sort_order" value="<?php echo e($_POST['sort_order'] ?? '0'); ?>"
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
                 <p class="text-xs text-gray-500 mt-1">ছোট সংখ্যা আগে দেখাবে</p>
             </div>
@@ -116,7 +116,7 @@ $parentResult = $conn->query($parentSql);
             
             <div class="md:col-span-2">
                 <label class="block font-semibold mb-2">বিবরণ</label>
-                <textarea name="description" rows="4" class="w-full px-3 py-2 border rounded"><?php echo htmlspecialchars($_POST['description'] ?? ''); ?></textarea>
+                <textarea name="description" rows="4" class="w-full px-3 py-2 border rounded"><?php echo e($_POST['description'] ?? ''); ?></textarea>
             </div>
         </div>
         

@@ -42,7 +42,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
         <input type="hidden" name="q" value="comments">
         <div>
             <input type="text" name="search" placeholder="সার্চ করুন..." 
-                   value="<?php echo htmlspecialchars($search); ?>"
+                   value="<?php echo e($search); ?>"
                    class="w-full px-3 py-2 border rounded">
         </div>
         <div>
@@ -112,14 +112,14 @@ $totalPages = ceil($totalRow['total'] / $limit);
                     <td class="px-4 py-2"><?php echo $comment['id']; ?></td>
                     <td class="px-4 py-2">
                         <a href="../news/?feed=<?php echo $comment['news_id']; ?>" target="_blank" class="text-blue-600 hover:underline">
-                            <?php echo htmlspecialchars(substr($comment['news_title'], 0, 30) . '...'); ?>
+                            <?php echo e(substr($comment['news_title'], 0, 30) . '...'); ?>
                         </a>
                     </td>
-                    <td class="px-4 py-2"><?php echo htmlspecialchars($comment['name']); ?></td>
-                    <td class="px-4 py-2"><?php echo htmlspecialchars($comment['email']); ?></td>
+                    <td class="px-4 py-2"><?php echo e($comment['name']); ?></td>
+                    <td class="px-4 py-2"><?php echo e($comment['email']); ?></td>
                     <td class="px-4 py-2">
-                        <div class="max-w-xs truncate" title="<?php echo htmlspecialchars($comment['comment']); ?>">
-                            <?php echo htmlspecialchars(substr($comment['comment'], 0, 50) . '...'); ?>
+                        <div class="max-w-xs truncate" title="<?php echo e($comment['comment']); ?>">
+                            <?php echo e(substr($comment['comment'], 0, 50) . '...'); ?>
                         </div>
                     </td>
                     <td class="px-4 py-2">

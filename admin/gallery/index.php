@@ -34,7 +34,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
 <div class="bg-white p-4 rounded-lg shadow mb-6">
     <form method="GET" class="flex gap-2">
         <input type="text" name="search" placeholder="ছবির নাম সার্চ করুন..." 
-               value="<?php echo htmlspecialchars($search); ?>"
+               value="<?php echo e($search); ?>"
                class="flex-1 px-3 py-2 border rounded focus:outline-none focus:border-red-500">
         <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
             <i class="fas fa-search"></i> সার্চ

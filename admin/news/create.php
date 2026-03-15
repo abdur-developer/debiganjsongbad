@@ -98,8 +98,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             
             <div>
-                <label class="block font-semibold mb-2">শিরোনাম (ইংরেজি)</label>
-                <input type="text" name="title_en" 
+                <label class="block font-semibold mb-2">শিরোনাম (ইংরেজি) *</label>
+                <input type="text" name="title_en" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             

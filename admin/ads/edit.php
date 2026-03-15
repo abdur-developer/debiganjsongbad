@@ -93,7 +93,7 @@ $types = ['banner', 'sidebar', 'popup', 'video'];
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
                 <label class="block font-semibold mb-2">শিরোনাম *</label>
-                <input type="text" name="title" value="<?php echo htmlspecialchars($ad['title']); ?>" required
+                <input type="text" name="title" value="<?php echo e($ad['title']); ?>" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
@@ -117,7 +117,7 @@ $types = ['banner', 'sidebar', 'popup', 'video'];
             
             <div>
                 <label class="block font-semibold mb-2">লিংক</label>
-                <input type="url" name="link" value="<?php echo htmlspecialchars($ad['link']); ?>"
+                <input type="url" name="link" value="<?php echo e($ad['link']); ?>"
                        class="w-full px-3 py-2 border rounded">
             </div>
             
@@ -153,7 +153,7 @@ $types = ['banner', 'sidebar', 'popup', 'video'];
             
             <div class="md:col-span-2">
                 <label class="block font-semibold mb-2">HTML কোড</label>
-                <textarea name="code" rows="4" class="w-full px-3 py-2 border rounded font-mono text-sm"><?php echo htmlspecialchars($ad['code']); ?></textarea>
+                <textarea name="code" rows="4" class="w-full px-3 py-2 border rounded font-mono text-sm"><?php echo e($ad['code']); ?></textarea>
             </div>
         </div>
         

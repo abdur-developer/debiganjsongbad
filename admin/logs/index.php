@@ -48,7 +48,7 @@ $userResult = $conn->query($userSql);
                 <option value="0">সব ব্যবহারকারী</option>
                 <?php while ($user = $userResult->fetch_assoc()): ?>
                 <option value="<?php echo $user['id']; ?>" <?php echo $user_id == $user['id'] ? 'selected' : ''; ?>>
-                    <?php echo htmlspecialchars($user['full_name'] ?: $user['username']); ?>
+                    <?php echo e($user['full_name'] ?: $user['username']); ?>
                 </option>
                 <?php endwhile; ?>
             </select>
@@ -56,7 +56,7 @@ $userResult = $conn->query($userSql);
         <input type="hidden" name="q" value="logs">
         <div>
             <input type="text" name="action" placeholder="অ্যাকশন সার্চ..." 
-                   value="<?php echo htmlspecialchars($action); ?>"
+                   value="<?php echo e($action); ?>"
                    class="w-full px-3 py-2 border rounded">
         </div>
         <div>
@@ -95,7 +95,7 @@ $userResult = $conn->query($userSql);
                     </td>
                     <td class="px-4 py-2">
                         <?php if ($log['user_id']): ?>
-                            <span class="font-semibold"><?php echo htmlspecialchars($log['full_name'] ?: $log['username']); ?></span>
+                            <span class="font-semibold"><?php echo e($log['full_name'] ?: $log['username']); ?></span>
                         <?php else: ?>
                             <span class="text-gray-400">সিস্টেম</span>
                         <?php endif; ?>
@@ -105,7 +105,7 @@ $userResult = $conn->query($userSql);
                             <?php echo $log['action']; ?>
                         </span>
                     </td>
-                    <td class="px-4 py-2"><?php echo htmlspecialchars($log['details']); ?></td>
+                    <td class="px-4 py-2"><?php echo e($log['details']); ?></td>
                     <td class="px-4 py-2 text-xs font-mono"><?php echo $log['ip_address']; ?></td>
                 </tr>
                 <?php endwhile; ?>

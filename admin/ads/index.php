@@ -57,7 +57,7 @@ $result = $conn->query($sql);
                         <input type="checkbox" class="select-item rounded" value="<?php echo $ad['id']; ?>">
                     </td>
                     <td class="px-4 py-2"><?php echo $ad['id']; ?></td>
-                    <td class="px-4 py-2 font-semibold"><?php echo htmlspecialchars($ad['title']); ?></td>
+                    <td class="px-4 py-2 font-semibold"><?php echo e($ad['title']); ?></td>
                     <td class="px-4 py-2"><?php echo ucfirst($ad['type']); ?></td>
                     <td class="px-4 py-2"><?php echo $ad['position']; ?></td>
                     <td class="px-4 py-2">

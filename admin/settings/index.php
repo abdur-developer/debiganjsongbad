@@ -54,25 +54,25 @@ while ($row = $result->fetch_assoc()) {
             
             <div>
                 <label class="block font-semibold mb-2">সাইটের নাম</label>
-                <input type="text" name="site_title" value="<?php echo htmlspecialchars($settings['site_title']); ?>" 
+                <input type="text" name="site_title" value="<?php echo e($settings['site_title']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">সাইট URL</label>
-                <input type="url" name="site_url" value="<?php echo htmlspecialchars($settings['site_url']); ?>" 
+                <input type="url" name="site_url" value="<?php echo e($settings['site_url']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">সাইট বিবরণ</label>
                 <textarea name="site_description" rows="3" 
-                          class="w-full px-3 py-2 border rounded"><?php echo htmlspecialchars($settings['site_description']); ?></textarea>
+                          class="w-full px-3 py-2 border rounded"><?php echo e($settings['site_description']); ?></textarea>
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">কীওয়ার্ড</label>
-                <input type="text" name="site_keywords" value="<?php echo htmlspecialchars($settings['site_keywords']); ?>" 
+                <input type="text" name="site_keywords" value="<?php echo e($settings['site_keywords']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
         </div>
@@ -83,26 +83,26 @@ while ($row = $result->fetch_assoc()) {
             
             <div>
                 <label class="block font-semibold mb-2">অ্যাডমিন ইমেইল</label>
-                <input type="email" name="admin_email" value="<?php echo htmlspecialchars($settings['admin_email']); ?>" 
+                <input type="email" name="admin_email" value="<?php echo e($settings['admin_email']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">যোগাযোগ ইমেইল</label>
-                <input type="email" name="contact_email" value="<?php echo htmlspecialchars($settings['contact_email']); ?>" 
+                <input type="email" name="contact_email" value="<?php echo e($settings['contact_email']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">ফোন</label>
-                <input type="text" name="phone" value="<?php echo htmlspecialchars($settings['phone']); ?>" 
+                <input type="text" name="phone" value="<?php echo e($settings['phone']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">ঠিকানা</label>
                 <textarea name="address" rows="2" 
-                          class="w-full px-3 py-2 border rounded"><?php echo htmlspecialchars($settings['address']); ?></textarea>
+                          class="w-full px-3 py-2 border rounded"><?php echo e($settings['address']); ?></textarea>
             </div>
         </div>
         
@@ -112,25 +112,25 @@ while ($row = $result->fetch_assoc()) {
             
             <div>
                 <label class="block font-semibold mb-2">ফেসবুক</label>
-                <input type="url" name="facebook_url" value="<?php echo htmlspecialchars($settings['facebook_url']); ?>" 
+                <input type="url" name="facebook_url" value="<?php echo e($settings['facebook_url']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">টুইটার</label>
-                <input type="url" name="twitter_url" value="<?php echo htmlspecialchars($settings['twitter_url']); ?>" 
+                <input type="url" name="twitter_url" value="<?php echo e($settings['twitter_url']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">ইউটিউব</label>
-                <input type="url" name="youtube_url" value="<?php echo htmlspecialchars($settings['youtube_url']); ?>" 
+                <input type="url" name="youtube_url" value="<?php echo e($settings['youtube_url']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">ইনস্টাগ্রাম</label>
-                <input type="url" name="instagram_url" value="<?php echo htmlspecialchars($settings['instagram_url']); ?>" 
+                <input type="url" name="instagram_url" value="<?php echo e($settings['instagram_url']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
         </div>
@@ -160,7 +160,7 @@ while ($row = $result->fetch_assoc()) {
             <div>
                 <label class="block font-semibold mb-2">ফুটার টেক্সট</label>
                 <textarea name="footer_text" rows="2" 
-                          class="w-full px-3 py-2 border rounded"><?php echo htmlspecialchars($settings['footer_text']); ?></textarea>
+                          class="w-full px-3 py-2 border rounded"><?php echo e($settings['footer_text']); ?></textarea>
             </div>
         </div>
     </div>

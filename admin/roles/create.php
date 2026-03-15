@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="POST" action="">
         <div class="mb-4">
             <label class="block font-semibold mb-2">রোল নাম *</label>
-            <input type="text" name="role" value="<?php echo htmlspecialchars($_POST['role'] ?? ''); ?>" required
+            <input type="text" name="role" value="<?php echo e($_POST['role'] ?? ''); ?>" required
                    class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500"
                    placeholder="যেমন: moderator, contributor">
         </div>

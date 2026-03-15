@@ -157,24 +157,24 @@ $catResult = $conn->query($catSql);
         <div class="md:col-span-2 space-y-4">
             <div>
                 <label class="block font-semibold mb-2">শিরোনাম (বাংলা) *</label>
-                <input type="text" name="title_bn" value="<?php echo htmlspecialchars($news['title_bn']); ?>" required
+                <input type="text" name="title_bn" value="<?php echo e($news['title_bn']); ?>" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
             <div>
-                <label class="block font-semibold mb-2">শিরোনাম (ইংরেজি)</label>
-                <input type="text" name="title_en" value="<?php echo htmlspecialchars($news['title_en']); ?>"
+                <label class="block font-semibold mb-2">শিরোনাম (ইংরেজি) *</label>
+                <input type="text" name="title_en" value="<?php echo e($news['title_en']); ?>" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">বিস্তারিত *</label>
-                <textarea name="content" id="editor" rows="12"><?php echo htmlspecialchars($news['content']); ?></textarea>
+                <textarea name="content" id="editor" rows="12"><?php echo e($news['content']); ?></textarea>
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">সারসংক্ষেপ</label>
-                <textarea name="summary" rows="3" class="w-full px-3 py-2 border rounded"><?php echo htmlspecialchars($news['summary']); ?></textarea>
+                <textarea name="summary" rows="3" class="w-full px-3 py-2 border rounded"><?php echo e($news['summary']); ?></textarea>
             </div>
         </div>
         
@@ -206,7 +206,7 @@ $catResult = $conn->query($catSql);
                 
                 <div class="mb-3">
                     <label class="block font-semibold mb-2">ট্যাগ (কমা দিয়ে আলাদা)</label>
-                    <input type="text" name="tags" value="<?php echo htmlspecialchars($tags); ?>" 
+                    <input type="text" name="tags" value="<?php echo e($tags); ?>" 
                            class="w-full px-3 py-2 border rounded" placeholder="রাজনীতি, অর্থনীতি, ক্রিকেট">
                 </div>
                 
@@ -260,18 +260,18 @@ $catResult = $conn->query($catSql);
                 
                 <div class="mb-3">
                     <label class="block text-sm mb-1">মেটা টাইটেল</label>
-                    <input type="text" name="meta_title" value="<?php echo htmlspecialchars($news['meta_title']); ?>"
+                    <input type="text" name="meta_title" value="<?php echo e($news['meta_title']); ?>"
                            class="w-full px-3 py-2 border rounded text-sm">
                 </div>
                 
                 <div class="mb-3">
                     <label class="block text-sm mb-1">মেটা বিবরণ</label>
-                    <textarea name="meta_description" rows="2" class="w-full px-3 py-2 border rounded text-sm"><?php echo htmlspecialchars($news['meta_description']); ?></textarea>
+                    <textarea name="meta_description" rows="2" class="w-full px-3 py-2 border rounded text-sm"><?php echo e($news['meta_description']); ?></textarea>
                 </div>
                 
                 <div>
                     <label class="block text-sm mb-1">মেটা কীওয়ার্ড</label>
-                    <input type="text" name="meta_keywords" value="<?php echo htmlspecialchars($news['meta_keywords']); ?>"
+                    <input type="text" name="meta_keywords" value="<?php echo e($news['meta_keywords']); ?>"
                            class="w-full px-3 py-2 border rounded text-sm">
                 </div>
             </div>

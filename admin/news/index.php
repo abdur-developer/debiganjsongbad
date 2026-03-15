@@ -47,7 +47,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
     <form method="GET" class="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div>
             <input type="text" name="search" placeholder="সার্চ করুন..." 
-                   value="<?php echo htmlspecialchars($search); ?>"
+                   value="<?php echo e($search); ?>"
                    class="w-full px-3 py-2 border rounded">
         </div>
         <div>

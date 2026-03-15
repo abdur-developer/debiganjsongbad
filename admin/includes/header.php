@@ -83,7 +83,7 @@ $warning_message = $_SESSION['warning'] ?? '';
                         <?php endif; ?>
                     </div>
                     <div class="ml-3 min-w-0 flex-1">
-                        <p class="font-semibold text-sm truncate"><?php echo htmlspecialchars($currentUser['full_name']); ?></p>
+                        <p class="font-semibold text-sm truncate"><?php echo e($currentUser['full_name']); ?></p>
                         <p class="text-xs text-gray-400 truncate">
                             <?php 
                                 $roleNames = [
@@ -343,8 +343,8 @@ $warning_message = $_SESSION['warning'] ?? '';
             <div class="flex-1 overflow-y-auto p-4 md:p-6">
                 <!-- হিডেন সেশন ডাটা -->
                 <div id="session-data" 
-                    data-success="<?php echo htmlspecialchars($success_message); ?>"
-                    data-error="<?php echo htmlspecialchars($error_message); ?>"
-                    data-warning="<?php echo htmlspecialchars($warning_message); ?>"
+                    data-success="<?php echo e($success_message); ?>"
+                    data-error="<?php echo e($error_message); ?>"
+                    data-warning="<?php echo e($warning_message); ?>"
                     class="hidden">
                 </div>

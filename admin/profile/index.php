@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="space-y-4">
                         <div>
                             <label class="block font-semibold mb-2">পূর্ণ নাম *</label>
-                            <input type="text" name="full_name" value="<?php echo htmlspecialchars($user['full_name']); ?>" required 
+                            <input type="text" name="full_name" value="<?php echo e($user['full_name']); ?>" required 
                                    class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
                         </div>
                         
