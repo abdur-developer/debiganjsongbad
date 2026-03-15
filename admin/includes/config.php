@@ -22,6 +22,6 @@ date_default_timezone_set('Asia/Dhaka');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-function e($string) {
-    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+function e(?string $string): string {
+    return htmlspecialchars($string ?? '', ENT_QUOTES, 'UTF-8');
 }
