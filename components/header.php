@@ -1,3 +1,4 @@
+<?php $rootLink = $isRoot ? "news" : "."; ?>
 <!-- HEADER SECTION -->
 <header class="my-header top-0 z-50 bg-white shadow-md border-b border-gray-200 transition-colors">
     <div class="container mx-auto px-2 sm:px-4">
@@ -28,7 +29,7 @@
                         $breakingResult = $conn->query($breakingSql);
                         
                         foreach($breakingResult as $breaking){
-                            echo "<a href='news/?feed={$breaking['id']}&slug={$breaking['slug']}' class='hover:text-blue-600'>🔴 {$breaking['title_bn']}</a> | ";
+                            echo "<a href='$rootLink/?feed={$breaking['id']}&slug={$breaking['slug']}' class='hover:text-blue-600'>🔴 {$breaking['title_bn']}</a> | ";
                         }
                     ?>
                 </div>
@@ -76,14 +77,14 @@
                             <div class="dropdown-content">
                                 <?php
                                     while ($childCat = $childCatResult->fetch_assoc()) {
-                                        echo '<a href="category.php?cat='.$childCat['slug'].'">'.$childCat['name_bn'].'</a>';
+                                        echo '<a href="'.$rootLink.'/?cat='.$childCat['slug'].'">'.$childCat['name_bn'].'</a>';
                                     }
                                 ?>
                             </div>
                         </div>
                     <?php
                     }else{
-                        echo '<a href="category.php?cat='.$cat['slug'].'" class="nav-link">'.$cat['name_bn'].'</a>';
+                        echo '<a href="'.$rootLink.'/?cat='.$cat['slug'].'" class="nav-link">'.$cat['name_bn'].'</a>';
                     }
 
                 }

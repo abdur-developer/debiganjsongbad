@@ -1,5 +1,5 @@
 <?php if(!isset($news)){
-    header("Location: news.php");
+    echo "<script>window.location.href = './';</script>";
     exit();
 } ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     <nav class="text-sm mb-4" aria-label="Breadcrumb">
         <ol class="list-none p-0 inline-flex flex-wrap">
             <li class="flex items-center"><a href="../" class="text-blue-600 hover:underline">হোম</a><svg class="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6v12z"/></svg></li>
-            <li class="flex items-center"><a href="../category.html?cat=national" class="text-blue-600 hover:underline"><?= $news['category_name'] ?></a><svg class="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6v12z"/></svg></li>
+            <li class="flex items-center"><a href="?cat=national" class="text-blue-600 hover:underline"><?= $news['category_name'] ?></a><svg class="fill-current w-3 h-3 mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6v12z"/></svg></li>
             <li class="flex items-center text-gray-500"><?=$news['title_en']?></li>
         </ol>
     </nav>

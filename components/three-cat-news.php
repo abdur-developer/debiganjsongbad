@@ -29,7 +29,7 @@ for ($i = 0; $i < $totalCat; $i++) {
     <section class="mb-6">
         <div class="flex items-center justify-between mb-3">
             <h3 class="font-bold text-lg border-l-4 border-<?= $color ?>-600 pl-2"><?= $name_bn ?></h3>
-            <a href="category.php?cat=<?= $slug ?>" class="text-sm text-blue-600 hover:underline">আরও দেখুন</a>
+            <a href="news/?cat=<?= $slug ?>" class="text-sm text-blue-600 hover:underline">আরও দেখুন</a>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
 

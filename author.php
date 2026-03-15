@@ -1,5 +1,6 @@
 <?php
 require_once "root.php";
+$isRoot = true;
 $logo = "assets/img/logo.png";
 $sql = "SELECT * FROM users WHERE username = '{$_GET['username']}'";
 $result = $conn->query($sql);
@@ -22,7 +23,9 @@ if ($result->num_rows > 0) {
 </head>
 <body class="bg-gray-50 text-gray-800" id="body">
 
-<?php require_once "components/header.php"; ?>
+<?php 
+require_once "components/header.php";
+?>
 
 <main class="container mx-auto px-2 sm:px-4 py-4">
     <!-- Breadcrumb -->

@@ -1,6 +1,6 @@
 <?php
     require_once "root.php";
-    
+    $isRoot = true;
     $logo = "./assets/img/logo.png";
 ?>
 <!DOCTYPE html>
