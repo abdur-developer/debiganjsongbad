@@ -1,4 +1,7 @@
-<?php $rootLink = $isRoot ? "news" : "."; ?>
+<?php
+$catLink = $isRoot ? "news" : "."; 
+$rootLink = $isRoot ? "./" : "../"; 
+?>
 <!-- HEADER SECTION -->
 <header class="my-header top-0 z-50 bg-white shadow-md border-b border-gray-200 transition-colors">
     <div class="container mx-auto px-2 sm:px-4">
@@ -29,7 +32,7 @@
                         $breakingResult = $conn->query($breakingSql);
                         
                         foreach($breakingResult as $breaking){
-                            echo "<a href='$rootLink/?feed={$breaking['id']}&slug={$breaking['slug']}' class='hover:text-blue-600'>🔴 {$breaking['title_bn']}</a> | ";
+                            echo "<a href='$catLink/?feed={$breaking['id']}&slug={$breaking['slug']}' class='hover:text-blue-600'>🔴 {$breaking['title_bn']}</a> | ";
                         }
                     ?>
                 </div>
@@ -49,10 +52,16 @@
         
         <!-- Navigation Menu -->
         <nav id="navMenu" class="hidden md:flex flex-wrap items-center text-sm font-semibold gap-1 py-2 border-b">
-            <a href="./" class="nav-link">হোম</a>
+            <a href="<?=$rootLink?>" class="nav-link">হোম</a>
             <?php
-                // ক্যাটাগরি লোড
-                $catSql = "SELECT * FROM categories WHERE status = 'active' AND parent_id = 0 ORDER BY sort_order, name_bn LIMIT 12";
+                // ক্যাটাগরি লোড                
+                $catSql = "SELECT * FROM categories c
+                    WHERE c.status = 'active' AND c.parent_id = 0
+                    AND (
+                        EXISTS (SELECT 1 FROM news n WHERE n.category_id = c.id)                        
+                    )
+                    ORDER BY c.sort_order, c.name_bn
+                    LIMIT 12";
                 $catResult = $conn->query($catSql);
             ?>
             <?php
@@ -77,14 +86,14 @@
                             <div class="dropdown-content">
                                 <?php
                                     while ($childCat = $childCatResult->fetch_assoc()) {
-                                        echo '<a href="'.$rootLink.'/?cat='.$childCat['slug'].'">'.$childCat['name_bn'].'</a>';
+                                        echo '<a href="'.$catLink.'/?cat='.$childCat['slug'].'">'.$childCat['name_bn'].'</a>';
                                     }
                                 ?>
                             </div>
                         </div>
                     <?php
                     }else{
-                        echo '<a href="'.$rootLink.'/?cat='.$cat['slug'].'" class="nav-link">'.$cat['name_bn'].'</a>';
+                        echo '<a href="'.$catLink.'/?cat='.$cat['slug'].'" class="nav-link">'.$cat['name_bn'].'</a>';
                     }
 
                 }

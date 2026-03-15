@@ -18,7 +18,7 @@
         <?php foreach ($uniqueTags as $tag):
             if(empty($tag)) continue;
             ?>
-            <a href="search.html?tag=<?= urlencode($tag) ?>" class="bg-gray-100 px-2 py-1 text-xs rounded hover:bg-gray-200"><?= $tag ?></a>
+            <a href="news/?search=<?= urlencode($tag) ?>" class="bg-gray-100 px-2 py-1 text-xs rounded hover:bg-gray-200"><?= $tag ?></a>
         <?php endforeach; ?>
     </div>
 </div>

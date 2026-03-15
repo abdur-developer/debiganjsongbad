@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     suggestion.addEventListener('click', function() {
                         searchInput.value = this.innerText;
                         searchSuggestions.classList.add('hidden');
-                        window.location.href = `search.html?q=${encodeURIComponent(this.innerText)}`;
+                        window.location.href = `news/?search=${encodeURIComponent(this.innerText)}`;
                     });
                 });
             } else {
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
             searchBtn.addEventListener('click', function() {
                 const query = searchInput.value.trim();
                 if (query) {
-                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                    window.location.href = `news/?search=${encodeURIComponent(query)}`;
                 }
             });
         }
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.key === 'Enter') {
                 const query = this.value.trim();
                 if (query) {
-                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                    window.location.href = `news/?search=${encodeURIComponent(query)}`;
                 }
             }
         });

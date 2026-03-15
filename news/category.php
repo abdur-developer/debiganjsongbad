@@ -25,10 +25,10 @@ $news_sql = "SELECT
     LIMIT $limit OFFSET $offset";
 $news_query = $conn->query($news_sql);
 
-if(!isset($news_query) || $news_query->num_rows == 0){
-    echo "<script>window.location.href = './';</script>";
-    exit();
-} 
+// if(!isset($news_query) || $news_query->num_rows == 0){
+//     echo "<script>window.location.href = './';</script>";
+//     exit();
+// } 
 
 $news = [];
 while ($row = $news_query->fetch_assoc()) {

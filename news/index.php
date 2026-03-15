@@ -28,11 +28,11 @@
         require_once "category.php";
         
     }elseif(isset($_GET['tag'])){
-        $cat_slug = $_GET['tag'];
-        require_once "tag.php";
+        $search_key = $_GET['tag'] ?? "";
+        require_once "search.php";
 
     }elseif(isset($_GET['search'])){
-        $cat_slug = $_GET['search'];
+        $search_key = $_GET['search'] ?? "";
         require_once "search.php";
     }else{
         echo "empty";

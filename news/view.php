@@ -71,7 +71,7 @@
                     <span class="text-sm font-semibold">ট্যাগ:</span>
                     <?php
                     while($tag = array_shift($tags)){
-                        echo '<a href="search.php?tag=' . urlencode($tag) . '" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">' . e($tag) . '</a>';
+                        echo '<a href="./?search=' . urlencode($tag) . '" class="bg-gray-200 px-2 py-1 text-xs rounded hover:bg-gray-300">' . e($tag) . '</a>';
                     }
                     ?>
                 </div>
