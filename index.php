@@ -8,6 +8,11 @@
 <?php require_once "components/head.php"; ?>
 <body class="bg-gray-50 text-gray-800 antialiased" id="body">
 
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3940256099942544" data-ad-slot="6300978111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <?php require_once "components/header.php"; ?>
 
 <!-- MAIN CONTENT -->
@@ -50,7 +55,7 @@
     </div>
     
     <?php require_once "components/video-news.php"; ?>
-    <?php require_once "components/photo-gallery.php"; ?>
+    <!-- <php require_once "components/photo-gallery.php"; ?> -->
     
     <!-- Footer Ad -->
     <div class="bg-gray-200 h-20 my-4 flex items-center justify-center text-gray-500 ad-placeholder">

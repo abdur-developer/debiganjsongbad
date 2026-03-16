@@ -170,7 +170,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <script src="tailwindcss.js"></script> -->
-    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3940256099942544" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>

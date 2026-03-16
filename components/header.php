@@ -100,7 +100,7 @@ $rootLink = $isRoot ? "./" : "../";
                 // if($count > 6) echo '</div>';
             ?>
 
-            <a href="gallery.html" class="nav-link">ছবি</a>
+            <!-- <a href="gallery.html" class="nav-link">ছবি</a> -->
 
         </nav>
         <script>

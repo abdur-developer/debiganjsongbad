@@ -143,11 +143,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <p class="text-xs text-gray-500 mt-1">সর্বোচ্চ সাইজ: ৫MB (JPG, PNG, WEBP)</p>
             </div>
             
-            <div>
+            <!-- <div>
                 <label class="block font-semibold mb-2">গ্যালারি ইমেজ (একাধিক)</label>
                 <input type="file" name="gallery_images[]" multiple accept="image/*"
                        class="w-full px-3 py-2 border rounded">
-            </div>
+            </div> -->
         </div>
         
         <!-- ডান কলাম -->

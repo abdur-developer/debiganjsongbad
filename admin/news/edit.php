@@ -239,7 +239,7 @@ $catResult = $conn->query($catSql);
                 <p class="text-xs text-gray-500 mt-1">সর্বোচ্চ ৫MB (JPG, PNG, WEBP)</p>
             </div>
             
-            <div class="bg-gray-50 p-4 rounded-lg">
+            <!-- <div class="bg-gray-50 p-4 rounded-lg">
                 <h3 class="font-semibold mb-3">গ্যালারি ইমেজ</h3>
                 
                 <?php if (!empty($gallery)): ?>
@@ -253,7 +253,7 @@ $catResult = $conn->query($catSql);
                 <?php endif; ?>
                 
                 <input type="file" name="gallery_images[]" multiple accept="image/*" class="w-full">
-            </div>
+            </div> -->
             
             <div class="bg-gray-50 p-4 rounded-lg">
                 <h3 class="font-semibold mb-3">SEO তথ্য</h3>

@@ -163,12 +163,12 @@ $warning_message = $_SESSION['warning'] ?? '';
                         </a>
                     </li>
                     
-                    <li>
+                    <!-- <li>
                         <a href="?q=gallery" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'gallery' ? 'active-nav' : '' ?> transition-colors">
                             <i class="fas fa-images w-6 text-base <?= $active === 'gallery' ? 'text-red-500' : 'text-gray-400' ?>"></i>
                             <span class="ml-2 text-sm truncate">গ্যালারি</span>
                         </a>
-                    </li>
+                    </li> -->
                     
                     <!-- মন্তব্য - কমেন্ট আউট করা আছে -->
                     
