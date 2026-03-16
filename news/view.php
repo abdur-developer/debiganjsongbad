@@ -167,7 +167,7 @@
             
             <!-- Sidebar Ad -->
             <div class="bg-gray-200 h-64 flex items-center justify-center text-gray-500 text-sm ad-placeholder">
-                সাইডবার এডি ৩০০x২৫০
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8406156397897492" data-ad-slot="7731728586" data-ad-format="auto" data-ad-test="on" data-full-width-responsive="true"></ins>
             </div>
             
             <!-- Newsletter -->
@@ -189,7 +189,9 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
     </svg>
 </button> -->
-
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <!-- Main JavaScript -->
 <script src="../assets/js/app.js"></script>
 </body>

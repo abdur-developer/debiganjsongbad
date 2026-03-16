@@ -56,6 +56,6 @@ $latestResult = $conn->query($latestSql);
     
     <!-- Between Sections Ad -->
     <div class="bg-gray-200 h-16 my-4 flex items-center justify-center text-gray-500 text-sm ad-placeholder">
-        বিজ্ঞাপন (মাঝের ব্যানার)
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8406156397897492" data-ad-slot="7731728586" data-ad-format="auto" data-ad-test="on" data-full-width-responsive="true"></ins>
     </div>
 </section>

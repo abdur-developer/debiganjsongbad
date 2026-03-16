@@ -46,7 +46,7 @@ $rootLink = $isRoot ? "./" : "../";
                 <img src="<?=$logo?>" class="w-[40%] cursor-pointer" onclick="window.location.href='<?=$rootLink?>'" />
             </div>
             <div class="bg-gray-200 w-[728px] max-w-full h-[90px] flex items-center justify-center text-xs text-gray-500 border ad-placeholder">
-                বিজ্ঞাপন ৭২৮x৯০
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8406156397897492" data-ad-slot="7731728586" data-ad-format="auto" data-ad-test="on" data-full-width-responsive="true"></ins>
             </div>
         </div>
         
