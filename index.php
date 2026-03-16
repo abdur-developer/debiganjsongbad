@@ -8,11 +8,11 @@
 <?php require_once "components/head.php"; ?>
 <body class="bg-gray-50 text-gray-800 antialiased" id="body">
 
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3940256099942544" data-ad-slot="6300978111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3940256099942544" data-ad-slot="6300978111" data-ad-format="auto" data-full-width-responsive="true"></ins>
 
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+</script> -->
 <?php require_once "components/header.php"; ?>
 
 <!-- MAIN CONTENT -->
