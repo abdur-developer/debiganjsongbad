@@ -74,7 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
                 
                 <div class="mt-6 text-center text-sm text-gray-600">
-                    <?php//"<p>ডিফল্ট লগইন: <strong>superadmin / Admin@123</strong></p>"?>
+                    <?php
+                    //"<p>ডিফল্ট লগইন: <strong>superadmin / Admin@123</strong></p>"
+                    ?>
                 </div>
             </div>
             
