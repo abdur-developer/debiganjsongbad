@@ -24,8 +24,8 @@
     
     
     <!-- Tailwind CSS CDN -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script src="../tailwindcss.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="../tailwindcss.js"></script> -->
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=69b4572d4e4ca8ffb8ee5b35&product=sop&source=platform" async="async"></script>
     
     <!-- Custom CSS -->

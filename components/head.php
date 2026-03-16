@@ -27,7 +27,7 @@
     <meta property="og:url" content="https://debiganjsongbad.com/">
     <meta property="og:title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad - বাংলা নিউজ পোর্টাল">
     <meta property="og:description" content="দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।">
-    <meta property="og:image" content="https://debiganjsongbad.com/assets/images/og-image.jpg">
+    <meta property="og:image" content="https://debiganjsongbad.com/assets/img/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="দেবীগঞ্জ সংবাদ - Debiganj Songbad Logo">
@@ -41,21 +41,21 @@
     <meta name="twitter:url" content="https://debiganjsongbad.com/">
     <meta name="twitter:title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad - বাংলা নিউজ পোর্টাল">
     <meta name="twitter:description" content="দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।">
-    <meta name="twitter:image" content="https://debiganjsongbad.com/assets/images/twitter-image.jpg">
+    <meta name="twitter:image" content="https://debiganjsongbad.com/assets/img/logo.png">
     <meta name="twitter:image:alt" content="দেবীগঞ্জ সংবাদ - Debiganj Songbad Logo">
     
     <!-- ========== হোয়াটসঅ্যাপ / মেসেঞ্জার শেয়ার ========== -->
     <meta property="og:whatsapp:title" content="দেবীগঞ্জ সংবাদ | Debiganj Songbad">
     <meta property="og:whatsapp:description" content="দেবীগঞ্জের সর্বশেষ সংবাদ - দ্রুত ও নির্ভরযোগ্য">
-    <meta property="og:whatsapp:image" content="https://debiganjsongbad.com/assets/images/whatsapp-share.jpg">
+    <meta property="og:whatsapp:image" content="https://debiganjsongbad.com/assets/img/logo.png">
     
     <!-- ========== আইকন ও অ্যাপেল টাচ আইকন ========== -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
-    <link rel="mask-icon" href="https://debiganjsongbad.com/safari-pinned-tab.svg" color="#dc2626">
+    <link rel="mask-icon" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png" color="#dc2626">
     <meta name="msapplication-TileColor" content="#dc2626">
-    <meta name="msapplication-TileImage" content="https://debiganjsongbad.com/mstile-144x144.png">
+    <meta name="msapplication-TileImage" content="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
     <meta name="theme-color" content="#dc2626">
     
     <!-- ========== ফন্ট ও সিএসএস ========== -->
@@ -74,7 +74,7 @@
         "url": "https://debiganjsongbad.com/",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://debiganjsongbad.com/assets/images/logo.png",
+            "url": "https://debiganjsongbad.com/assets/img/logo.png",
             "width": 600,
             "height": 60
         },
@@ -133,19 +133,19 @@
         "headline": "দেবীগঞ্জ সংবাদ - বাংলা নিউজ পোর্টাল",
         "description": "দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।",
         "image": [
-            "https://debiganjsongbad.com/assets/images/og-image.jpg",
-            "https://debiganjsongbad.com/assets/images/featured-1.jpg",
-            "https://debiganjsongbad.com/assets/images/featured-2.jpg"
+            "https://debiganjsongbad.com/assets/img/logo.png",
+            "https://debiganjsongbad.com/assets/img/logo.png",
+            "https://debiganjsongbad.com/assets/img/logo.png"
         ],
         "datePublished": "2026-03-10T12:00:00+06:00",
         "dateModified": "2026-03-10T12:00:00+06:00",
         "author": {
             "@type": "Organization",
             "name": "দেবীগঞ্জ সংবাদ কর্তৃপক্ষ",
-            "url": "https://debiganjsongbad.com/author/editor"
+            "url": "https://debiganjsongbad.com/author/"
         },
         "publisher": {
-            "@id": "https://debiganjsongbad.com/#organization"
+            "@id": "https://debiganjsongbad.com/"
         }
     }
     </script>
@@ -157,7 +157,8 @@
     <!-- আপনার ফেসবুক পিক্সেল আইডি থাকলে এখানে বসাবেন -->
     
     <!-- ========== ভারিফিকেশন মেটা ========== -->
-    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
+    <meta name="google-site-verification" content="2vi8lopwrmWAZA4dMlLT4enLhtrkQw5Vm2AIKwjs-cI" />
+    <!--
     <meta name="facebook-domain-verification" content="YOUR_FACEBOOK_VERIFICATION_CODE">
     <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE"> -->
     
@@ -167,8 +168,8 @@
     <meta name="HandheldFriendly" content="true">
     
     <!-- Tailwind CSS CDN -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script src="tailwindcss.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="tailwindcss.js"></script> -->
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">

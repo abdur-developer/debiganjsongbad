@@ -12,7 +12,7 @@ $latestResult = $conn->query($latestSql);
 <section class="mb-6">
     <div class="flex items-center justify-between mb-3">
         <h3 class="font-bold text-lg border-l-4 border-red-600 pl-2">সর্বশেষ সংবাদ</h3>
-        <a href="#" class="text-sm text-blue-600 hover:underline">সবগুলো</a>
+        <a href="news/" class="text-sm text-blue-600 hover:underline">সবগুলো</a>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
         <?php 
