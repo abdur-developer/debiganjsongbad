@@ -57,8 +57,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <script src="../tailwindcss.js"></script> -->
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=69b4572d4e4ca8ffb8ee5b35&product=sop&source=platform" async="async"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3940256099942544" crossorigin="anonymous"></script>
-    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8406156397897492"
+     crossorigin="anonymous"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
