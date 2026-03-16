@@ -197,14 +197,12 @@ $warning_message = $_SESSION['warning'] ?? '';
                     <?php endif; ?>
                     
                     <!-- রোল - কমেন্ট আউট করা আছে -->
-                    <!--
                     <li>
                         <a href="?q=roles" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'roles' ? 'active-nav' : '' ?>">
                             <i class="fas fa-user-tag w-6"></i>
                             <span>রোল ও পারমিশন</span>
                         </a>
                     </li>
-                    -->
                     
                     <?php if ($auth->hasPermission('ads')): ?>
                     <!-- বিজ্ঞাপন - কমেন্ট আউট করা আছে -->
