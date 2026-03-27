@@ -56,6 +56,6 @@ $latestResult = $conn->query($latestSql);
     
     <!-- Between Sections Ad -->
     <div class="bg-gray-200 h-16 my-4 flex items-center justify-center text-gray-500 text-sm ad-placeholder">
-        <ins class="adsbygoogle" style="display:block min-width: 100%; min-height: 100%;" data-ad-client="ca-pub-8406156397897492" data-ad-slot="7731728586" data-ad-format="auto" data-ad-test="on" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block min-width: 100%; min-height: 100%;" data-ad-client="ca-pub-4520141412693223" data-ad-slot="7731728586" data-ad-format="auto" data-ad-test="on" data-full-width-responsive="true"></ins>
     </div>
 </section>
