@@ -109,7 +109,7 @@ require_once 'ad_functions.php';
         </style>
         
         <!-- Google AdSense -->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4520141412693223"
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
             crossorigin="anonymous"></script>
     </head>
     <body>
