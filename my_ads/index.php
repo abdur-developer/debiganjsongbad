@@ -178,7 +178,9 @@ require_once 'ad_functions.php';
                 <p>&copy; 2024 নিউজ পোর্টাল - সর্বস্বত্ব সংরক্ষিত</p>
             </div>
         </div>
-        
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         <!-- ক্লিক ট্র্যাকিং জাভাস্ক্রিপ্ট -->
         <script>
         // অ্যাডে ক্লিক ট্র্যাক করা

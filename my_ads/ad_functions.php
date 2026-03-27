@@ -50,7 +50,7 @@ function showAds($position, $limit = null) {
         $html .= '</div>';
     }
 
-    echo "<script> console.log('Showing $position ads for $device'); </script>";
+    // echo "<script> console.log('Showing $position ads for $device'); </script>";
     
     return $html;
 }
