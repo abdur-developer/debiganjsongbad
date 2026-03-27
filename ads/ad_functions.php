@@ -45,10 +45,12 @@ function showAds($position, $limit = null) {
             ->execute([$ad['id']]);
         
         // অ্যাড কোড দেখান
-        $html .= '<div class="ad-wrapper" data-ad-id="'.$ad['id'].'">';
+        // $html .= '<div class="ad-wrapper" data-ad-id="'.$ad['id'].'">';
         $html .= $ad['ad_code'];
-        $html .= '</div>';
+        // $html .= '</div>';
     }
+
+    echo "<script> console.log('Showing $position ads for $device'); </script>";
     
     return $html;
 }
