@@ -1,19 +1,16 @@
 <?php
 // track_click.php
-session_start();
 require_once 'config.php';
 
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ad_id'])) {
-    $adId = intval($_POST['ad_id']);
+if(isset($_POST['ad_id'])) {
+    $ad_id = (int)$_POST['ad_id'];
     
-    // ক্লিক আপডেট করুন
-    updateClick($adId);
+    // ক্লিক আপডেট
+    $stmt = $pdo->prepare("UPDATE ads SET current_clicks = current_clicks + 1 WHERE id = ?");
+    $stmt->execute([$ad_id]);
     
-    // JSON রেসপন্স
-    header('Content-Type: application/json');
-    echo json_encode(['status' => 'success']);
+    echo 'ok';
 } else {
-    header('HTTP/1.0 403 Forbidden');
-    echo 'Access denied';
+    echo 'error';
 }
 ?>
