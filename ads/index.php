@@ -126,7 +126,7 @@ $newsContent = "<p>প্রথম প্যারাগ্রাফের ক�
     </style>
     
     <!-- Google AdSense Script -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxx"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8406156397897492"
          crossorigin="anonymous"></script>
 </head>
 <body>
