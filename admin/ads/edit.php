@@ -1,6 +1,5 @@
 <?php
 $auth->requirePermission('ads');
-
 $id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
 
 if (!$id) {
@@ -8,7 +7,7 @@ if (!$id) {
     exit();
 }
 
-$sql = "SELECT * FROM advertisements WHERE id = $id";
+$sql = "SELECT * FROM ads WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
@@ -20,44 +19,30 @@ $ad = $result->fetch_assoc();
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = $conn->real_escape_string($_POST['title']);
-    $type = $conn->real_escape_string($_POST['type']);
-    $position = $conn->real_escape_string($_POST['position']);
-    $link = $conn->real_escape_string($_POST['link']);
-    $code = $conn->real_escape_string($_POST['code']);
-    $start_date = $conn->real_escape_string($_POST['start_date']);
-    $end_date = $conn->real_escape_string($_POST['end_date']);
+    $id = intval($_POST['id']);
+    $ad_name = $conn->real_escape_string($_POST['ad_name']);
+    $ad_code = $conn->real_escape_string($_POST['ad_code']);
+    $ad_position = $conn->real_escape_string($_POST['ad_position']);
+    $ad_size = $conn->real_escape_string($_POST['ad_size']);
+    $device_type = $conn->real_escape_string($_POST['device_type']);
+    $max_impressions = $conn->real_escape_string($_POST['max_impressions']);
+    $max_clicks = $conn->real_escape_string($_POST['max_clicks']);
     $status = $conn->real_escape_string($_POST['status']);
     
-    if (empty($title)) {
+    if (empty($ad_name)) {
         $error = 'শিরোনাম প্রয়োজন';
     } else {
-        $image = $ad['image'];
-        if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
-            $upload = $functions->uploadFile($_FILES['image'], 'ads', ['jpg', 'jpeg', 'png', 'gif']);
-            if ($upload['success']) {
-                // পুরাতন ছবি ডিলিট
-                if (!empty($image) && file_exists($_SERVER['DOCUMENT_ROOT'] . $image)) {
-                    unlink($_SERVER['DOCUMENT_ROOT'] . $image);
-                }
-                $image = $upload['path'];
-            } else {
-                $error = $upload['error'];
-            }
-        }
         
         if (empty($error)) {
-            $sql = "UPDATE advertisements SET 
-                    title = '$title',
-                    type = '$type',
-                    position = '$position',
-                    image = '$image',
-                    code = '$code',
-                    link = '$link',
-                    start_date = '$start_date',
-                    end_date = '$end_date',
-                    status = '$status',
-                    updated_at = NOW()
+            $sql = "UPDATE ads SET 
+                    ad_name = '$ad_name',
+                    ad_code = '$ad_code',
+                    -- ad_position = '$ad_position',
+                    -- ad_size = '$ad_size',
+                    -- device_type = '$device_type',
+                    max_impressions = '$max_impressions',
+                    max_clicks = '$max_clicks',
+                    status = '$status'
                     WHERE id = $id";
             
             if ($conn->query($sql)) {
@@ -90,70 +75,61 @@ $types = ['banner', 'sidebar', 'popup', 'video'];
 
 <div class="bg-white rounded-lg shadow p-6">
     <form method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?php echo $ad['id']; ?>">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
                 <label class="block font-semibold mb-2">শিরোনাম *</label>
-                <input type="text" name="title" value="<?php echo e($ad['title']); ?>" required
+                <input type="text" name="ad_name" value="<?php echo e($ad['ad_name']); ?>" required
                        class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
-            
             <div>
-                <label class="block font-semibold mb-2">টাইপ *</label>
-                <select name="type" required class="w-full px-3 py-2 border rounded">
-                    <?php foreach ($types as $t): ?>
-                    <option value="<?php echo $t; ?>" <?php echo $ad['type'] == $t ? 'selected' : ''; ?>><?php echo ucfirst($t); ?></option>
+                <label class="block font-semibold mb-2">অবস্থান *</label>
+                <select name="ad_position" required class="w-full px-3 py-2 border rounded" readonly>
+                    <?php foreach ($positions as $pos): ?>
+                    <option value="<?php echo $pos; ?>" <?php echo $ad['ad_position'] == $pos ? 'selected' : ''; ?>>
+                        <?php echo ucfirst($pos); ?>
+                    </option>
                     <?php endforeach; ?>
                 </select>
             </div>
-            
             <div>
-                <label class="block font-semibold mb-2">পজিশন *</label>
-                <select name="position" required class="w-full px-3 py-2 border rounded">
-                    <?php foreach ($positions as $p): ?>
-                    <option value="<?php echo $p; ?>" <?php echo $ad['position'] == $p ? 'selected' : ''; ?>><?php echo ucfirst($p); ?></option>
-                    <?php endforeach; ?>
+                <label class="block font-semibold mb-2">সাইজ *</label>
+                <select name="ad_size" required class="w-full px-3 py-2 border rounded" readonly>
+                    <option value="300x250" <?php echo $ad['ad_size'] == '300x250' ? 'selected' : ''; ?>>300x250</option>
+                    <option value="728x90" <?php echo $ad['ad_size'] == '728x90' ? 'selected' : ''; ?>>728x90</option>
+                    <option value="160x600" <?php echo $ad['ad_size'] == '160x600' ? 'selected' : ''; ?>>160x600</option>
+                    <option value="320x50" <?php echo $ad['ad_size'] == '320x50' ? 'selected' : ''; ?>>320x50</option>
                 </select>
             </div>
-            
             <div>
-                <label class="block font-semibold mb-2">লিংক</label>
-                <input type="url" name="link" value="<?php echo e($ad['link']); ?>"
-                       class="w-full px-3 py-2 border rounded">
+                <label class="block font-semibold mb-2">ডিভাইস *</label>
+                <select name="device_type" required class="w-full px-3 py-2 border rounded" readonly>
+                    <option value="all" <?php echo $ad['device_type'] == 'all' ? 'selected' : ''; ?>>সব</option>
+                    <option value="desktop" <?php echo $ad['device_type'] == 'desktop' ? 'selected' : ''; ?>>ডেস্কটপ</option>
+                    <option value="mobile" <?php echo $ad['device_type'] == 'mobile' ? 'selected' : ''; ?>>মোবাইল</option>
+                </select>
             </div>
-            
             <div>
-                <label class="block font-semibold mb-2">স্টার্ট তারিখ</label>
-                <input type="date" name="start_date" value="<?php echo $ad['start_date']; ?>"
-                       class="w-full px-3 py-2 border rounded">
+                <label class="block font-semibold mb-2">ম্যাক্স ইমপ্রেশন *</label>
+                <input type="number" name="max_impressions" value="<?php echo e($ad['max_impressions']); ?>" required
+                       class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
-            
             <div>
-                <label class="block font-semibold mb-2">এন্ড তারিখ</label>
-                <input type="date" name="end_date" value="<?php echo $ad['end_date']; ?>"
-                       class="w-full px-3 py-2 border rounded">
+                <label class="block font-semibold mb-2">ম্যাক্স ক্লিক *</label>
+                <input type="number" name="max_clicks" value="<?php echo e($ad['max_clicks']); ?>" required
+                       class="w-full px-3 py-2 border rounded focus:outline-none focus:border-red-500">
             </div>
-            
             <div>
                 <label class="block font-semibold mb-2">স্ট্যাটাস *</label>
                 <select name="status" required class="w-full px-3 py-2 border rounded">
-                    <option value="active" <?php echo $ad['status'] == 'active' ? 'selected' : ''; ?>>সক্রিয়</option>
-                    <option value="inactive" <?php echo $ad['status'] == 'inactive' ? 'selected' : ''; ?>>নিষ্ক্রিয়</option>
+                    <option value="1" <?php echo $ad['status'] == '1' ? 'selected' : ''; ?>>সক্রিয়</option>
+                    <option value="0" <?php echo $ad['status'] == '0' ? 'selected' : ''; ?>>নিষ্ক্রিয়</option>
                 </select>
-            </div>
-            
-            <div>
-                <label class="block font-semibold mb-2">ছবি পরিবর্তন</label>
-                <?php if (!empty($ad['image'])): ?>
-                <div class="mb-2">
-                    <img src="<?php echo $ad['image']; ?>" class="h-20 object-cover rounded" alt="">
-                </div>
-                <?php endif; ?>
-                <input type="file" name="image" accept="image/*" class="w-full">
             </div>
             
             <div class="md:col-span-2">
                 <label class="block font-semibold mb-2">HTML কোড</label>
-                <textarea name="code" rows="4" class="w-full px-3 py-2 border rounded font-mono text-sm"><?php echo e($ad['code']); ?></textarea>
+                <textarea name="ad_code" rows="4" class="w-full px-3 py-2 border rounded font-mono text-sm"><?php echo e($ad['ad_code']); ?></textarea>
             </div>
         </div>
         

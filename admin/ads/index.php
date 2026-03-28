@@ -1,22 +1,19 @@
 <?php
 $auth->requirePermission('ads');
 
-$sql = "SELECT a.*, u.full_name as creator_name 
-        FROM advertisements a 
-        LEFT JOIN users u ON a.created_by = u.id 
-        ORDER BY a.created_at DESC";
+$sql = "SELECT * FROM ads ORDER BY created_at DESC";
 $result = $conn->query($sql);
 ?>
 
 <div class="flex justify-between items-center mb-6">
     <h2 class="text-lg md:text-2xl font-bold">বিজ্ঞাপন ব্যবস্থাপনা</h2>
-    <a href="?q=ads&create" class="bg-green-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-green-700">
+    <!-- <a href="?q=ads&create" class="bg-green-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-plus"></i> নতুন বিজ্ঞাপন
-    </a>
+    </a> -->
 </div>
 
 <!-- ব্যাচ অ্যাকশন -->
-<div id="batch-actions" class="bg-gray-100 p-3 rounded-lg mb-4 hidden flex items-center gap-3">
+<!-- <div id="batch-actions" class="bg-gray-100 p-3 rounded-lg mb-4 hidden flex items-center gap-3">
     <span class="text-sm"><span id="selected-count">0</span> টি সিলেক্টেড</span>
     <select id="batch-action" class="border rounded px-3 py-1 text-sm">
         <option value="">অ্যাকশন নির্বাচন</option>
@@ -27,25 +24,19 @@ $result = $conn->query($sql);
     <button id="apply-batch" class="bg-blue-600 text-white px-4 py-1 rounded text-sm hover:bg-blue-700">
         প্রয়োগ করুন
     </button>
-</div>
+</div> -->
 
 <div class="bg-white rounded-lg shadow overflow-hidden">
     <table class="w-full">
         <thead class="bg-gray-50">
             <tr>
-                <th class="px-4 py-3 text-left w-10">
+                <!-- <th class="px-4 py-3 text-left w-10">
                     <input type="checkbox" id="select-all" class="rounded">
-                </th>
-                <th class="px-4 py-3 text-left">আইডি</th>
+                </th> -->
                 <th class="px-4 py-3 text-left">শিরোনাম</th>
-                <th class="px-4 py-3 text-left">টাইপ</th>
-                <th class="px-4 py-3 text-left">পজিশন</th>
                 <th class="px-4 py-3 text-left">স্ট্যাটাস</th>
-                <th class="px-4 py-3 text-left">স্টার্ট</th>
-                <th class="px-4 py-3 text-left">এন্ড</th>
-                <th class="px-4 py-3 text-left">ক্লিক</th>
-                <th class="px-4 py-3 text-left">ইমপ্রেশন</th>
-                <th class="px-4 py-3 text-left">তৈরি করেছেন</th>
+                <th class="px-4 py-3 text-left">max ক্লিক</th>
+                <th class="px-4 py-3 text-left">max ইমপ্রেশন</th>
                 <th class="px-4 py-3 text-left">অ্যাকশন</th>
             </tr>
         </thead>
@@ -53,34 +44,28 @@ $result = $conn->query($sql);
             <?php if ($result && $result->num_rows > 0): ?>
                 <?php while ($ad = $result->fetch_assoc()): ?>
                 <tr class="border-t hover:bg-gray-50">
-                    <td class="px-4 py-2">
+                    <!-- <td class="px-4 py-2">
                         <input type="checkbox" class="select-item rounded" value="<?php echo $ad['id']; ?>">
-                    </td>
-                    <td class="px-4 py-2"><?php echo $ad['id']; ?></td>
-                    <td class="px-4 py-2 font-semibold"><?php echo e($ad['title']); ?></td>
-                    <td class="px-4 py-2"><?php echo ucfirst($ad['type']); ?></td>
-                    <td class="px-4 py-2"><?php echo $ad['position']; ?></td>
+                    </td> -->
+                    <td class="px-4 py-2 font-semibold"><?php echo e($ad['ad_name']); ?></td>
                     <td class="px-4 py-2">
-                        <?php if ($ad['status'] == 'active'): ?>
+                        <?php if ($ad['status'] == '1'): ?>
                             <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">সক্রিয়</span>
                         <?php else: ?>
                             <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">নিষ্ক্রিয়</span>
                         <?php endif; ?>
                     </td>
-                    <td class="px-4 py-2 text-sm"><?php echo $ad['start_date']; ?></td>
-                    <td class="px-4 py-2 text-sm"><?php echo $ad['end_date']; ?></td>
-                    <td class="px-4 py-2"><?php echo number_format($ad['clicks']); ?></td>
-                    <td class="px-4 py-2"><?php echo number_format($ad['impressions']); ?></td>
-                    <td class="px-4 py-2 text-sm"><?php echo $ad['creator_name']; ?></td>
+                    <td class="px-4 py-2"><?php echo number_format($ad['max_clicks']); ?></td>
+                    <td class="px-4 py-2"><?php echo number_format($ad['max_impressions']); ?></td>
                     <td class="px-4 py-2">
                         <a href="?q=ads&edit_id=<?php echo $ad['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="?q=ads&delete_id=<?php echo $ad['id']; ?>" 
+                        <!-- <a href="?q=ads&delete_id=<?php echo $ad['id']; ?>" 
                            class="text-red-600 hover:text-red-800 delete-confirm"
                            data-message="এই বিজ্ঞাপন মুছে ফেলবেন?">
                             <i class="fas fa-trash"></i>
-                        </a>
+                        </a> -->
                     </td>
                 </tr>
                 <?php endwhile; ?>

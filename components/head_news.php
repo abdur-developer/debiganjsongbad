@@ -27,7 +27,7 @@
     <meta property="og:url" content="https://debiganjsongbad.com/">
     <meta property="og:title" content="<?=$news['title_bn']?>">
     <meta property="og:description" content="<?=$news['summary']?>">
-    <meta property="og:image" content="https://debiganjsongbad.com/assets/images/og-image.jpg">
+    <meta property="og:image" content="https://debiganjsongbad.com/<?=$news['featured_image']?>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="দেবীগঞ্জ সংবাদ - Debiganj Songbad Logo">
@@ -41,13 +41,13 @@
     <meta name="twitter:url" content="https://debiganjsongbad.com/">
     <meta name="twitter:title" content="<?=$news['title_en']?>">
     <meta name="twitter:description" content="<?=$news['summary']?>">
-    <meta name="twitter:image" content="https://debiganjsongbad.com/assets/images/twitter-image.jpg">
+    <meta name="twitter:image" content="https://debiganjsongbad.com/<?=$news['featured_image']?>">
     <meta name="twitter:image:alt" content="দেবীগঞ্জ সংবাদ - Debiganj Songbad Logo">
     
     <!-- ========== হোয়াটসঅ্যাপ / মেসেঞ্জার শেয়ার ========== -->
     <meta property="og:whatsapp:title" content="<?=$news['title_bn']?>">
     <meta property="og:whatsapp:description" content="<?=$news['summary']?>">
-    <meta property="og:whatsapp:image" content="https://debiganjsongbad.com/assets/images/whatsapp-share.jpg">
+    <meta property="og:whatsapp:image" content="https://debiganjsongbad.com/<?=$news['featured_image']?>">
     
     <!-- ========== আইকন ও অ্যাপেল টাচ আইকন ========== -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
@@ -133,9 +133,9 @@
             "headline": "দেবীগঞ্জ সংবাদ - বাংলা নিউজ পোর্টাল",
             "description": "দেবীগঞ্জের সর্বশেষ সংবাদ, জাতীয়, আন্তর্জাতিক, খেলাধুলা, বিনোদন ও প্রযুক্তির নির্ভরযোগ্য বাংলা নিউজ পোর্টাল।",
             "image": [
-                "https://debiganjsongbad.com/assets/images/og-image.jpg",
-                "https://debiganjsongbad.com/assets/images/featured-1.jpg",
-                "https://debiganjsongbad.com/assets/images/featured-2.jpg"
+                "https://debiganjsongbad.com/<?=$news['featured_image']?>",
+                "https://debiganjsongbad.com/<?=$news['featured_image']?>",
+                "https://debiganjsongbad.com/<?=$news['featured_image']?>"
             ],
             "datePublished": "2026-03-10T12:00:00+06:00",
             "dateModified": "2026-03-10T12:00:00+06:00",
@@ -173,6 +173,15 @@
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=69b4572d4e4ca8ffb8ee5b35&product=sop&source=platform" async="async"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4520141412693223"
      crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM3P3XN1J4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QM3P3XN1J4');
+    </script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>

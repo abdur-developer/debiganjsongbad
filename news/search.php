@@ -114,9 +114,7 @@ while ($row = $news_query->fetch_assoc()) {
 </main>
 
 <?php require_once "../components/footer.php"; ?>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<?php require_once "../components/ads_script.php"; ?>
 <script src="../assets/js/app.js"></script>
 </body>
 </html>

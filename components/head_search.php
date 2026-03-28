@@ -29,6 +29,15 @@
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=69b4572d4e4ca8ffb8ee5b35&product=sop&source=platform" async="async"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4520141412693223"
      crossorigin="anonymous"></script>
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM3P3XN1J4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QM3P3XN1J4');
+    </script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>

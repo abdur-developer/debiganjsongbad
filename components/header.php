@@ -2,6 +2,13 @@
 $catLink = $isRoot ? "news" : "."; 
 $rootLink = $isRoot ? "./" : "../"; 
 ?>
+<script>
+    function setCookie(name, value) {
+        let date = new Date();
+        date.setTime(date.getTime() + (2 * 60 * 60 * 1000)); // 2 hours
+        document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+    }
+</script>
 <!-- HEADER SECTION -->
 <header class="my-header top-0 z-50 bg-white shadow-md border-b border-gray-200 transition-colors">
     <div class="container mx-auto px-2 sm:px-4">
@@ -45,9 +52,7 @@ $rootLink = $isRoot ? "./" : "../";
                 <button id="menuBtn" class="md:hidden p-2 text-xl">☰</button>
                 <img src="<?=$logo?>" class="w-[40%] cursor-pointer" onclick="window.location.href='<?=$rootLink?>'" />
             </div>
-            <div class="bg-gray-200 w-[728px] max-w-full h-[90px] flex items-center justify-center text-xs text-gray-500 border ad-placeholder">
-                <ins class="adsbygoogle" style="display:block min-width: 100%; min-height: 100%;" data-ad-client="ca-pub-4520141412693223" data-ad-slot="7731728586" data-ad-format="auto" data-ad-test="on" data-full-width-responsive="true"></ins>
-            </div>
+            <?= headerAds() ?>
         </div>
         
         <!-- Navigation Menu -->

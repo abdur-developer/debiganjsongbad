@@ -185,7 +185,6 @@ $warning_message = $_SESSION['warning'] ?? '';
                     </li>
                     
                     <?php if ($auth->hasPermission('users')): ?>
-                    <!-- ব্যবহারকারী - কমেন্ট আউট করা আছে -->
                     
                     <li>
                         <a href="?q=users" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'users' ? 'active-nav' : '' ?>">
@@ -195,8 +194,6 @@ $warning_message = $_SESSION['warning'] ?? '';
                     </li>
                    
                     <?php endif; ?>
-                    
-                    <!-- রোল - কমেন্ট আউট করা আছে -->
                     <li>
                         <a href="?q=roles" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'roles' ? 'active-nav' : '' ?>">
                             <i class="fas fa-user-tag w-6"></i>
@@ -204,28 +201,23 @@ $warning_message = $_SESSION['warning'] ?? '';
                         </a>
                     </li>
                     
-                    <?php if ($auth->hasPermission('ads')): ?>
-                    <!-- বিজ্ঞাপন - কমেন্ট আউট করা আছে -->
-                    <!--
+                    <?php if ($auth->hasPermission('ads')): ?>                    
                     <li>
                         <a href="?q=ads" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'ads' ? 'active-nav' : '' ?>">
                             <i class="fas fa-ad w-6"></i>
                             <span>বিজ্ঞাপন</span>
                         </a>
-                    </li>
-                    -->
+                    </li>                   
                     <?php endif; ?>
                     
                     <?php if ($auth->hasPermission('settings')): ?>
-                    <!-- সেটিংস - কমেন্ট আউট করা আছে -->
-                    <!--
                     <li>
                         <a href="?q=settings" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'settings' ? 'active-nav' : '' ?>">
                             <i class="fas fa-cog w-6"></i>
                             <span>সেটিংস</span>
                         </a>
                     </li>
-                    -->
+                   
                     <?php endif; ?>
                     
                     <!-- টুলস সেকশন - কমেন্ট আউট -->

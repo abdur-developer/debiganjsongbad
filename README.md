@@ -1,135 +1,140 @@
+ ৩. Reporter Info System
 
-```
-my_news
-├─ admin
-│  ├─ ads
-│  │  ├─ create.php
-│  │  ├─ delete.php
-│  │  ├─ edit.php
-│  │  └─ index.php
-│  ├─ ads_copy
-│  │  ├─ create.php
-│  │  ├─ delete.php
-│  │  ├─ edit.php
-│  │  └─ index.php
-│  ├─ ajax
-│  │  ├─ add-watermark.php
-│  │  ├─ auto-save.php
-│  │  ├─ batch-action.php
-│  │  ├─ clear-cache.php
-│  │  ├─ create-backup.php
-│  │  ├─ import.php
-│  │  ├─ live-search.php
-│  │  ├─ load-more.php
-│  │  ├─ restore-backup.php
-│  │  ├─ system-check.php
-│  │  └─ upload-cropped.php
-│  ├─ assets
-│  │  ├─ css
-│  │  │  └─ admin.css
-│  │  ├─ js
-│  │  │  └─ admin.js
-│  │  └─ uploads
-│  │     └─ news
-│  ├─ backup
-│  │  ├─ delete.php
-│  │  └─ index.php
-│  ├─ categories
-│  │  ├─ create.php
-│  │  ├─ delete.php
-│  │  ├─ edit.php
-│  │  └─ index.php
-│  ├─ comments
-│  │  ├─ approve.php
-│  │  ├─ delete.php
-│  │  ├─ index.php
-│  │  └─ spam.php
-│  ├─ dashboard.php
-│  ├─ export.php
-│  ├─ gallery
-│  │  ├─ delete.php
-│  │  ├─ edit.php
-│  │  ├─ index.php
-│  │  └─ upload.php
-│  ├─ includes
-│  │  ├─ auth.php
-│  │  ├─ config.php
-│  │  ├─ db.php
-│  │  ├─ footer.php
-│  │  ├─ functions.php
-│  │  └─ header.php
-│  ├─ index.php
-│  ├─ login.php
-│  ├─ logout.php
-│  ├─ logs
-│  │  ├─ clear.php
-│  │  └─ index.php
-│  ├─ news
-│  │  ├─ create.php
-│  │  ├─ delete.php
-│  │  ├─ edit.php
-│  │  └─ index.php
-│  ├─ profile
-│  │  └─ index.php
-│  ├─ roles
-│  │  ├─ create.php
-│  │  ├─ delete.php
-│  │  ├─ edit.php
-│  │  └─ index.php
-│  ├─ settings
-│  │  └─ index.php
-│  └─ users
-│     ├─ create.php
-│     ├─ delete.php
-│     ├─ edit.php
-│     └─ index.php
-├─ api
-│  ├─ comments.php
-│  ├─ get-categories.php
-│  ├─ get-news.php
-│  ├─ login.php
-│  └─ search.php
-├─ assets
-│  ├─ css
-│  │  └─ style.css
-│  ├─ font
-│  │  └─ SolaimanLipi.ttf
-│  ├─ img
-│  │  └─ logo.png
-│  └─ js
-│     └─ app.js
-├─ author.php
-├─ cc_htaccess.txt
-├─ cc_sitemap.txt
-├─ components
-│  ├─ footer.php
-│  ├─ head.php
-│  ├─ header.php
-│  ├─ head_cat.php
-│  ├─ head_news.php
-│  ├─ head_search.php
-│  ├─ hero-section.php
-│  ├─ latest-news.php
-│  ├─ photo-gallery.php
-│  ├─ tab.php
-│  ├─ tags-cloud.php
-│  ├─ three-cat-news.php
-│  ├─ trending-news.php
-│  └─ video-news.php
-├─ database
-│  └─ data.sql
-├─ gallery.html
-├─ googlee063dcf1888965fb.html
-├─ index.php
-├─ news
-│  ├─ category.php
-│  ├─ index.php
-│  ├─ search.php
-│  └─ view.php
-├─ robots.txt
-├─ root.php
-├─ tailwind.config.js
-├─ tailwindcss.js
-└─ test.html
+প্রতিটি নিউজে দেখাতে হবে:
 
-```
+* রিপোর্টারের নাম
+* পদবী (যেমন: উপজেলা প্রতিনিধি)
+* ছবি (thumbnail)
+* ক্লিক করলে রিপোর্টারের প্রোফাইল পেজে যাবে
+*  Admin panel থেকে editable হতে হবে
+
+ ৪. Social Media Integration (Header)
+
+ওয়েবসাইটের top header-এ:
+
+ * Facebook icon
+* YouTube icon
+
+ ক্লিক করলে  সরাসরি official page-এ redirect করবে।
+
+৫. Legal Pages (Must Have)
+
+নিচের পেজগুলো তৈরি ও মেনুতে যুক্ত করতে হবে:
+
+* About Us
+* Contact Us
+* Privacy Policy
+* Terms & Conditions
+* Disclaimer
+
+ ৬. Admin Panel (Full Control Dashboard)
+
+# Admin যা করতে পারবে:
+
+Reporter Management
+
+* Reporter add / edit / delete
+* Reporter photo + designation সেট করা
+* Reporter profile page auto generate
+* Reporter অনুযায়ী নিউজ লিস্ট দেখা
+
+
+Social Media Integration
+
+* Header-এ Facebook link সেট করার অপশন
+* Header-এ YouTube link সেট করার অপশন
+* (Optional) অন্যান্য social link (Twitter/X, Instagram) যোগ করার সুবিধা
+
+ Design & Branding
+
+* Header / Footer edit করা
+* Logo change করা
+* Footer-এ প্রকাশক, সম্পাদক, উপদেষ্টা যোগ/পরিবর্তন
+
+
+
+Advertisement Management
+
+* Google AdSense code বসানো
+* Local ads (banner/image) add/edit/delete
+* Ad position control (header, sidebar, footer ইত্যাদি)
+
+ Page Management
+
+* About Us edit
+* Contact Us edit
+* Privacy Policy edit
+* অন্যান্য static page edit
+
+
+
+## 📰 ৭. Editor Panel (Restricted Access)
+
+ Editor যা করতে পারবে:
+
+* News upload
+* Photo upload
+* Edit/Delete own news
+* Seo সহ অন্যান্য 
+
+ Editor যা করতে পারবে না:
+
+* Theme change
+* Ads change
+* Settings change
+
+
+ 
+৮. SEO + Performance Setup
+
+ SEO:
+
+* Meta title + description auto system
+* Open Graph (OG tags)
+* XML Sitemap auto generate
+* robots.txt configure
+
+### Google Tools:
+
+* Google Analytics connect
+* Google Search Console connect
+
+### Performance:
+
+* Fast loading (under 3 sec)
+* Image compression
+* Lazy loading
+* Mobile responsive design
+
+
+৯. ওয়েবসাইট Share করলে ছবি না দেখানোর সমস্যা 
+
+১০. Media System Upgrade
+
+• E-paper section (PDF viewer) ই পেপার আপলোড করার অপশন 
+* Photo gallery আপলোড করার অপশন 
+* Video gallery সরাসরি ইউটিউব চ্যানেলের সাথে সম্পর্কযুক্ত থাকবে। ক্লিক করলে ইউটিউব থেকে ভিডিও দেখা যাবে।
+
+
+ ১১. Footer Structure (Professional Format)
+
+Footer-এ থাকতে হবে:
+
+Editorial Info:
+
+* প্রকাশক
+* সম্পাদক
+* উপদেষ্টা
+
+
+ 📞 Contact:
+
+* ঠিকানা
+* ফোন
+* ইমেইল
+*বিজ্ঞাপন
+
+* About Us
+* Privacy Policy
+* Terms
+* Contact

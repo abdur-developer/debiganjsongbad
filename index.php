@@ -8,11 +8,6 @@
 <?php require_once "components/head.php"; ?>
 <body class="bg-gray-50 text-gray-800 antialiased" id="body">
 
-<!-- <ins class="adsbygoogle" style="display:block min-width: 100%; min-height: 100%;" data-ad-client="ca-pub-3940256099942544" data-ad-slot="6300978111" data-ad-format="auto" data-full-width-responsive="true"></ins>
-
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script> -->
 <?php require_once "components/header.php"; ?>
 
 <!-- MAIN CONTENT -->
@@ -45,9 +40,7 @@
             <?php require_once "components/tab.php"; ?>
             
             <!-- Sidebar Ad -->
-            <div class="bg-gray-200 h-64 flex items-center justify-center text-gray-500 text-sm ad-placeholder">
-               <ins class="adsbygoogle" style="display:block min-width: 100%; min-height: 100%;" data-ad-client="ca-pub-4520141412693223" data-ad-slot="7731728586" data-ad-format="auto" data-ad-test="on" data-full-width-responsive="true"></ins>
-            </div>
+            <?= sidebarAds() ?>
             
             
             <?php require_once "components/tags-cloud.php"; ?>
@@ -58,9 +51,7 @@
     <!-- <php require_once "components/photo-gallery.php"; ?> -->
     
     <!-- Footer Ad -->
-    <div class="bg-gray-200 h-20 my-4 flex items-center justify-center text-gray-500 ad-placeholder">
-        <ins class="adsbygoogle" style="display:block min-width: 100%; min-height: 100%;" data-ad-client="ca-pub-4520141412693223" data-ad-slot="7731728586" data-ad-format="auto" data-ad-test="on" data-full-width-responsive="true"></ins>
-    </div>
+    <?= footerAds() ?>
     
     <!-- Breadcrumb (Example) -->
     <!-- <nav class="text-sm mb-4" aria-label="Breadcrumb">
@@ -80,9 +71,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
     </svg>
 </button> -->
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<?php require_once "components/ads_script.php"; ?>
 <!-- Main JavaScript -->
 <script src="assets/js/app.js"></script>
 </body>

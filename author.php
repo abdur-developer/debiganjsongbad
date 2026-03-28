@@ -110,10 +110,10 @@ require_once "components/header.php";
 
 
 <?php require_once "components/footer.php"; ?>
+<?php require_once "components/ads_script.php"; ?>
 
 <!-- Dark Mode Toggle -->
 <!-- <button id="dark-mode-toggle" class="fixed bottom-4 right-4 bg-gray-800 text-white p-3 rounded-full shadow-lg">ডার্ক</button> -->
-
 <script src="assets/js/app.js"></script>
 </body>
 </html>

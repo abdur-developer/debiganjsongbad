@@ -29,7 +29,7 @@
             <!-- Article Header -->
             <header class="mb-4">
                 <h1 class="text-2xl md:text-3xl font-bold mb-3"><?=$news['title_bn']?></h1>
-                <div class="inline-block bg-red-600 text-white px-2 py-1 text-xs rounded mb-2"><?=$news['category_name']?></div>
+                <div class="inline-block bg-red-600 text-white px-2 py-1 text-xs rounded mb-2 print-hide"><?=$news['category_name']?></div>
                 
                 <!-- Author & Date -->
                 <div class="flex flex-wrap items-center justify-between text-sm text-gray-600 border-b border-gray-200 pb-3 mb-4">
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <!-- Share Buttons -->
-                <div class="flex gap-2 mb-6 justify-end">
+                <div class="print-hide flex gap-2 mb-6 justify-end">
                     <!-- ShareThis BEGIN -->
                     <div class="sharethis-inline-share-buttons"></div>
                     <!-- ShareThis END -->
@@ -67,7 +67,7 @@
                     <?=$news['content']?>
                 </p>
                 
-                <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t">
+                <div class="flex flex-wrap gap-2 mt-6 pt-4 border-t print-hide">
                     <span class="text-sm font-semibold">ট্যাগ:</span>
                     <?php
                     while($tag = array_shift($tags)){
@@ -78,7 +78,7 @@
             </article>
             
             <!-- Comment Section -->
-            <section class="mt-8 mb-8">
+            <section class="mt-8 mb-8 print-hide">
                 <h3 class="text-xl font-bold mb-4 border-b pb-2">মন্তব্য করুন</h3>
                 
                 <!-- Comment Form -->
@@ -115,7 +115,7 @@
             </section>
             
             <!-- Related News -->
-            <section class="mt-8">
+            <section class="mt-8 print-hide">
                 <h3 class="text-xl font-bold mb-4 border-l-4 border-red-600 pl-2">আরও পড়ুন</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
                     <?php
@@ -135,7 +135,7 @@
         </div>
         
         <!-- Sidebar -->
-        <aside class="lg:col-span-1 space-y-4">
+        <aside class="lg:col-span-1 space-y-4 print-hide">
             <!-- Author Info Card -->
             <div class="bg-white shadow-sm rounded p-4 text-center">
                 <div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-2xl font-bold">
@@ -166,22 +166,21 @@
             </div>
             
             <!-- Sidebar Ad -->
-            <div class="bg-gray-200 h-64 flex items-center justify-center text-gray-500 text-sm ad-placeholder">
-                <ins class="adsbygoogle" style="display:block min-width: 100%; min-height: 100%;" data-ad-client="ca-pub-4520141412693223" data-ad-slot="7731728586" data-ad-format="auto" data-ad-test="on" data-full-width-responsive="true"></ins>
-            </div>
+            <?= sidebarAds() ?>
             
             <!-- Newsletter -->
-            <div class="bg-blue-50 p-4 rounded">
+            <!-- <div class="bg-blue-50 p-4 rounded">
                 <h4 class="font-bold mb-2">নিউজলেটার</h4>
                 <p class="text-xs mb-2">দৈনিক সংবাদ পেতে সাবস্ক্রাইব করুন</p>
                 <input type="email" placeholder="ইমেইল" class="w-full p-2 border rounded text-sm mb-2">
                 <button class="w-full bg-blue-600 text-white py-2 rounded text-sm hover:bg-blue-700">সাবস্ক্রাইব</button>
-            </div>
+            </div> -->
         </aside>
     </div>
 </main>
 
 <?php require_once "../components/footer.php"; ?>
+<?php require_once "../components/ads_script.php"; ?>
 
 <!-- Dark Mode Toggle -->
 <!-- <button id="dark-mode-toggle" class="fixed bottom-4 right-4 bg-gray-800 text-white p-3 rounded-full shadow-lg z-50 hover:bg-gray-700 transition">
@@ -189,9 +188,6 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
     </svg>
 </button> -->
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 <!-- Main JavaScript -->
 <script src="../assets/js/app.js"></script>
 </body>
