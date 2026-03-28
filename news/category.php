@@ -16,10 +16,10 @@ $total_news = $count_result->fetch_assoc()['total'];
 $total_pages = ceil($total_news / $limit);
 
 $news_sql = "SELECT 
-    news.id, news.slug, news.featured_image, news.title_bn, news.summary, news.created_at, users.full_name
+    news.id, news.slug, news.featured_image, news.title_bn, news.summary, news.created_at, reporters.full_name
     FROM news 
     JOIN categories ON news.category_id = categories.id 
-    JOIN users ON news.author_id = users.id 
+    JOIN reporters ON news.author_id = reporters.id 
     WHERE categories.slug = '$cat_slug' 
     ORDER BY news.created_at DESC 
     LIMIT $limit OFFSET $offset";
@@ -103,7 +103,7 @@ while ($row = $news_query->fetch_assoc()) {
                     <p class="text-xs text-gray-500 mb-2 max-w-[30em] line-clamp-3"><?= $row['summary'] ?></p>
                     <div class="flex justify-between text-xs">
                         <span><?= timeAgo($row['created_at']) ?></span>
-                        <span class="bg-gray-100 px-2 py-0.5 rounded"><?= $cat_name ?></span>
+                        <span class="bg-gray-100 px-2 py-0.5 rounded"><?= $row['full_name'] ?></span>
                     </div>
                 </div>
             </article>
@@ -117,12 +117,11 @@ while ($row = $news_query->fetch_assoc()) {
         <a href="?cat=<?= $cat_slug ?>&page=1" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 <?= $page == 1 ? 'opacity-50 pointer-events-none' : '' ?>">প্রথম</a>
         
         <?php
-        $start = max(1, $page - 2);
-        $end = min($total_pages, $page + 2);
-        
-        for($i = $start; $i <= $end; $i++):
+            $start = max(1, $page - 2);
+            $end = min($total_pages, $page + 2);
         ?>
-        <a href="?cat=<?= $cat_slug ?>&page=<?= $i ?>" class="px-3 py-1 <?= $i == $page ? 'bg-red-600 text-white' : 'bg-gray-200 hover:bg-gray-300' ?> rounded"><?= bn_num($i) ?></a>
+        f<?php for($i = $start; $i <= $end; $i++): ?>
+            <a href="?cat=<?= $cat_slug ?>&page=<?= $i ?>" class="px-3 py-1 <?= $i == $page ? 'bg-red-600 text-white' : 'bg-gray-200 hover:bg-gray-300' ?> rounded"><?= bn_num($i) ?></a>
         <?php endfor; ?>
         
         <a href="?cat=<?= $cat_slug ?>&page=<?= $total_pages ?>" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 <?= $page == $total_pages ? 'opacity-50 pointer-events-none' : '' ?>">শেষ</a>
