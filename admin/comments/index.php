@@ -84,40 +84,40 @@ $totalPages = ceil($totalRow['total'] / $limit);
 </div>
 
 <!-- কমেন্ট লিস্ট -->
-<div class="bg-white rounded-lg shadow overflow-hidden">
-    <table class="w-full">
+<div class="bg-white rounded-lg shadow overflow-x-auto">
+    <table class="min-w-full">
         <thead class="bg-gray-50">
             <tr>
-                <th class="px-4 py-3 text-left w-10">
+                <!-- <th class="px-4 py-3 text-left w-10">
                     <input type="checkbox" id="select-all" class="rounded">
-                </th>
-                <th class="px-4 py-3 text-left">আইডি</th>
-                <th class="px-4 py-3 text-left">নিউজ</th>
-                <th class="px-4 py-3 text-left">নাম</th>
-                <th class="px-4 py-3 text-left">ইমেইল</th>
+                </th> -->
+                <!-- <th class="px-4 py-3 text-left">আইডি</th> -->
+                <th class="px-4 py-3 text-left hidden md:table-cell">নিউজ</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">নাম</th>
+                <th class="px-4 py-3 text-left hidden">ইমেইল</th>
                 <th class="px-4 py-3 text-left">মন্তব্য</th>
                 <th class="px-4 py-3 text-left">স্ট্যাটাস</th>
-                <th class="px-4 py-3 text-left">তারিখ</th>
-                <th class="px-4 py-3 text-left">আইপি</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">তারিখ</th>
+                <th class="px-4 py-3 text-left hidden">আইপি</th>
                 <th class="px-4 py-3 text-left">অ্যাকশন</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="text-sm md:text-base">
             <?php if ($result && $result->num_rows > 0): ?>
                 <?php while ($comment = $result->fetch_assoc()): ?>
                 <tr class="border-t hover:bg-gray-50">
-                    <td class="px-4 py-2">
+                    <!-- <td class="px-4 py-2">
                         <input type="checkbox" class="select-item rounded" value="<?php echo $comment['id']; ?>">
-                    </td>
-                    <td class="px-4 py-2"><?php echo $comment['id']; ?></td>
-                    <td class="px-4 py-2">
+                    </td> -->
+                    <!-- <td class="px-4 py-2"><php echo $comment['id']; ?></td> -->
+                    <td class="px-4 py-2 hidden md:table-cell">
                         <a href="../news/?feed=<?php echo $comment['news_id']; ?>" target="_blank" class="text-blue-600 hover:underline">
                             <?php echo e(substr($comment['news_title'], 0, 30) . '...'); ?>
                         </a>
                     </td>
-                    <td class="px-4 py-2"><?php echo e($comment['name']); ?></td>
-                    <td class="px-4 py-2"><?php echo e($comment['email']); ?></td>
-                    <td class="px-4 py-2">
+                    <td class="px-4 py-2 hidden md:table-cell"><?php echo e($comment['name']); ?></td>
+                    <td class="px-4 py-2 hidden"><?php echo e($comment['email']); ?></td>
+                    <td class="px-4 py-2 max-w-40 md:max-w-none">
                         <div class="max-w-xs truncate" title="<?php echo e($comment['comment']); ?>">
                             <?php echo e(substr($comment['comment'], 0, 50) . '...'); ?>
                         </div>
@@ -131,8 +131,8 @@ $totalPages = ceil($totalRow['total'] / $limit);
                             <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">স্প্যাম</span>
                         <?php endif; ?>
                     </td>
-                    <td class="px-4 py-2 text-sm"><?php echo date('d/m/Y', strtotime($comment['created_at'])); ?></td>
-                    <td class="px-4 py-2 text-xs"><?php echo $comment['ip_address']; ?></td>
+                    <td class="px-4 py-2 text-sm hidden md:table-cell"><?php echo date('d/m/Y', strtotime($comment['created_at'])); ?></td>
+                    <td class="px-4 py-2 text-xs hidden"><?php echo $comment['ip_address']; ?></td>
                     <td class="px-4 py-2">
                         <div class="flex gap-1">
                             <?php if ($comment['status'] != 'approved'): ?>

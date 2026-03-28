@@ -148,21 +148,22 @@ $warning_message = $_SESSION['warning'] ?? '';
                             <span class="ml-2 text-sm truncate">ওয়েবসাইট দেখুন</span>
                         </a>
                     </li>
-                    
+                    <?php if ($auth->hasPermission('news')): ?>
                     <li>
                         <a href="?q=news" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'news' ? 'active-nav' : '' ?> transition-colors">
                             <i class="fas fa-newspaper w-6 text-base <?= $active === 'news' ? 'text-red-500' : 'text-gray-400' ?>"></i>
                             <span class="ml-2 text-sm truncate">সংবাদ</span>
                         </a>
                     </li>
-                    
+                    <?php endif; ?>
+                    <?php if ($auth->hasPermission('categories')): ?>
                     <li>
                         <a href="?q=categories" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'categories' ? 'active-nav' : '' ?> transition-colors">
                             <i class="fas fa-tags w-6 text-base <?= $active === 'categories' ? 'text-red-500' : 'text-gray-400' ?>"></i>
                             <span class="ml-2 text-sm truncate">ক্যাটাগরি</span>
                         </a>
                     </li>
-                    
+                    <?php endif; ?>
                     <!-- <li>
                         <a href="?q=gallery" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'gallery' ? 'active-nav' : '' ?> transition-colors">
                             <i class="fas fa-images w-6 text-base <?= $active === 'gallery' ? 'text-red-500' : 'text-gray-400' ?>"></i>
@@ -170,42 +171,46 @@ $warning_message = $_SESSION['warning'] ?? '';
                         </a>
                     </li> -->
                     
-                    <!-- মন্তব্য - কমেন্ট আউট করা আছে -->
-                    
+                    <?php if ($auth->hasPermission('comments')): ?>
                     <li>
                         <a href="?q=comments" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'comments' ? 'active-nav' : '' ?>">
                             <i class="fas fa-comments w-6"></i>
-                            <span>মন্তব্য</span>
+                            <span class="ml-2 text-sm truncate">মন্তব্য</span>
                         </a>
                     </li>
-                   
+                    <?php endif; ?>                  
                     
+                    <?php if ($auth->hasPermission('users')): ?>
                     <li class="pt-4 mt-2 border-t border-gray-800">
                         <p class="text-xs text-gray-500 mb-2 px-2 uppercase tracking-wider">ব্যবস্থাপনা</p>
                     </li>
-                    
-                    <?php if ($auth->hasPermission('users')): ?>
-                    
+                        
                     <li>
                         <a href="?q=users" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'users' ? 'active-nav' : '' ?>">
                             <i class="fas fa-users w-6"></i>
-                            <span>প্রতিনিধি</span>
+                            <span class="ml-2 text-sm truncate">প্রতিনিধি</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?q=reporters" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'reporters' ? 'active-nav' : '' ?>">
+                            <i class="fas fa-users w-6"></i>
+                            <span class="ml-2 text-sm truncate">রিপোর্টার</span>
                         </a>
                     </li>
                    
                     <?php endif; ?>
-                    <li>
+                    <!-- <li>
                         <a href="?q=roles" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'roles' ? 'active-nav' : '' ?>">
                             <i class="fas fa-user-tag w-6"></i>
-                            <span>রোল ও পারমিশন</span>
+                            <span class="ml-2 text-sm truncate">রোল ও পারমিশন</span>
                         </a>
-                    </li>
+                    </li> -->
                     
                     <?php if ($auth->hasPermission('ads')): ?>                    
                     <li>
                         <a href="?q=ads" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'ads' ? 'active-nav' : '' ?>">
                             <i class="fas fa-ad w-6"></i>
-                            <span>বিজ্ঞাপন</span>
+                            <span class="ml-2 text-sm truncate">বিজ্ঞাপন</span>
                         </a>
                     </li>                   
                     <?php endif; ?>
@@ -214,7 +219,7 @@ $warning_message = $_SESSION['warning'] ?? '';
                     <li>
                         <a href="?q=settings" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'settings' ? 'active-nav' : '' ?>">
                             <i class="fas fa-cog w-6"></i>
-                            <span>সেটিংস</span>
+                            <span class="ml-2 text-sm truncate">সেটিংস</span>
                         </a>
                     </li>
                    

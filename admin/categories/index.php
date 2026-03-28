@@ -38,7 +38,7 @@ $result = $conn->query($sql);
                 <th class="px-4 py-3 text-left w-10">
                     <input type="checkbox" id="select-all" class="rounded">
                 </th>
-                <th class="px-4 py-3 text-left hidden md:table-cell">আইডি</th>
+                <!-- <th class="px-4 py-3 text-left hidden md:table-cell">আইডি</th> -->
                 <th class="px-4 py-3 text-left">নাম (বাংলা)</th>
                 <th class="px-4 py-3 text-left hidden md:table-cell">নাম (ইংরেজি)</th>
                 <th class="px-4 py-3 text-left hidden md:table-cell">স্লাগ</th>
@@ -68,7 +68,7 @@ $result = $conn->query($sql);
                     <td class="px-4 py-2">
                         <input type="checkbox" class="select-item rounded" value="<?php echo $cat['id']; ?>">
                     </td>
-                    <td class="px-4 py-2 hidden md:table-cell"><?php echo $cat['id']; ?></td>
+                    <!-- <td class="px-4 py-2 hidden md:table-cell"><php echo $cat['id']; ?></td> -->
                     <td class="px-4 py-2 font-semibold"><?php echo e($cat['name_bn']); ?></td>
                     <td class="px-4 py-2 hidden md:table-cell"><?php echo e($cat['name_en']); ?></td>
                     <td class="px-4 py-2 hidden md:table-cell text-sm"><?php echo $cat['slug']; ?></td>

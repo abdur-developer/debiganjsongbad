@@ -8,10 +8,7 @@ if (!$id) {
     exit();
 }
 
-$sql = "SELECT n.*, u.full_name as author_name 
-        FROM news n 
-        LEFT JOIN users u ON n.author_id = u.id 
-        WHERE n.id = $id";
+$sql = "SELECT * FROM news WHERE id = $id";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 0) {
@@ -28,11 +25,13 @@ $gallery = !empty($news['gallery_images']) ? json_decode($news['gallery_images']
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require_once 'meta_fun.php';
     $title_bn = $conn->real_escape_string($_POST['title_bn']);
     $title_en = $conn->real_escape_string($_POST['title_en']);
     $content = $conn->real_escape_string($_POST['content']);
     $summary = $conn->real_escape_string($_POST['summary']);
     $category_id = intval($_POST['category_id']);
+    $author_id = intval($_POST['author_id']);
     
     $tags_json = $tags = isset($_POST['tags']) 
     ? json_encode(array_map('trim', explode(',', $_POST['tags'])), JSON_UNESCAPED_UNICODE) 
@@ -42,9 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $is_featured = isset($_POST['is_featured']) ? 1 : 0;
     $is_trending = isset($_POST['is_trending']) ? 1 : 0;
     $status = $conn->real_escape_string($_POST['status']);
-    $meta_title = $conn->real_escape_string($_POST['meta_title']);
-    $meta_description = $conn->real_escape_string($_POST['meta_description']);
-    $meta_keywords = $conn->real_escape_string($_POST['meta_keywords']);
+    $meta_title = getMetaTitle($title_bn, $title_en);
+    $meta_description = getMetaDescription($summary);
+    $meta_keywords = getMetaKeywords($title_bn, $title_en, $summary);
     
     if (empty($title_bn)) {
         $error = 'শিরোনাম প্রয়োজন';
@@ -106,6 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 featured_image = " . ($featured_image ? "'$featured_image'" : "NULL") . ",
                 gallery_images = " . ($gallery_json ? "'$gallery_json'" : "NULL") . ",
                 category_id = $category_id,
+                author_id = $author_id,
                 tags = '$tags_json',
                 is_breaking = $is_breaking,
                 is_featured = $is_featured,
@@ -195,6 +195,21 @@ $catResult = $conn->query($catSql);
                     </select>
                 </div>
                 
+                <div>
+                    <label class="block font-semibold mb-2">রিপোর্টার *</label>
+                    <select name="author_id" required class="w-full px-3 py-2 border rounded">
+                        <option value="">রিপোর্টার নির্বাচন করুন</option>
+                        <?php
+                        $authorSql = "SELECT id, full_name FROM reporters ORDER BY full_name";
+                        $authorResult = $conn->query($authorSql);
+                        while ($author = $authorResult->fetch_assoc()):
+                        ?>
+                        <option value="<?= $author['id']; ?>" <?php echo $news['author_id'] == $author['id'] ? 'selected' : ''; ?>>
+                            <?= $author['full_name']; ?>
+                        </option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
                 <div class="mb-3">
                     <label class="block font-semibold mb-2">স্ট্যাটাস</label>
                     <select name="status" class="w-full px-3 py-2 border rounded">
@@ -255,26 +270,26 @@ $catResult = $conn->query($catSql);
                 <input type="file" name="gallery_images[]" multiple accept="image/*" class="w-full">
             </div> -->
             
-            <div class="bg-gray-50 p-4 rounded-lg">
+            <!-- <div class="bg-gray-50 p-4 rounded-lg">
                 <h3 class="font-semibold mb-3">SEO তথ্য</h3>
                 
                 <div class="mb-3">
                     <label class="block text-sm mb-1">মেটা টাইটেল</label>
-                    <input type="text" name="meta_title" value="<?php echo e($news['meta_title']); ?>"
+                    <input type="text" name="meta_title" value="<php echo e($news['meta_title']); ?>"
                            class="w-full px-3 py-2 border rounded text-sm">
                 </div>
                 
                 <div class="mb-3">
                     <label class="block text-sm mb-1">মেটা বিবরণ</label>
-                    <textarea name="meta_description" rows="2" class="w-full px-3 py-2 border rounded text-sm"><?php echo e($news['meta_description']); ?></textarea>
+                    <textarea name="meta_description" rows="2" class="w-full px-3 py-2 border rounded text-sm"><php echo e($news['meta_description']); ?></textarea>
                 </div>
                 
                 <div>
                     <label class="block text-sm mb-1">মেটা কীওয়ার্ড</label>
-                    <input type="text" name="meta_keywords" value="<?php echo e($news['meta_keywords']); ?>"
+                    <input type="text" name="meta_keywords" value="<php echo e($news['meta_keywords']); ?>"
                            class="w-full px-3 py-2 border rounded text-sm">
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     

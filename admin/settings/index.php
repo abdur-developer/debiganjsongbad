@@ -49,43 +49,43 @@ while ($row = $result->fetch_assoc()) {
 <form method="POST" enctype="multipart/form-data" class="bg-white rounded-lg shadow p-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- সাধারণ সেটিংস -->
-        <div class="space-y-4">
-            <h3 class="text-lg font-semibold border-b pb-2">সাধারণ সেটিংস</h3>
+        <!-- <div class="space-y-4">
+            <h3 class="text-lg font-semibold border-b pb-2">সাধারণ সেটিংস</h3> -->
             
-            <div>
+            <!-- <div>
                 <label class="block font-semibold mb-2">সাইটের নাম</label>
-                <input type="text" name="site_title" value="<?php echo e($settings['site_title']); ?>" 
+                <input type="text" name="site_title" value="<php echo e($settings['site_title']); ?>" 
                        class="w-full px-3 py-2 border rounded">
-            </div>
+            </div> -->
             
-            <div>
+            <!-- <div>
                 <label class="block font-semibold mb-2">সাইট URL</label>
-                <input type="url" name="site_url" value="<?php echo e($settings['site_url']); ?>" 
+                <input type="url" name="site_url" value="<php echo e($settings['site_url']); ?>" 
                        class="w-full px-3 py-2 border rounded">
-            </div>
+            </div> -->
             
-            <div>
+            <!-- <div>
                 <label class="block font-semibold mb-2">সাইট বিবরণ</label>
                 <textarea name="site_description" rows="3" 
-                          class="w-full px-3 py-2 border rounded"><?php echo e($settings['site_description']); ?></textarea>
+                          class="w-full px-3 py-2 border rounded"><php echo e($settings['site_description']); ?></textarea>
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">কীওয়ার্ড</label>
-                <input type="text" name="site_keywords" value="<?php echo e($settings['site_keywords']); ?>" 
+                <input type="text" name="site_keywords" value="<php echo e($settings['site_keywords']); ?>" 
                        class="w-full px-3 py-2 border rounded">
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
         
         <!-- যোগাযোগ সেটিংস -->
         <div class="space-y-4">
             <h3 class="text-lg font-semibold border-b pb-2">যোগাযোগ তথ্য</h3>
             
-            <div>
+            <!-- <div>
                 <label class="block font-semibold mb-2">অ্যাডমিন ইমেইল</label>
-                <input type="email" name="admin_email" value="<?php echo e($settings['admin_email']); ?>" 
+                <input type="email" name="admin_email" value="<php echo e($settings['admin_email']); ?>" 
                        class="w-full px-3 py-2 border rounded">
-            </div>
+            </div> -->
             
             <div>
                 <label class="block font-semibold mb-2">যোগাযোগ ইমেইল</label>
@@ -116,11 +116,11 @@ while ($row = $result->fetch_assoc()) {
                        class="w-full px-3 py-2 border rounded">
             </div>
             
-            <div>
+            <!-- <div>
                 <label class="block font-semibold mb-2">টুইটার</label>
-                <input type="url" name="twitter_url" value="<?php echo e($settings['twitter_url']); ?>" 
+                <input type="url" name="twitter_url" value="<php echo e($settings['twitter_url']); ?>" 
                        class="w-full px-3 py-2 border rounded">
-            </div>
+            </div> -->
             
             <div>
                 <label class="block font-semibold mb-2">ইউটিউব</label>
@@ -128,31 +128,31 @@ while ($row = $result->fetch_assoc()) {
                        class="w-full px-3 py-2 border rounded">
             </div>
             
-            <div>
+            <!-- <div>
                 <label class="block font-semibold mb-2">ইনস্টাগ্রাম</label>
-                <input type="url" name="instagram_url" value="<?php echo e($settings['instagram_url']); ?>" 
+                <input type="url" name="instagram_url" value="<php echo e($settings['instagram_url']); ?>" 
                        class="w-full px-3 py-2 border rounded">
-            </div>
+            </div> -->
         </div>
         
         <!-- লোগো ও ফেভিকন -->
-        <div class="space-y-4">
+        <!-- <div class="space-y-4">
             <h3 class="text-lg font-semibold border-b pb-2">লোগো ও ফেভিকন</h3>
             
             <div>
                 <label class="block font-semibold mb-2">বর্তমান লোগো</label>
-                <?php if (!empty($settings['logo'])): ?>
-                <img src="<?php echo $settings['logo']; ?>" class="h-16 mb-2" alt="">
-                <?php endif; ?>
+                <php if (!empty($settings['logo'])): ?>
+                <img src="<php echo $settings['logo']; ?>" class="h-16 mb-2" alt="">
+                <php endif; ?>
                 <input type="file" name="logo" accept="image/*" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
             <div>
                 <label class="block font-semibold mb-2">বর্তমান ফেভিকন</label>
-                <?php if (!empty($settings['favicon'])): ?>
-                <img src="<?php echo $settings['favicon']; ?>" class="h-8 mb-2" alt="">
-                <?php endif; ?>
+                <php if (!empty($settings['favicon'])): ?>
+                <img src="<php echo $settings['favicon']; ?>" class="h-8 mb-2" alt="">
+                <php endif; ?>
                 <input type="file" name="favicon" accept=".ico,.png" 
                        class="w-full px-3 py-2 border rounded">
             </div>
@@ -160,9 +160,9 @@ while ($row = $result->fetch_assoc()) {
             <div>
                 <label class="block font-semibold mb-2">ফুটার টেক্সট</label>
                 <textarea name="footer_text" rows="2" 
-                          class="w-full px-3 py-2 border rounded"><?php echo e($settings['footer_text']); ?></textarea>
+                          class="w-full px-3 py-2 border rounded"><php echo e($settings['footer_text']); ?></textarea>
             </div>
-        </div>
+        </div> -->
     </div>
     
     <div class="mt-6 flex justify-end">

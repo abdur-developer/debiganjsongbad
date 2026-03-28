@@ -1,6 +1,11 @@
 <?php
     require_once 'admin/includes/config.php';
     require_once 'admin/includes/db.php';
+
+    $facebook_url = $conn->query("SELECT value FROM settings WHERE key_name = 'facebook_url'")->fetch_assoc()['value'];
+    $youtube_url = $conn->query("SELECT value FROM settings WHERE key_name = 'youtube_url'")->fetch_assoc()['value'];
+    
+    
     function timeAgo($datetime){
         $time = strtotime($datetime);
         $current = time();
@@ -51,13 +56,6 @@
         $formatted = date('j F Y, g:i A', strtotime($date));
         return str_replace($en, $bn, $formatted);
     }
-    $roleNames = [
-        'super_admin' => 'সুপার অ্যাডমিন',
-        'admin' => 'অ্যাডমিন',
-        'editor' => 'এডিটর',
-        'reporter' => 'রিপোর্টার',
-        'moderator' => 'মডারেটর'
-    ];
     function getDevice() {
         $mobile = ['Android', 'iPhone', 'iPad', 'Mobile', 'BlackBerry'];
         foreach($mobile as $device) {

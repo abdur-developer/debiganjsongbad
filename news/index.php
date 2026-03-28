@@ -7,10 +7,10 @@
         $news_id = $_GET['feed'];
         $news_sql = "SELECT news.*, 
             categories.name_bn as category_name, 
-            users.full_name , users.username, users.role, users.bio, users.avatar
+            reporters.full_name , reporters.designation, reporters.bio, reporters.avatar
             FROM news 
             JOIN categories ON news.category_id = categories.id 
-            JOIN users ON news.author_id = users.id 
+            JOIN reporters ON news.author_id = reporters.id 
             WHERE news.id = '$news_id'
         ";
         $news_query = $conn->query($news_sql);
@@ -18,7 +18,6 @@
             $news = $news_query->fetch_assoc();
             $tags = json_decode($news['tags'], true);
             
-            $role = $roleNames[$news['role']] ?? $news['role'];
             $conn->query("UPDATE news SET views = views + 1 WHERE id = '$news_id'");
             require_once "view.php";
         } else {

@@ -2,7 +2,7 @@
 require_once "root.php";
 $isRoot = true;
 $logo = "assets/img/logo.png";
-$sql = "SELECT * FROM users WHERE username = '{$_GET['username']}'";
+$sql = "SELECT * FROM reporters WHERE id = '{$_GET['find']}'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $author = $result->fetch_assoc();
@@ -43,7 +43,7 @@ require_once "components/header.php";
         </div>
         <div class="text-center md:text-left">
             <h1 class="text-3xl font-bold"><?= $author['full_name'] ?></h1>
-            <p class="text-blue-600 mb-2"><?=$roleNames[$author['role']] ?? $author['role']?></p>
+            <p class="text-blue-600 mb-2"><?=$author['designation'] ?></p>
             <p class="text-gray-600 max-w-2xl"><?= $author['bio'] ?></p>
             <div class="flex gap-4 mt-3 justify-center md:justify-start">
                 <span class="text-sm">📧 <?= $author['email'] ?></span>

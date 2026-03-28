@@ -1,5 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require_once 'meta_fun.php';
     $title_bn = $conn->real_escape_string($_POST['title_bn']);
     $title_en = $conn->real_escape_string($_POST['title_en']);
     $content = $conn->real_escape_string($_POST['content']);
@@ -14,9 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $is_featured = isset($_POST['is_featured']) ? 1 : 0;
     $is_trending = isset($_POST['is_trending']) ? 1 : 0;
     $status = $conn->real_escape_string($_POST['status']);
-    $meta_title = $conn->real_escape_string($_POST['meta_title']);
-    $meta_description = $conn->real_escape_string($_POST['meta_description']);
-    $meta_keywords = $conn->real_escape_string($_POST['meta_keywords']);
+    $meta_title = getMetaTitle($title_bn, $title_en);
+    $meta_description = getMetaDescription($summary);
+    $meta_keywords = getMetaKeywords($title_bn, $title_en, $summary);
     
     $slug = $functions->createSlug($title_en ?: $title_bn);
     
@@ -117,11 +118,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </select>
             </div>
             <div>
-                <label class="block font-semibold mb-2">প্রতিনিধি *</label>
+                <label class="block font-semibold mb-2">রিপোর্টার *</label>
                 <select name="author_id" required class="w-full px-3 py-2 border rounded">
-                    <option value="">প্রতিনিধি নির্বাচন করুন</option>
+                    <option value="">রিপোর্টার নির্বাচন করুন</option>
                     <?php
-                    $authorSql = "SELECT id, full_name FROM users ORDER BY full_name";
+                    $authorSql = "SELECT id, full_name FROM reporters ORDER BY full_name";
                     $authorResult = $conn->query($authorSql);
                     while ($author = $authorResult->fetch_assoc()):
                     ?>
@@ -183,7 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <p class="text-xs text-gray-500">সংক্ষিপ্ত বিবরণ (SEO-এর জন্য)</p>
             </div>
             
-            <div>
+            <!-- <div>
                 <label class="block font-semibold mb-2">মেটা টাইটেল</label>
                 <input type="text" name="meta_title" 
                        class="w-full px-3 py-2 border rounded">
@@ -199,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label class="block font-semibold mb-2">মেটা কীওয়ার্ড</label>
                 <input type="text" name="meta_keywords" 
                        class="w-full px-3 py-2 border rounded">
-            </div>
+            </div> -->
         </div>
     </div>
     

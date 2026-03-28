@@ -57,7 +57,7 @@
     <meta name="msapplication-TileColor" content="#dc2626">
     <meta name="msapplication-TileImage" content="https://debiganjsongbad.com/uploads/settings/1773409974_favicon.png">
     <meta name="theme-color" content="#dc2626">
-    
+ 
     <!-- ========== ফন্ট ও সিএসএস ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,7 +81,7 @@
         "sameAs": [
             "https://www.facebook.com/debiganjsongbad",
             "https://www.twitter.com/debiganjsongbad",
-            "https://www.youtube.com/debiganjsongbad",
+            "https://www.youtube.com/@দেবীগঞ্জসংবাদ",
             "https://www.instagram.com/debiganjsongbad"
         ],
         "address": {

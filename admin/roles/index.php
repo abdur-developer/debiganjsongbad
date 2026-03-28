@@ -7,16 +7,16 @@ $result = $conn->query($sql);
 
 <div class="flex justify-between items-center mb-6">
     <h2 class="text-lg md:text-2xl font-bold">রোল ব্যবস্থাপনা</h2>
-    <a href="?q=roles&create" class="bg-green-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-green-700">
+    <!-- <a href="?q=roles&create" class="bg-green-600 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-plus"></i> নতুন রোল
-    </a>
+    </a> -->
 </div>
 
-<div class="bg-white rounded-lg shadow overflow-hidden">
-    <table class="w-full">
+<div class="bg-white rounded-lg shadow overflow-x-auto">
+    <table class="min-w-full">
         <thead class="bg-gray-50">
             <tr>
-                <th class="px-4 py-3 text-left">আইডি</th>
+                <!-- <th class="px-4 py-3 text-left">আইডি</th> -->
                 <th class="px-4 py-3 text-left">রোল</th>
                 <th class="px-4 py-3 text-left">পারমিশন</th>
                 <th class="px-4 py-3 text-left">অ্যাকশন</th>
@@ -28,7 +28,7 @@ $result = $conn->query($sql);
                     $permissions = json_decode($role['permissions'], true);
                 ?>
                 <tr class="border-t hover:bg-gray-50">
-                    <td class="px-4 py-2"><?php echo $role['id']; ?></td>
+                    <!-- <td class="px-4 py-2"><php echo $role['id']; ?></td> -->
                     <td class="px-4 py-2 font-semibold"><?php echo ucfirst($role['role']); ?></td>
                     <td class="px-4 py-2">
                         <div class="flex flex-wrap gap-1">

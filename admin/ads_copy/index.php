@@ -36,7 +36,7 @@ $result = $conn->query($sql);
                 <th class="px-4 py-3 text-left w-10">
                     <input type="checkbox" id="select-all" class="rounded">
                 </th>
-                <th class="px-4 py-3 text-left">আইডি</th>
+                <!-- <th class="px-4 py-3 text-left">আইডি</th> -->
                 <th class="px-4 py-3 text-left">শিরোনাম</th>
                 <th class="px-4 py-3 text-left">টাইপ</th>
                 <th class="px-4 py-3 text-left">পজিশন</th>
@@ -56,7 +56,7 @@ $result = $conn->query($sql);
                     <td class="px-4 py-2">
                         <input type="checkbox" class="select-item rounded" value="<?php echo $ad['id']; ?>">
                     </td>
-                    <td class="px-4 py-2"><?php echo $ad['id']; ?></td>
+                    <!-- <td class="px-4 py-2"><php echo $ad['id']; ?></td> -->
                     <td class="px-4 py-2 font-semibold"><?php echo e($ad['title']); ?></td>
                     <td class="px-4 py-2"><?php echo ucfirst($ad['type']); ?></td>
                     <td class="px-4 py-2"><?php echo $ad['position']; ?></td>

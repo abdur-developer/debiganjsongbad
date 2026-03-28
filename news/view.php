@@ -35,11 +35,15 @@
                 <div class="flex flex-wrap items-center justify-between text-sm text-gray-600 border-b border-gray-200 pb-3 mb-4">
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold">
-                            <img class="w-full h-full object-cover rounded-full" src="<?=$news['avatar']?>" alt="Author Avatar">
+                            <?php if($news['avatar']) : ?>
+                                <img class="w-full h-full object-cover rounded-full" src="<?=$news['avatar']?>" alt="Author Avatar">
+                            <?php else: ?>
+                                <i class="fas fa-user text-gray-500"></i>
+                            <?php endif; ?>
                         </div>
                         <div>
                             <span class="font-semibold"><?=$news['full_name']?></span>
-                            <span class="text-xs text-gray-500 block"><?=$role?></span>
+                            <span class="text-xs text-gray-500 block"><?=$news['designation']?></span>
                         </div>
                     </div>
                     <div class="flex gap-4">
@@ -139,18 +143,16 @@
             <!-- Author Info Card -->
             <div class="bg-white shadow-sm rounded p-4 text-center">
                 <div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-2xl font-bold">
-                    <?php
-                        if($news['avatar']){
-                            echo '<img class="w-full h-full object-cover rounded-full" src="' . $news['avatar'] . '" alt="Author Avatar">';
-                        } else {
-                            echo 'আ';
-                        }
-                    ?>
+                    <?php if($news['avatar']) : ?>
+                        <img class="w-full h-full object-cover rounded-full" src="<?=$news['avatar']?>" alt="Author Avatar">
+                    <?php else: ?>
+                        <i class="fas fa-user text-gray-500"></i>
+                    <?php endif; ?>
                 </div>
                 <h4 class="font-bold"><?=$news['full_name']?></h4>
-                <p class="text-sm text-gray-600 mb-2"><?=$role?></p>
+                <p class="text-sm text-gray-600 mb-2"><?=$news['designation']?></p>
                 <p class="text-xs text-gray-500"><?=$news['bio']?></p>
-                <a href="../author.php?username=<?=$news['username']?>" class="inline-block mt-3 text-blue-600 text-sm hover:underline">সব লেখা দেখুন</a>
+                <a href="../author.php?find=<?=$news['author_id']?>" class="inline-block mt-3 text-blue-600 text-sm hover:underline">সব লেখা দেখুন</a>
             </div>
             
             <!-- Popular News -->

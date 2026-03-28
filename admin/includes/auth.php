@@ -79,18 +79,18 @@ class Auth {
         if ($result && $result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $permissions = json_decode($row['permissions'], true);
-            
             // সুপার অ্যাডমিনের সব পারমিশন
-            if ($role == 'super_admin') {
+            if ($role == 'super_admin' || $role == 'admin') {
                 return true;
             }
-            
+                
             // পারমিশন চেক
             foreach ($permissions as $key => $value) {
-                if ($key == $permission) {
+                if ($key == $permission && $value != 'none') {
                     return true;
                 }
             }
+            // exit;
         }
         
         return false;

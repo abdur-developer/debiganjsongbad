@@ -81,8 +81,8 @@ $totalPages = ceil($totalRow['total'] / $limit);
 </div>
 
 <!-- নিউজ লিস্ট -->
-<div class="bg-white rounded-lg shadow overflow-hidden">
-    <table class="w-full">
+<div class="bg-white rounded-lg shadow overflow-x-auto">
+    <table class="min-w-full">
         <thead class="bg-gray-50">
             <tr>
                 <th class="px-4 py-3 text-left hidden md:table-cell">ছবি</th>

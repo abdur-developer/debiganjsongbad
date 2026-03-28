@@ -35,8 +35,8 @@ $result = $conn->query($sql);
                 </th> -->
                 <th class="px-4 py-3 text-left">শিরোনাম</th>
                 <th class="px-4 py-3 text-left">স্ট্যাটাস</th>
-                <th class="px-4 py-3 text-left">max ক্লিক</th>
-                <th class="px-4 py-3 text-left">max ইমপ্রেশন</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">max ক্লিক</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">max ইমপ্রেশন</th>
                 <th class="px-4 py-3 text-left">অ্যাকশন</th>
             </tr>
         </thead>
@@ -55,8 +55,8 @@ $result = $conn->query($sql);
                             <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">নিষ্ক্রিয়</span>
                         <?php endif; ?>
                     </td>
-                    <td class="px-4 py-2"><?php echo number_format($ad['max_clicks']); ?></td>
-                    <td class="px-4 py-2"><?php echo number_format($ad['max_impressions']); ?></td>
+                    <td class="px-4 py-2 hidden md:table-cell"><?php echo number_format($ad['max_clicks']); ?></td>
+                    <td class="px-4 py-2 hidden md:table-cell"><?php echo number_format($ad['max_impressions']); ?></td>
                     <td class="px-4 py-2">
                         <a href="?q=ads&edit_id=<?php echo $ad['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
                             <i class="fas fa-edit"></i>

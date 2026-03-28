@@ -81,7 +81,7 @@
             "sameAs": [
                 "https://www.facebook.com/debiganjsongbad",
                 "https://www.twitter.com/debiganjsongbad",
-                "https://www.youtube.com/debiganjsongbad",
+                "https://www.youtube.com/@দেবীগঞ্জসংবাদ",
                 "https://www.instagram.com/debiganjsongbad"
             ],
             "address": {
