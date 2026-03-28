@@ -30,12 +30,9 @@
                 </ul>
             </div>
             <div>
-                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">সেবা সমূহ</h5>
+                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">সম্পাদকীয় তথ্য</h5>
                 <ul class="space-y-1 text-gray-300">
-                    <li><a href="mailto:<?= $email ?>" class="hover:text-white">নিউজ দিন</a></li>
-                    <!-- <li><a href="#" class="hover:text-white">নিউজলেটার</a></li>
-                    <li><a href="#" class="hover:text-white">আর্কাইভ</a></li>
-                    <li><a href="#" class="hover:text-white">আরএসএস ফিড</a></li> -->
+                    <li><a href="https://debiganjsongbad.com/staff.php" class="hover:text-white">আমাদের পরিবার</a></li>
                     <li><a href="#" class="hover:text-white">মোবাইল অ্যাপ</a></li>
                 </ul>
             </div>
