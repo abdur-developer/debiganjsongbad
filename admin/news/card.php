@@ -29,8 +29,6 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <style>
-    
-    /* মেইন গ্রিড */
     .main-grid {
         display: grid;
         grid-template-columns: 1fr 400px;
@@ -38,7 +36,7 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
         max-width: 1400px;
         margin: 0 auto;
     }
-    
+
     @media (max-width: 968px) {
         .main-grid {
             grid-template-columns: 1fr;
@@ -47,8 +45,7 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
             padding: 12px;
         }
     }
-    
-    /* কার্ড স্টাইল */
+
     .card {
         background: white;
         border-radius: 20px;
@@ -56,7 +53,7 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
         overflow: hidden;
         margin-bottom: 24px;
     }
-    
+
     .section-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 16px 24px;
@@ -65,20 +62,11 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
         align-items: center;
         gap: 12px;
     }
+
     .hidden {
         display: none !important;
     }
-    .section-header i {
-        font-size: 24px;
-    }
-    
-    .section-header h2 {
-        font-size: 18px;
-        font-weight: 600;
-        margin: 0;
-    }
-    
-    /* প্রিভিউ কন্টেইনার */
+
     .preview-container {
         padding: 30px;
         background: #f8f9fa;
@@ -86,7 +74,7 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
         flex-direction: column;
         align-items: center;
     }
-    
+
     .preview-wrapper {
         position: relative;
         display: inline-block;
@@ -95,33 +83,38 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
         overflow: hidden;
         background: white;
     }
-    
+
     #cardContent {
         position: relative;
         width: 500px;
         height: 500px;
         background: white;
     }
-    
+
     .user-image {
+        width: 98%;
+        height: 265px;
+        object-fit: cover;
         display: block;
-        width: 100%;
-        height: auto;
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
-    
-    .frame-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 80px;
+        left: 5px;
+    }
+    #dateOverlay{
+        width: fit-content;
+        height: fit-content;
+        background: #025E57;
+        padding: 6px 12px;
+        position: absolute;
+        border-radius: 0;
+        top: 50px;
+        right: 100px;
+    }
+    .frame-overlay {
         width: 100%;
         height: 100%;
-        object-fit: contain;
-        pointer-events: none;
     }
-    
-    /* প্রিভিউ কন্ট্রোল */
+
     .preview-controls {
         display: flex;
         gap: 15px;
@@ -129,183 +122,27 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .btn {
         padding: 12px 24px;
         border-radius: 50px;
         font-weight: 600;
         font-size: 14px;
         cursor: pointer;
-        transition: all 0.3s ease;
         border: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
     }
-    
-    .btn-success {
-        background: linear-gradient(135deg, #11998e, #38ef7d);
-        color: white;
-    }
-    
-    .btn-success:hover:not(:disabled) {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
-    }
-    
-    .btn-outline {
-        background: white;
-        border: 2px solid #667eea;
-        color: #667eea;
-    }
-    
-    .btn-outline:hover {
-        background: #667eea;
-        color: white;
-    }
-    
-    .btn-primary {
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        color: white;
-    }
-    
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-    }
-    
-    .btn:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
-    
-    /* কন্ট্রোল গ্রিড */
+
     .controls-grid {
         padding: 24px;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-    
+
     .control-group {
         display: flex;
         flex-direction: column;
         gap: 8px;
-    }
-    
-    .control-group label {
-        font-weight: 600;
-        color: #333;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    
-    .control-group label i {
-        color: #667eea;
-        width: 20px;
-    }
-    
-    input, textarea {
-        padding: 12px 15px;
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
-        font-size: 14px;
-        transition: all 0.3s;
-        font-family: inherit;
-    }
-    
-    input:focus, textarea:focus {
-        outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    }
-    
-    textarea {
-        resize: vertical;
-        min-height: 80px;
-    }
-    
-    .file-input-wrapper {
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-    }
-    
-    .file-input-btn {
-        background: #f0f0f0;
-        padding: 12px 20px;
-        border-radius: 12px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s;
-        border: 2px dashed #ccc;
-    }
-    
-    .file-input-btn:hover {
-        background: #e0e0e0;
-        border-color: #667eea;
-    }
-    
-    /* লোডিং ওভারলে */
-    .loading-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(5px);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .loading-content {
-        background: white;
-        padding: 40px;
-        border-radius: 24px;
-        text-align: center;
-        max-width: 350px;
-    }
-    
-    .spinner-circle {
-        width: 60px;
-        height: 60px;
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #667eea;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 20px;
-    }
-    
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-    
-    .loading-progress {
-        margin-top: 20px;
-        height: 4px;
-        background: #e0e0e0;
-        border-radius: 2px;
-        overflow: hidden;
-    }
-    
-    .progress-bar {
-        height: 100%;
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        width: 0%;
-        transition: width 0.3s;
-        animation: progress 2s ease infinite;
-    }
-    
-    @keyframes progress {
-        0% { width: 0%; }
-        50% { width: 70%; }
-        100% { width: 100%; }
     }
 </style>
 
@@ -324,20 +161,20 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
                 <div class="preview-wrapper">
                     <!-- কার্ড কন্টেন্ট - এটাই ডাউনলোড হবে -->
                     <div id="cardContent">
-                        <!-- ফ্রেম ওভারলে (একটি মাত্র ফ্রেম) -->
-                        <img id="frameOverlay" class="frame-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" src="<?php echo $framePath; ?>">
-                        
-                        <!-- ফিচার ইমেজ -->
-                        <img id="userImage" class="user-image" style="width: 100%; display: block;" src="">
-                        
-                        <!-- টাইটেল ওভারলে -->
-                        <div id="titleOverlay" style="position: absolute; bottom: 70px; left: 0; right: 0; text-align: center; padding: 15px;">
-                            <h2 id="cardTitle" style="font-size: 20px; font-weight: bold; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); line-height: 1.3;"></h2>
+                        <!-- frame -->
+                        <img id="frameOverlay" class="frame-overlay pointer-events-none" src="<?php echo $framePath; ?>">
+
+                        <!-- user image -->
+                        <img id="userImage" class="user-image cursor-pointer transition-transform duration-200 z-10" src="">
+
+                        <!-- title overlay -->
+                        <div id="titleOverlay" class="absolute bottom-[70px] left-0 right-0 text-center p-4">
+                            <h2 id="cardTitle" class="text-[20px] font-bold m-0 leading-[1.3] text-black drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]"></h2>
                         </div>
-                        
-                        <!-- তারিখ ওভারলে -->
-                        <div id="dateOverlay" style="position: absolute; bottom: 20px; right: 20px; background: rgba(0,0,0,0.7); padding: 6px 14px; border-radius: 25px; color: white; font-size: 12px;">
-                            <i class="far fa-calendar-alt"></i> <span id="cardDate"></span>
+
+                        <!-- date overlay -->
+                        <div id="dateOverlay" class="absolute bottom-5 right-5 bg-black/70 px-3 py-1.5 rounded-full text-white text-base font-medium">
+                            <span id="cardDate"></span>
                         </div>
                     </div>
                 </div>
@@ -558,10 +395,10 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
                 const card = document.getElementById('cardContent');
 
                 const originalWidth = card.style.width;
-                card.style.width = "1000px";
+                //card.style.width = "1000px";
 
                 const canvas = await html2canvas(card, {
-                    scale: 2,
+                    scale: 1,
                     useCORS: true,
                     backgroundColor: "#fff"
                 });
