@@ -80,44 +80,44 @@ while ($staff = $result->fetch_assoc()) {
             <div class="inline-block bg-red-100 rounded-full px-4 py-1 mb-4">
                 <span class="text-red-600 text-sm font-semibold">আমাদের টিম</span>
             </div>
-            <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-3">আমাদের পরিবার</h1>
+            <h1 class="text-2xl md:text-5xl font-bold text-gray-800 mb-3">আমাদের পরিবার</h1>
             <div class="w-24 h-1 bg-red-600 mx-auto mb-4"></div>
-            <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+            <p class="text-gray-600 max-w-2xl mx-auto text-xs md:text-base">
                 দেবীগঞ্জ সংবাদের পেছনে যারা নিরলসভাবে কাজ করে যাচ্ছেন, তাদের নিয়েই আমাদের এই পরিবার। 
                 প্রতিটি সদস্য আমাদের শক্তি, প্রতিটি মুখ আমাদের পরিচয়।
             </p>
         </div>
         
         <!-- Stats Section -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <!-- <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <div class="bg-white rounded-xl shadow-sm p-4 text-center">
-                <i class="fas fa-users text-3xl text-red-500 mb-2"></i>
-                <div class="text-2xl font-bold text-gray-800"><?php echo count($result->fetch_all() ?: []); ?></div>
+                <i class="fas fa-users text-2xl text-red-500 mb-2"></i>
+                <div class="text-2xl font-bold text-gray-800"><php echo count($result->fetch_all() ?: []); ?></div>
                 <div class="text-sm text-gray-500">মোট সদস্য</div>
             </div>
             <div class="bg-white rounded-xl shadow-sm p-4 text-center">
-                <i class="fas fa-newspaper text-3xl text-blue-500 mb-2"></i>
-                <div class="text-2xl font-bold text-gray-800"><?php echo count($staffByDept); ?></div>
+                <i class="fas fa-newspaper text-2xl text-blue-500 mb-2"></i>
+                <div class="text-2xl font-bold text-gray-800"><php echo count($staffByDept); ?></div>
                 <div class="text-sm text-gray-500">বিভাগ</div>
             </div>
             <div class="bg-white rounded-xl shadow-sm p-4 text-center">
-                <i class="fas fa-calendar-alt text-3xl text-green-500 mb-2"></i>
+                <i class="fas fa-calendar-alt text-2xl text-green-500 mb-2"></i>
                 <div class="text-2xl font-bold text-gray-800">২০১৮</div>
                 <div class="text-sm text-gray-500">প্রতিষ্ঠাকাল</div>
             </div>
             <div class="bg-white rounded-xl shadow-sm p-4 text-center">
-                <i class="fas fa-chart-line text-3xl text-purple-500 mb-2"></i>
-                <div class="text-2xl font-bold text-gray-800"><?php echo rand(10000, 50000); ?>+</div>
+                <i class="fas fa-chart-line text-2xl text-purple-500 mb-2"></i>
+                <div class="text-2xl font-bold text-gray-800"><php echo rand(10000, 50000); ?>+</div>
                 <div class="text-sm text-gray-500">দৈনিক পাঠক</div>
             </div>
-        </div>
+        </div> -->
         
         <!-- Staff List by Department -->
         <?php foreach ($staffByDept as $dept => $staffList): ?>
         <div class="mb-12">
             <div class="flex items-center gap-3 mb-6">
                 <div class="h-10 w-1 bg-red-500 rounded-full"></div>
-                <h2 class="text-2xl font-bold text-gray-800">
+                <h2 class="text-xl font-bold text-gray-800">
                     <?php 
                     $deptNames = [
                         'Editorial' => 'সম্পাদকীয় বিভাগ',
@@ -136,17 +136,17 @@ while ($staff = $result->fetch_assoc()) {
                 <span class="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full"><?php echo count($staffList); ?> জন</span>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <?php foreach ($staffList as $staff): ?>
                 <div class="staff-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
                     <!-- Image Section -->
-                    <div class="relative h-56 overflow-hidden bg-gradient-to-br from-red-500 to-red-700">
+                    <div class="relative h-24 md:h-44 lg:h-52 overflow-hidden bg-gradient-to-br from-red-500 to-red-700">
                         <?php if (!empty($staff['image']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $staff['image'])): ?>
                         <img src="<?php echo $staff['image']; ?>" alt="<?php echo $staff['name_bn']; ?>" class="staff-img w-full h-full object-cover">
                         <?php else: ?>
                         <div class="w-full h-full flex items-center justify-center">
                             <div class="text-center">
-                                <i class="fas fa-user-circle text-6xl text-white opacity-50"></i>
+                                <i class="fas fa-user-circle text-4xl text-white opacity-50"></i>
                                 <p class="text-white text-sm mt-2">ছবি নেই</p>
                             </div>
                         </div>
@@ -175,12 +175,12 @@ while ($staff = $result->fetch_assoc()) {
                     </div>
                     
                     <!-- Info Section -->
-                    <div class="p-5 text-center">
-                        <h3 class="text-xl font-bold text-gray-800 mb-1"><?php echo $staff['name_bn']; ?></h3>
+                    <div class="p-2 text-center">
+                        <h5 class="text-base font-bold text-gray-800 mb-1"><?php echo $staff['name_bn']; ?></h5>
                         <?php if (!empty($staff['name_en'])): ?>
                         <p class="text-xs text-gray-500 mb-2"><?php echo $staff['name_en']; ?></p>
                         <?php endif; ?>
-                        <div class="inline-block bg-red-50 text-red-600 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                        <div class="inline-block bg-red-50 text-red-600 text-xs font-semibold px-3 pt-1 rounded-full">
                             <?php echo $staff['designation_bn']; ?>
                         </div>
                         
@@ -188,7 +188,7 @@ while ($staff = $result->fetch_assoc()) {
                             <?php if (!empty($staff['email'])): ?>
                             <div class="flex items-center justify-center gap-2">
                                 <i class="fas fa-envelope text-gray-400 text-xs"></i>
-                                <a href="mailto:<?php echo $staff['email']; ?>" class="hover:text-red-500 transition text-xs"><?php echo $staff['email']; ?></a>
+                                <a href="mailto:<?php echo $staff['email']; ?>" class="hover:text-red-500 transition break-all w-48" style="font-size: 0.75rem;"><?= $staff['email']; ?></a>
                             </div>
                             <?php endif; ?>
                             
@@ -220,7 +220,7 @@ while ($staff = $result->fetch_assoc()) {
         <?php endforeach; ?>
         
         <!-- Join Our Team Section -->
-        <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 md:p-12 mt-12 text-center">
+        <!-- <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 md:p-12 mt-12 text-center">
             <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">আমাদের টিমে যোগ দিন</h2>
             <p class="text-white/90 text-sm md:text-base max-w-2xl mx-auto mb-6">
                 আপনি কি সংবাদপত্রের সাথে কাজ করতে আগ্রহী? আমাদের টিমের অংশ হতে চাইলে আপনার সিভি পাঠান।
@@ -229,7 +229,7 @@ while ($staff = $result->fetch_assoc()) {
                 <i class="fas fa-paper-plane"></i>
                 <span>আবেদন করুন</span>
             </a>
-        </div>
+        </div> -->
         
         <!-- Footer Note -->
         <div class="text-center mt-8 text-sm text-gray-500">

@@ -77,6 +77,35 @@ while ($row = $result->fetch_assoc()) {
             </div> -->
         <!-- </div> -->
         
+        <!-- সম্পাদক সেটিংস -->
+        <div class="space-y-4">
+            <h3 class="text-lg font-semibold border-b pb-2">সম্পাদক তথ্য</h3>
+            
+            <!-- <div>
+                <label class="block font-semibold mb-2">অ্যাডমিন ইমেইল</label>
+                <input type="email" name="admin_email" value="<php echo e($settings['admin_email']); ?>" 
+                       class="w-full px-3 py-2 border rounded">
+            </div> -->
+            
+            <div>
+                <label class="block font-semibold mb-2">পাবলিশার</label>
+                <input type="text" name="publisher" value="<?php echo e($settings['publisher']); ?>" 
+                       class="w-full px-3 py-2 border rounded">
+            </div>
+            
+            <div>
+                <label class="block font-semibold mb-2">সম্পাদক</label>
+                <input type="text" name="editor" value="<?php echo e($settings['editor']); ?>" 
+                       class="w-full px-3 py-2 border rounded">
+            </div>
+            
+            <div>
+                <label class="block font-semibold mb-2">অনলাইন ইনচার্জ</label>
+                <input type="text" name="online_inc" value="<?php echo e($settings['online_inc']); ?>" 
+                       class="w-full px-3 py-2 border rounded">
+            </div>
+        </div>
+
         <!-- যোগাযোগ সেটিংস -->
         <div class="space-y-4">
             <h3 class="text-lg font-semibold border-b pb-2">যোগাযোগ তথ্য</h3>

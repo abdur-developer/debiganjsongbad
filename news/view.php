@@ -21,7 +21,7 @@
             <li class="flex items-center text-gray-500"><?=$news['title_en']?></li>
         </ol>
     </nav>
-    
+    <img src="<?=$logo?>" class="w-[30%] cursor-pointer mb-5 hidden print-add" />
     <!-- Main Grid: News Content + Sidebar -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <!-- Main Content Column -->
@@ -48,7 +48,7 @@
                     </div>
                     <div class="flex gap-4">
                         <span>প্রকাশ: <?php echo bn_date($news['created_at']); ?></span>          
-                        <span>আপডেট: <?php echo bn_date($news['updated_at']); ?></span>
+                        <!-- <span>আপডেট: <php echo bn_date($news['updated_at']); ?></span> -->
                     </div>
                 </div>
                 <!-- Share Buttons -->
@@ -178,6 +178,20 @@
                 <button class="w-full bg-blue-600 text-white py-2 rounded text-sm hover:bg-blue-700">সাবস্ক্রাইব</button>
             </div> -->
         </aside>
+    </div>
+    <div class="hidden print-add">
+        <?php
+            $publisher2 = $conn->query("SELECT value FROM settings WHERE key_name = 'publisher'")->fetch_assoc()['value'];
+            $editor2 = $conn->query("SELECT value FROM settings WHERE key_name = 'editor'")->fetch_assoc()['value'];
+            $address2 = $conn->query("SELECT value FROM settings WHERE key_name = 'address'")->fetch_assoc()['value'];
+        ?>
+        <img src="<?=$logo?>" class="w-[35%] block m-auto my-5" />
+        <div class=" pt-4 text-center text-base text-black ">
+            <p class="">প্রকাশকঃ <?=$publisher2?></p>
+            <p class="">সম্পাদকঃ <?=$editor2?></p>
+            <p class=""><?=$address2?></p>
+            <p>© <?= bn_num(date('Y')) ?> দেবীগঞ্জ সংবাদ। সর্বসত্ত্ব সংরক্ষিত।</p>
+        </div>
     </div>
 </main>
 

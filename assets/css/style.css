@@ -330,11 +330,13 @@ body.dark-mode .nav-link:hover {
 
 /* Print Styles */
 @media print {
-    nav, .print-hide, 
-    .my-header,
-    .ad-placeholder,
-    #dark-mode-toggle,
+    nav, .print-hide, .my-header,
+    .ad-placeholder, #dark-mode-toggle,
     footer {
         display: none !important;
+    }
+
+    .print-add{
+        display: block !important;
     }
 }
