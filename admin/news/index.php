@@ -88,7 +88,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
                 <th class="px-4 py-3 text-left hidden md:table-cell">ছবি</th>
                 <th class="px-4 py-3 text-left">শিরোনাম</th>
                 <th class="px-4 py-3 text-left hidden md:table-cell">ক্যাটাগরি</th>
-                <th class="px-4 py-3 text-left hidden">লেখক</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">লেখক</th>
                 <th class="px-4 py-3 text-left hidden md:table-cell">তারিখ</th>
                 <th class="px-4 py-3 text-left hidden md:table-cell">স্ট্যাটাস</th>
                 <th class="px-4 py-3 text-left hidden md:table-cell">ভিউ</th>
@@ -103,9 +103,11 @@ $totalPages = ceil($totalRow['total'] / $limit);
                         <img src="<?php echo $news['featured_image'] ?: 'https://via.placeholder.com/50'; ?>" 
                              class="w-12 h-12 object-cover rounded" alt="">
                     </td>
-                    <td class="px-4 py-2 font-semibold"><?php echo $news['title_bn']; ?></td>
+                    <td class="px-4 py-2 font-semibold max-w-[100px] md:max-w-[200px] overflow-hidden text-ellipsis" title="<?php echo $news['title_bn']; ?>">
+                        <?php echo $news['title_bn']; ?>
+                    </td>
                     <td class="px-4 py-2 hidden md:table-cell"><?php echo $news['category_name']; ?></td>
-                    <td class="px-4 py-2 hidden"><?php echo $news['author_name']; ?></td>
+                    <td class="px-4 py-2 hidden md:table-cell"><?php echo $news['author_name']; ?></td>
                     <td class="px-4 py-2 hidden md:table-cell text-sm"><?php echo date('d/m/Y', strtotime($news['created_at'])); ?></td>
                     <td class="px-4 py-2 hidden md:table-cell">
                         <?php if ($news['status'] == 'published'): ?>
