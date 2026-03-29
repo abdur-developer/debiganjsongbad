@@ -104,7 +104,7 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
         width: fit-content;
         height: fit-content;
         background: #025E57;
-        padding: 6px 12px;
+        padding: 0 12px 10px 12px;
         position: absolute;
         border-radius: 0;
         top: 50px;
