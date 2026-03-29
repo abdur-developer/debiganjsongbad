@@ -41,9 +41,6 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
         .main-grid {
             grid-template-columns: 1fr;
         }
-        body {
-            padding: 12px;
-        }
     }
 
     .card {
@@ -143,6 +140,34 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
         display: flex;
         flex-direction: column;
         gap: 8px;
+    }
+    @media screen and (max-width: 600px) {
+        #cardContent {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        .user-image {
+            width: 98%;
+            height: 160px;
+            top: 48px;
+            left: 4px;
+        }
+        #titleOverlay{
+            bottom: 45px;
+        }
+        #dateOverlay{
+            top: 15px;
+            right: 65px;
+            padding: 5px;
+        }
+        .frame-overlay {
+            width: 100%;
+            height: 100%;
+        }
+        .preview-container {
+            padding: 5px;
+        }
     }
 </style>
 
@@ -398,7 +423,10 @@ $frameExists = file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $framePath);
                 //card.style.width = "1000px";
 
                 const canvas = await html2canvas(card, {
-                    scale: 1,
+                    width: 500,
+                    height: 500,
+                    scale: 3,
+                    windowWidth: 1200,
                     useCORS: true,
                     backgroundColor: "#fff"
                 });
