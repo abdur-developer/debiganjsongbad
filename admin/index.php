@@ -90,6 +90,8 @@ $stats = $functions->getDashboardStats();
                 require_once 'news/edit.php';
             }else if(isset($_GET['delete_id'])) {
                 require_once 'news/delete.php';
+            }else if(isset($_GET['card_id'])) {
+                require_once 'news/card.php';
             }else{
                 require_once 'news/index.php';
             }

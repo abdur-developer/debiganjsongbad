@@ -122,6 +122,9 @@ $totalPages = ceil($totalRow['total'] / $limit);
                     </td>
                     <td class="px-4 py-2 hidden md:table-cell"><?php echo number_format($news['views']); ?></td>
                     <td class="px-4 py-2">
+                        <a href="?q=news&card_id=<?php echo $news['id']; ?>" class="text-green-600 hover:text-green-800 mr-2">
+                            <i class="fas fa-image"></i>
+                        </a>
                         <a href="?q=news&edit_id=<?php echo $news['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
                             <i class="fas fa-edit"></i>
                         </a>

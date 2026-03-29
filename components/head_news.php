@@ -170,7 +170,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <script src="../tailwindcss.js"></script> -->
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=69b4572d4e4ca8ffb8ee5b35&product=sop&source=platform" async="async"></script>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=69c8f47f6b358baeb1bf3757&product=sop&source=platform" async="async"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4520141412693223"
      crossorigin="anonymous"></script>
      <!-- Google tag (gtag.js) -->
