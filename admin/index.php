@@ -73,6 +73,16 @@ $stats = $functions->getDashboardStats();
             }else{
                 require_once 'reporters/index.php';
             }
+        }else if($q == 'staff') {
+            if(isset($_GET['create'])) {
+                require_once 'staff/create.php';
+            }else if(isset($_GET['edit_id'])) {
+                require_once 'staff/edit.php';
+            }else if(isset($_GET['delete_id'])) {
+                require_once 'staff/delete.php';
+            }else{
+                require_once 'staff/index.php';
+            }
         }else if($q == 'news') {
             if(isset($_GET['create'])) {
                 require_once 'news/create.php';

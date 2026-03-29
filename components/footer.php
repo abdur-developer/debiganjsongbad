@@ -1,5 +1,8 @@
 
 <?php
+    $publisher = $conn->query("SELECT value FROM settings WHERE key_name = 'publisher'")->fetch_assoc()['value'];
+    $editor = $conn->query("SELECT value FROM settings WHERE key_name = 'editor'")->fetch_assoc()['value'];
+    $online_inc = $conn->query("SELECT value FROM settings WHERE key_name = 'online_inc'")->fetch_assoc()['value'];
     $address = $conn->query("SELECT value FROM settings WHERE key_name = 'address'")->fetch_assoc()['value'];
     $phone = $conn->query("SELECT value FROM settings WHERE key_name = 'phone'")->fetch_assoc()['value'];
     $email = $conn->query("SELECT value FROM settings WHERE key_name = 'contact_email'")->fetch_assoc()['value'];
@@ -20,16 +23,6 @@
                 </ul>
             </div>
             <div>
-                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">সংবাদ</h5>
-                <ul class="space-y-1 text-gray-300">
-                    <li><a href="https://debiganjsongbad.com/news/" class="hover:text-white">সর্বশেষ সংবাদ</a></li>
-                    <li><a href="https://debiganjsongbad.com/news/?cat=international" class="hover:text-white">আন্তর্জাতিক</a></li>
-                    <li><a href="https://debiganjsongbad.com/news/?cat=national" class="hover:text-white">জাতীয়</a></li>
-                    <li><a href="https://debiganjsongbad.com/news/?cat=sports" class="hover:text-white">খেলাধুলা</a></li>
-                    <li><a href="https://debiganjsongbad.com/news/?cat=entertainment" class="hover:text-white">বিনোদন</a></li>
-                </ul>
-            </div>
-            <div>
                 <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">সম্পাদকীয় তথ্য</h5>
                 <ul class="space-y-1 text-gray-300">
                     <li><a href="https://debiganjsongbad.com/staff.php" class="hover:text-white">আমাদের পরিবার</a></li>
@@ -37,14 +30,22 @@
                 </ul>
             </div>
             <div>
-                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">নিউজলেটার</h5>
+                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">ইনফো</h5>
                 <!-- <p class="text-gray-300 text-xs mb-2">দৈনিক সংবাদ পেতে সাবস্ক্রাইব করুন</p>
                 <div class="flex">
                     <input type="email" placeholder="ইমেইল" class="p-2 text-black text-xs rounded-l w-full">
                     <button class="bg-red-600 px-3 rounded-r text-xs hover:bg-red-700 transition">সাবস্ক্রাইব</button>
                 </div> -->
                 <ul class="space-y-1 text-gray-300">
+                    <li><a href="#" class="text-blue-400 hover:text-white">প্রকাশকঃ <?=$publisher?></a></li>
+                    <li><a href="#" class="hover:text-white">সম্পাদকঃ <?=$editor?></a></li>
+                    <li><a href="#" class="hover:text-white">অনলাইন ইনচার্জঃ <?=$online_inc?></a></li>
                     <li><a href="#" class="hover:text-white"><?=$address?></a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-2 text-lg border-b border-gray-600 pb-1">যোগাযোগ</h5>
+                <ul class="space-y-1 text-gray-300">
                     <li><a href="tel:<?= $phone ?>" class="hover:text-white"><?=bn_num($phone)?></a></li>
                     <li><a href="mailto:<?= $email ?>" class="hover:text-white"><?=$email?></a></li>
                 </ul>
@@ -53,7 +54,6 @@
                     <!-- <a href="#" target="_blank" class="text-gray-300 hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg></a> -->
                     <a href="<?=$youtube_url?>" target="_blank" class="text-gray-300 hover:text-white"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                 </div>
-
             </div>
         </div>
         

@@ -1,15 +1,12 @@
 <?php
-// admin/staff/edit.php
-require_once '../includes/header.php';
-require_once '../includes/functions.php';
 $auth->requirePermission('users');
 
-$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-if (!$id) { header('Location: index.php'); exit(); }
+$id = isset($_GET['edit_id']) ? intval($_GET['edit_id']) : 0;
+if (!$id) { echo "<script>window.location.href = 'index.php?q=staff';</script>"; exit(); }
 
 $sql = "SELECT * FROM staffs WHERE id = $id";
 $result = $conn->query($sql);
-if ($result->num_rows == 0) { header('Location: index.php'); exit(); }
+if ($result->num_rows == 0) { echo "<script>window.location.href = 'index.php?q=staff';</script>"; exit(); }
 $staff = $result->fetch_assoc();
 
 $error = '';
@@ -32,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $image = $staff['image'];
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
-        $upload = uploadFile($_FILES['image'], 'staff', ['jpg', 'jpeg', 'png', 'webp']);
+        $upload = $functions->uploadFile($_FILES['image'], 'staff', ['jpg', 'jpeg', 'png', 'webp']);
         if ($upload['success']) {
             if (!empty($staff['image']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $staff['image'])) {
                 unlink($_SERVER['DOCUMENT_ROOT'] . $staff['image']);
@@ -51,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($conn->query($sql)) {
         $_SESSION['success'] = 'স্টাফ আপডেট হয়েছে';
-        header('Location: index.php');
+        echo "<script>window.location.href = 'index.php?q=staff';</script>";
         exit();
     } else {
         $error = 'ত্রুটি: ' . $conn->error;
@@ -88,5 +85,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <div class="mt-6 flex justify-end gap-2"><a href="index.php" class="bg-gray-500 text-white px-6 py-2 rounded">বাতিল</a><button type="submit" class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700">আপডেট করুন</button></div>
 </form>
-
-<?php require_once '../includes/footer.php'; ?>

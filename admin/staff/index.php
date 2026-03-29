@@ -1,6 +1,4 @@
 <?php
-// admin/staff/index.php - স্টাফ ম্যানেজমেন্ট প্যানেল
-require_once '../includes/header.php';
 $auth->requirePermission('users');
 
 $sql = "SELECT * FROM staffs ORDER BY sort_order ASC, id ASC";
@@ -14,8 +12,8 @@ $result = $conn->query($sql);
     </a>
 </div>
 
-<div class="bg-white rounded-lg shadow overflow-hidden">
-    <table class="w-full">
+<div class="bg-white rounded-lg shadow overflow-x-auto">
+    <table class="max-w-full">
         <thead class="bg-gray-50">
             <tr>
                 <th class="px-4 py-3 text-left">আইডি</th>
@@ -57,10 +55,10 @@ $result = $conn->query($sql);
                     <?php endif; ?>
                 </td>
                 <td class="px-4 py-2">
-                    <a href="edit.php?id=<?php echo $staff['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
+                    <a href="?q=staff&edit_id=<?php echo $staff['id']; ?>" class="text-blue-600 hover:text-blue-800 mr-2">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a href="delete.php?id=<?php echo $staff['id']; ?>" class="text-red-600 hover:text-red-800 delete-confirm">
+                    <a href="?q=staff&delete_id=<?php echo $staff['id']; ?>" class="text-red-600 hover:text-red-800 delete-confirm">
                         <i class="fas fa-trash"></i>
                     </a>
                 </td>
@@ -69,5 +67,3 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 </div>
-
-<?php require_once '../includes/footer.php'; ?>

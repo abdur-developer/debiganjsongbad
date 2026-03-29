@@ -197,6 +197,12 @@ $warning_message = $_SESSION['warning'] ?? '';
                             <span class="ml-2 text-sm truncate">রিপোর্টার</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="?q=staff" class="flex items-center p-2 hover:bg-gray-800 rounded <?= $active === 'reporters' ? 'active-nav' : '' ?>">
+                            <i class="fas fa-users w-6"></i>
+                            <span class="ml-2 text-sm truncate">পরিবার</span>
+                        </a>
+                    </li>
                    
                     <?php endif; ?>
                     <!-- <li>

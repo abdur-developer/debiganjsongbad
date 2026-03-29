@@ -1,7 +1,4 @@
 <?php
-// admin/staff/create.php
-require_once '../includes/header.php';
-require_once '../includes/functions.php';
 $auth->requirePermission('users');
 
 $error = '';
@@ -27,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $image = '';
         if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
-            $upload = uploadFile($_FILES['image'], 'staff', ['jpg', 'jpeg', 'png', 'webp']);
+            $upload = $functions->uploadFile($_FILES['image'], 'staff', ['jpg', 'jpeg', 'png', 'webp']);
             if ($upload['success']) {
                 $image = $upload['path'];
             }
@@ -138,5 +135,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit" class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700">সংরক্ষণ করুন</button>
     </div>
 </form>
-
-<?php require_once '../includes/footer.php'; ?>
