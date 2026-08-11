@@ -59,14 +59,11 @@ $rootLink = $isRoot ? "./" : "../";
         <nav id="navMenu" class="hidden md:flex flex-wrap items-center text-sm font-semibold gap-1 py-2 border-b">
             <a href="<?=$rootLink?>" class="nav-link">হোম</a>
             <?php
+                // AND (EXISTS (SELECT 1 FROM news n WHERE n.category_id = c.id))
                 // ক্যাটাগরি লোড                
                 $catSql = "SELECT * FROM categories c
-                    WHERE c.status = 'active' AND c.parent_id = 0
-                    AND (
-                        EXISTS (SELECT 1 FROM news n WHERE n.category_id = c.id)                        
-                    )
-                    ORDER BY c.sort_order, c.name_bn
-                    LIMIT 12";
+                    WHERE c.status = 'active' AND c.parent_id = 0 
+                    ORDER BY c.sort_order, c.name_bn";
                 $catResult = $conn->query($catSql);
             ?>
             <?php
