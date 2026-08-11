@@ -142,7 +142,7 @@ while ($staff = $result->fetch_assoc()) {
                     <!-- Image Section -->
                     <div class="relative h-24 md:h-44 lg:h-52 overflow-hidden bg-gradient-to-br from-red-500 to-red-700">
                         <?php if (!empty($staff['image']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $staff['image'])): ?>
-                        <img src="<?php echo $staff['image']; ?>" alt="<?php echo $staff['name_bn']; ?>" class="staff-img w-full h-full object-cover">
+                        <img src="./<?php echo $staff['image']; ?>" alt="<?php echo $staff['name_bn']; ?>" class="staff-img w-full h-full object-cover">
                         <?php else: ?>
                         <div class="w-full h-full flex items-center justify-center">
                             <div class="text-center">

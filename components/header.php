@@ -50,7 +50,7 @@ $rootLink = $isRoot ? "./" : "../";
         <div class="flex flex-col md:flex-row justify-between items-center py-3 gap-3">
             <div class="flex items-center gap-4">
                 <button id="menuBtn" class="md:hidden p-2 text-xl">☰</button>
-                <img src="<?=$logo?>" class="w-[40%] cursor-pointer" onclick="window.location.href='<?=$rootLink?>'" />
+                <img src="./<?=$logo?>" class="w-[40%] cursor-pointer" onclick="window.location.href='<?=$rootLink?>'" />
             </div>
             <?= headerAds() ?>
         </div>

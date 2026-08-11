@@ -23,7 +23,7 @@ $latestResult = $conn->query($latestSql);
         ?>
             <article class="news-card bg-white shadow-sm rounded overflow-hidden cursor-pointer"
             onclick="window.location.href='news/?feed=<?=$news['id']?>&slug=<?=$news['slug']?>'">
-                <img class="w-full h-24 md:h-28 object-cover lazy" data-src="<?php echo $news['featured_image']; ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
+                <img class="w-full h-24 md:h-28 object-cover lazy" data-src="./<?php echo $news['featured_image']; ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect width='300' height='180' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
                 <div class="p-2">
                     <h4 class="text-xs md:text-sm font-semibold line-clamp-2"><?php echo $news['title_bn']; ?></h4>
                     <div class="flex items-center justify-between mt-1 text-xs text-gray-500">

@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="mb-4">
                             <div class="w-32 h-32 mx-auto bg-gray-300 rounded-full overflow-hidden">
                                 <?php if ($user['avatar']): ?>
-                                <img src="<?php echo $user['avatar']; ?>" class="w-full h-full object-cover" alt="">
+                                <img src="./<?php echo $user['avatar']; ?>" class="w-full h-full object-cover" alt="">
                                 <?php else: ?>
                                 <div class="w-full h-full flex items-center justify-center text-4xl text-gray-600">
                                     <?php echo mb_substr($user['full_name'], 0, 1); ?>

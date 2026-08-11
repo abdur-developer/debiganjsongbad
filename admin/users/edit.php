@@ -163,7 +163,7 @@ $roles = [
                 <label class="block font-semibold mb-2">প্রোফাইল ছবি</label>
                 <?php if (!empty($user['avatar'])): ?>
                 <div class="mb-2">
-                    <img src="<?php echo $user['avatar']; ?>" class="h-16 w-16 object-cover rounded-full" alt="">
+                    <img src="./<?php echo $user['avatar']; ?>" class="h-16 w-16 object-cover rounded-full" alt="">
                 </div>
                 <?php endif; ?>
                 <input type="file" name="avatar" accept="image/*" class="w-full">

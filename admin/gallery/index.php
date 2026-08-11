@@ -71,7 +71,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
             </div>
             
             <div class="relative">
-                <img src="<?php echo $image['image']; ?>" class="w-full h-40 object-cover" alt="<?php echo $image['title_bn']; ?>">
+                <img src="./<?php echo $image['image']; ?>" class="w-full h-40 object-cover" alt="<?php echo $image['title_bn']; ?>">
                 
                 <?php if ($image['status'] == 'inactive'): ?>
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">

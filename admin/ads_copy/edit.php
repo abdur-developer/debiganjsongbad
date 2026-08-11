@@ -145,7 +145,7 @@ $types = ['banner', 'sidebar', 'popup', 'video'];
                 <label class="block font-semibold mb-2">ছবি পরিবর্তন</label>
                 <?php if (!empty($ad['image'])): ?>
                 <div class="mb-2">
-                    <img src="<?php echo $ad['image']; ?>" class="h-20 object-cover rounded" alt="">
+                    <img src="./<?php echo $ad['image']; ?>" class="h-20 object-cover rounded" alt="">
                 </div>
                 <?php endif; ?>
                 <input type="file" name="image" accept="image/*" class="w-full">

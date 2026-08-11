@@ -34,7 +34,7 @@ $result = $conn->query($sql);
                 <td class="px-4 py-2 hidden md:table-cell">
                     <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
                         <?php if ($user['avatar']): ?>
-                            <img src="<?php echo $user['avatar']; ?>" class="w-8 h-8 rounded-full object-cover" alt="">
+                            <img src="./<?php echo $user['avatar']; ?>" class="w-8 h-8 rounded-full object-cover" alt="">
                         <?php else: ?>
                             <i class="fas fa-user text-gray-500"></i>
                         <?php endif; ?>

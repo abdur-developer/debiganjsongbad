@@ -70,7 +70,7 @@
                 while ($news = $result->fetch_assoc()):
             ?>
             <div class="flex items-center border-b pb-2">
-                <img src="<?php echo $news['featured_image'] ?: 'https://via.placeholder.com/50'; ?>" 
+                <img src="./<?php echo $news['featured_image'] ?: 'https://via.placeholder.com/50'; ?>" 
                      class="w-12 h-12 object-cover rounded mr-3" alt="">
                 <div class="flex-1">
                     <p class="font-semibold"><?php echo $news['title_bn']; ?></p>

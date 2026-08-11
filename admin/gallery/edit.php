@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             <div class="md:col-span-2">
                 <label class="block font-semibold mb-2">বর্তমান ছবি</label>
-                <img src="<?php echo $image['image']; ?>" class="max-h-64 rounded-lg shadow mb-4" alt="">
+                <img src="./<?php echo $image['image']; ?>" class="max-h-64 rounded-lg shadow mb-4" alt="">
                 
                 <label class="block font-semibold mb-2">নতুন ছবি আপলোড (পরিবর্তন করতে চাইলে)</label>
                 <div id="drop-zone" class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-red-500 transition cursor-pointer">

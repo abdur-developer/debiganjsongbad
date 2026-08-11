@@ -65,7 +65,7 @@ while ($row = $news_query->fetch_assoc()) {
                     $firstPrint = true; ?>
                     <div class="bg-white shadow-md rounded overflow-hidden cursor-pointer"
                     onclick="window.location.href='./?feed=<?= $row['id'] ?>&slug=<?= $row['slug'] ?>'">
-                        <img class="w-full h-56 object-cover lazy" data-src="<?= $row['featured_image'] ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="featured">
+                        <img class="w-full h-56 object-cover lazy" data-src="./<?= $row['featured_image'] ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="featured">
                         <div class="p-4">
                             <h2 class="text-xl font-bold mb-2"><?= $row['title_bn'] ?></h2>
                             <p class="text-gray-600 text-sm mb-2 max-w-[30em] line-clamp-3"><?= $row['summary'] ?></p>
@@ -79,7 +79,7 @@ while ($row = $news_query->fetch_assoc()) {
                 <?php } else { ?>
                     <div class="bg-white p-3 shadow-sm rounded flex gap-3 cursor-pointer"
                     onclick="window.location.href='./?feed=<?= $row['id'] ?>&slug=<?= $row['slug'] ?>'">
-                        <img class="w-24 h-20 object-cover rounded lazy" data-src="<?= $row['featured_image'] ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='80'%3E%3Crect width='100' height='80' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
+                        <img class="w-24 h-20 object-cover rounded lazy" data-src="./<?= $row['featured_image'] ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='80'%3E%3Crect width='100' height='80' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
                         <div>
                             <h3 class="font-semibold text-sm"><?= $row['title_bn'] ?></h3>
                             <p class="text-xs text-gray-500 mt-1 max-w-[30em] line-clamp-3"><?= $row['summary'] ?></p>
@@ -97,7 +97,7 @@ while ($row = $news_query->fetch_assoc()) {
             <?php foreach(array_slice($news, 4) as $row): ?>
             <article class="bg-white shadow-sm rounded overflow-hidden cursor-pointer"
             onclick="window.location.href='./?feed=<?= $row['id'] ?>&slug=<?= $row['slug'] ?>'">
-                <img class="w-full h-36 object-cover lazy" data-src="<?= $row['featured_image'] ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
+                <img class="w-full h-36 object-cover lazy" data-src="./<?= $row['featured_image'] ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="news">
                 <div class="p-3">
                     <h4 class="font-semibold mb-1"><?= $row['title_bn'] ?></h4>
                     <p class="text-xs text-gray-500 mb-2 max-w-[30em] line-clamp-3"><?= $row['summary'] ?></p>

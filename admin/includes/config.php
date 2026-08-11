@@ -3,14 +3,16 @@
 session_start();
 
 // সাইট URL কনফিগারেশন
-// define('SITE_URL', 'http://debiganjsongbad.com');
-define('SITE_URL', 'http://localhost:8080/news/');
+define('SITE_URL', 'http://debiganjsongbad.com');
 define('ADMIN_URL', SITE_URL . '/admin');
 define('UPLOAD_PATH', $_SERVER['DOCUMENT_ROOT'] . '/uploads/');
 define('UPLOAD_URL', SITE_URL . '/uploads');
 
 // ডাটাবেজ কনফিগারেশন
 define('DB_HOST', 'localhost');
+// define('DB_USER', 'debigan1_news');
+// define('DB_PASS', '{xg{Cd(uapCRO05j');
+// define('DB_NAME', 'debigan1_news');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'debiganj_news');

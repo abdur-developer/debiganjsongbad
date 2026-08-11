@@ -83,7 +83,7 @@ while ($row = $news_query->fetch_assoc()) {
         <?php foreach ($news as $item) { ?>
             <div class="bg-white p-4 shadow-sm rounded flex gap-4 cursor-pointer hover:bg-gray-100 transition" 
                 onclick="window.location.href='?feed=<?=$item['id']?>&slug=<?=$item['slug']?>'">
-                <img class="w-24 h-24 object-cover rounded lazy" data-src="<?= $item['featured_image'] ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="result">
+                <img class="w-24 h-24 object-cover rounded lazy" data-src="./<?= $item['featured_image'] ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="result">
                 <div>
                     <span class="bg-red-600 text-white text-xs px-2 py-0.5 rounded"><?=$item['category_name']?></span>
                     <h3 class="font-semibold mt-1 hover:text-blue-600"><?=$item['title_bn']?></h3>

@@ -21,7 +21,7 @@
             <li class="flex items-center text-gray-500"><?=$news['title_en']?></li>
         </ol>
     </nav>
-    <img src="<?=$logo?>" class="w-[30%] cursor-pointer mb-5 hidden print-add" />
+    <img src="./<?=$logo?>" class="w-[30%] cursor-pointer mb-5 hidden print-add" />
     <!-- Main Grid: News Content + Sidebar -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <!-- Main Content Column -->
@@ -36,7 +36,7 @@
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white font-bold">
                             <?php if($news['avatar']) : ?>
-                                <img class="w-full h-full object-cover rounded-full" src="<?=$news['avatar']?>" alt="Author Avatar">
+                                <img class="w-full h-full object-cover rounded-full" src="./<?=$news['avatar']?>" alt="Author Avatar">
                             <?php else: ?>
                                 <i class="fas fa-user text-gray-500"></i>
                             <?php endif; ?>
@@ -51,17 +51,12 @@
                         <!-- <span>আপডেট: <php echo bn_date($news['updated_at']); ?></span> -->
                     </div>
                 </div>
-                <!-- Share Buttons -->
-                <div class="print-hide flex gap-2 mb-6 justify-end">
-                    <!-- ShareThis BEGIN -->
-                    <div class="sharethis-inline-share-buttons"></div>
-                    <!-- ShareThis END -->
-                </div>
+                <?php include '../components/share_buttons.php'; ?>
             </header>
             
             <!-- Featured Image -->
             <figure class="mb-4">
-                <img class="w-full h-auto rounded-lg lazy" data-src="<?=$news['featured_image']?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='800' height='450' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="বন্দরে কন্টেইনার জট">
+                <img class="w-full h-auto rounded-lg lazy" data-src="./<?=$news['featured_image']?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='800' height='450' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="বন্দরে কন্টেইনার জট">
                 <!-- <figcaption class="text-xs text-gray-500 mt-1">ছবি: দেবীগঞ্জ | সংগৃহীত</figcaption> -->
             </figure>
             
@@ -90,8 +85,8 @@
                     <input type="hidden" name="news_id" value="<?=$news_id?>">
                     <textarea rows="4" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-blue-500" placeholder="আপনার মন্তব্য লিখুন..."></textarea>
                     <div class="flex gap-3 mt-2">
-                        <input type="text" placeholder="আপনার নাম" class="flex-1 border border-gray-300 rounded-lg p-2 text-sm">
-                        <input type="email" placeholder="ইমেইল" class="flex-1 border border-gray-300 rounded-lg p-2 text-sm">
+                        <input type="text" placeholder="আপনার নাম" class="flex-1 border border-gray-300 rounded-lg p-2 text-sm w-[90%]">
+                        <input type="email" placeholder="ইমেইল" class="flex-1 border border-gray-300 rounded-lg p-2 text-sm w-[95%]">
                     </div>
                     <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg mt-3 hover:bg-blue-700 transition">মন্তব্য পাঠান</button>
                 </form>
@@ -128,7 +123,7 @@
                     ?>
                     <?php while($news_more = $query->fetch_assoc()){ ?>
                     <div class="bg-white shadow-sm rounded overflow-hidden cursor-pointer" onclick="window.location.href='./?feed=<?=$news_more['id']?>&slug=<?=$news_more['slug']?>'">
-                        <img class="w-full h-24 object-cover lazy" data-src="<?=$news_more['featured_image']?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="related">
+                        <img class="w-full h-24 object-cover lazy" data-src="./<?=$news_more['featured_image']?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="related">
                         <div class="p-2">
                             <h4 class="text-sm font-semibold"><?=$news_more['title_bn']?></h4>
                         </div>
@@ -144,7 +139,7 @@
             <div class="bg-white shadow-sm rounded p-4 text-center">
                 <div class="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-2xl font-bold">
                     <?php if($news['avatar']) : ?>
-                        <img class="w-full h-full object-cover rounded-full" src="<?=$news['avatar']?>" alt="Author Avatar">
+                        <img class="w-full h-full object-cover rounded-full" src="./<?=$news['avatar']?>" alt="Author Avatar">
                     <?php else: ?>
                         <i class="fas fa-user text-gray-500"></i>
                     <?php endif; ?>
@@ -185,7 +180,7 @@
             $editor2 = $conn->query("SELECT value FROM settings WHERE key_name = 'editor'")->fetch_assoc()['value'];
             $address2 = $conn->query("SELECT value FROM settings WHERE key_name = 'address'")->fetch_assoc()['value'];
         ?>
-        <img src="<?=$logo?>" class="w-[35%] block m-auto my-5" />
+        <img src="./<?=$logo?>" class="w-[35%] block m-auto my-5" />
         <div class=" pt-4 text-center text-base text-black ">
             <p class="">প্রকাশকঃ <?=$publisher2?></p>
             <p class="">সম্পাদকঃ <?=$editor2?></p>

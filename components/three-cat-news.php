@@ -42,7 +42,7 @@ for ($i = 0; $i < $totalCat; $i++) {
                 <div class="bg-white shadow-sm rounded overflow-hidden cursor-pointer" 
                 onclick="window.location.href='news/?feed=<?=$row['id']?>&slug=<?=$row['slug']?>'">
                     <img class="w-full h-40 object-cover lazy"
-                        data-src="<?= $row['featured_image'] ? $row['featured_image'] : 'https://picsum.photos/400/250?text=Featured_'.$i ?>"
+                        data-src="./<?= $row['featured_image'] ? $row['featured_image'] : 'https://picsum.photos/400/250?text=Featured_'.$i ?>"
                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Crect width='400' height='250' fill='%23f1f5f9'/%3E%3C/svg%3E">
 
                     <div class="p-2">

@@ -100,7 +100,7 @@ $totalPages = ceil($totalRow['total'] / $limit);
                 <?php while ($news = $result->fetch_assoc()): ?>
                 <tr class="border-t hover:bg-gray-50">
                     <td class="px-4 py-2 hidden md:table-cell">
-                        <img src="<?php echo $news['featured_image'] ?: 'https://via.placeholder.com/50'; ?>" 
+                        <img src="./<?php echo $news['featured_image'] ?: 'https://via.placeholder.com/50'; ?>" 
                              class="w-12 h-12 object-cover rounded" alt="">
                     </td>
                     <td class="px-4 py-2 font-semibold max-w-[100px] md:max-w-[200px] overflow-hidden text-ellipsis" title="<?php echo $news['title_bn']; ?>">

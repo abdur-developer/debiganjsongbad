@@ -39,7 +39,7 @@ require_once "components/header.php";
     <!-- Author Profile Header -->
     <div class="bg-white shadow-md rounded-lg p-6 mb-6 flex flex-col md:flex-row items-center gap-6">
         <div class="w-32 h-32 bg-blue-400 rounded-full flex items-center justify-center text-white text-4xl font-bold">
-            <img class="w-full h-full object-cover rounded-full" src="<?= $author['avatar'] ?>" alt="Author Avatar">
+            <img class="w-full h-full object-cover rounded-full" src="./<?= $author['avatar'] ?>" alt="Author Avatar">
         </div>
         <div class="text-center md:text-left">
             <h1 class="text-3xl font-bold"><?= $author['full_name'] ?></h1>
@@ -97,7 +97,7 @@ require_once "components/header.php";
         ?>
         <?php while($news_more = $query->fetch_assoc()){ ?>
         <div class="bg-white shadow-sm rounded overflow-hidden" onclick="window.location.href='./?feed=<?=$news_more['news_id']?>&slug=<?=$news_more['news_slug']?>'">
-            <img class="w-full h-36 object-cover lazy" data-src="<?=$news_more['featured_image']?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="article">
+            <img class="w-full h-36 object-cover lazy" data-src="./<?=$news_more['featured_image']?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="article">
             <div class="p-3">
                 <span class="bg-red-600 text-white text-xs px-2 py-0.5 rounded"> <?=$news_more['category_name']?></span>
                 <h4 class="font-semibold mt-1"><?=$news_more['title_bn']?></h4>

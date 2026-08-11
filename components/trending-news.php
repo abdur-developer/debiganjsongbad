@@ -15,7 +15,7 @@
         ?>
         <div class="trending-card bg-white shadow-sm rounded overflow-hidden min-w-[110px] cursor-pointer"
         onclick="window.location.href='news/?feed=<?=$trend['id']?>&slug=<?=$trend['slug']?>'">
-            <img class="w-full h-16 md:h-20 object-cover lazy" data-src="<?=$trend['featured_image']; ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
+            <img class="w-full h-16 md:h-20 object-cover lazy" data-src="./<?=$trend['featured_image']; ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f1f5f9'/%3E%3C/svg%3E" alt="trend">
             <div class="p-1">
                 <h4 class="text-xs font-semibold line-clamp-2"><?php echo $trend['title_bn']; ?></h4>
             </div>

@@ -246,7 +246,7 @@ $catResult = $conn->query($catSql);
                 
                 <?php if (!empty($news['featured_image'])): ?>
                 <div class="mb-3">
-                    <img src="<?php echo $news['featured_image']; ?>" class="w-full h-32 object-cover rounded-lg" alt="">
+                    <img src="./<?php echo $news['featured_image']; ?>" class="w-full h-32 object-cover rounded-lg" alt="">
                 </div>
                 <?php endif; ?>
                 
@@ -261,7 +261,7 @@ $catResult = $conn->query($catSql);
                 <div class="grid grid-cols-3 gap-2 mb-3">
                     <?php foreach ($gallery as $img): ?>
                     <div class="relative">
-                        <img src="<?php echo $img; ?>" class="w-full h-16 object-cover rounded" alt="">
+                        <img src="./<?php echo $img; ?>" class="w-full h-16 object-cover rounded" alt="">
                     </div>
                     <?php endforeach; ?>
                 </div>

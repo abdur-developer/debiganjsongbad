@@ -78,7 +78,7 @@ $warning_message = $_SESSION['warning'] ?? '';
                 <div class="flex items-center">
                     <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                         <?php if ($currentUser['avatar']): ?>
-                        <img src="<?php echo $currentUser['avatar']; ?>" class="w-full h-full object-cover" alt="">
+                        <img src="./<?php echo $currentUser['avatar']; ?>" class="w-full h-full object-cover" alt="">
                         <?php else: ?>
                         <i class="fas fa-user text-gray-300 text-xl"></i>
                         <?php endif; ?>

@@ -7,7 +7,7 @@ $result = $conn->query($sql);
 
 <div class="flex justify-between items-center mb-6">
     <h2 class="text-2xl font-bold">স্টাফ ব্যবস্থাপনা</h2>
-    <a href="create.php" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+    <a href="?q=staff&create" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
         <i class="fas fa-plus"></i> নতুন স্টাফ যোগ করুন
     </a>
 </div>
@@ -34,7 +34,7 @@ $result = $conn->query($sql);
                 <td class="px-4 py-2"><?php echo $staff['id']; ?></td>
                 <td class="px-4 py-2">
                     <?php if (!empty($staff['image']) && file_exists($_SERVER['DOCUMENT_ROOT'] . $staff['image'])): ?>
-                    <img src="<?php echo $staff['image']; ?>" class="w-10 h-10 object-cover rounded-full" alt="">
+                    <img src="./<?php echo $staff['image']; ?>" class="w-10 h-10 object-cover rounded-full" alt="">
                     <?php else: ?>
                     <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                         <i class="fas fa-user text-gray-400"></i>

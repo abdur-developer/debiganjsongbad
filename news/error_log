@@ -1,0 +1,150 @@
+[01-May-2026 06:46:25 Asia/Dhaka] PHP Fatal error:  Uncaught mysqli_sql_exception: Can't create/write to file '/tmp/#sql-temptable-1d721b-40a38-84af.MAI' (Errcode: 30 "Read-only file system") in /home/debigan1/public_html/news/search.php:26
+Stack trace:
+#0 /home/debigan1/public_html/news/search.php(26): mysqli->query()
+#1 /home/debigan1/public_html/news/index.php(39): require_once('/home/debigan1/...')
+#2 {main}
+  thrown in /home/debigan1/public_html/news/search.php on line 26
+[07-Jun-2026 03:54:17 Asia/Dhaka] PHP Fatal error:  Uncaught mysqli_sql_exception: Can't create/write to file '/tmp/#sql-temptable-371cc8-2ce0441-19f67a.MAI' (Errcode: 117 "Structure needs cleaning") in /home/debigan1/public_html/news/search.php:26
+Stack trace:
+#0 /home/debigan1/public_html/news/search.php(26): mysqli->query()
+#1 /home/debigan1/public_html/news/index.php(36): require_once('/home/debigan1/...')
+#2 {main}
+  thrown in /home/debigan1/public_html/news/search.php on line 26
+[07-Jun-2026 06:09:45 Asia/Dhaka] PHP Fatal error:  Uncaught mysqli_sql_exception: Can't create/write to file '/tmp/#sql-temptable-371cc8-2cfc282-19c2fd.MAI' (Errcode: 117 "Structure needs cleaning") in /home/debigan1/public_html/news/search.php:26
+Stack trace:
+#0 /home/debigan1/public_html/news/search.php(26): mysqli->query()
+#1 /home/debigan1/public_html/news/index.php(36): require_once('/home/debigan1/...')
+#2 {main}
+  thrown in /home/debigan1/public_html/news/search.php on line 26
+[07-Jun-2026 06:42:47 Asia/Dhaka] PHP Fatal error:  Uncaught mysqli_sql_exception: Can't create/write to file '/tmp/#sql-temptable-371cc8-2d04dce-1a2f2d.MAI' (Errcode: 117 "Structure needs cleaning") in /home/debigan1/public_html/news/search.php:26
+Stack trace:
+#0 /home/debigan1/public_html/news/search.php(26): mysqli->query()
+#1 /home/debigan1/public_html/news/index.php(36): require_once('/home/debigan1/...')
+#2 {main}
+  thrown in /home/debigan1/public_html/news/search.php on line 26
+[07-Jun-2026 08:07:59 Asia/Dhaka] PHP Fatal error:  Uncaught mysqli_sql_exception: Can't create/write to file '/tmp/#sql-temptable-371cc8-2d1bc1b-1a0158.MAI' (Errcode: 117 "Structure needs cleaning") in /home/debigan1/public_html/news/search.php:26
+Stack trace:
+#0 /home/debigan1/public_html/news/search.php(26): mysqli->query()
+#1 /home/debigan1/public_html/news/index.php(36): require_once('/home/debigan1/...')
+#2 {main}
+  thrown in /home/debigan1/public_html/news/search.php on line 26
+[19-Jul-2026 04:14:44 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/debigan1/public_html/news/category.php:2
+Stack trace:
+#0 /home/debigan1/public_html/news/index.php(28): require_once()
+#1 {main}
+  thrown in /home/debigan1/public_html/news/category.php on line 2
+[22-Jul-2026 01:47:42 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:42 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:42 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:42 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:42 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:44 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:44 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:44 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:44 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:44 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:46 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:46 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:46 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:46 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:46 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:48 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:48 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:48 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:48 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:48 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:49 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:49 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:49 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:49 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:49 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:51 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:51 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:51 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:51 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:51 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:53 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:53 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:53 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:53 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:53 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:55 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:55 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:55 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:55 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:55 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:56 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:56 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:56 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:56 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:56 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:58 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:58 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:58 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:58 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:47:58 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:00 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:00 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:00 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:00 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:00 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:02 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:02 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:02 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:02 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:02 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:04 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:04 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:04 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:04 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:04 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:06 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:08 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:10 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:12 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
+[22-Jul-2026 01:48:14 Asia/Dhaka] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/debigan1/public_html/root.php on line 62
