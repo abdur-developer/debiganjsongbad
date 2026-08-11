@@ -88,19 +88,19 @@ while ($row = $result->fetch_assoc()) {
             </div> -->
             
             <div>
-                <label class="block font-semibold mb-2">পাবলিশার</label>
+                <label class="block font-semibold mb-2">প্রকাশক ও সম্পাদকঃ</label>
                 <input type="text" name="publisher" value="<?php echo e($settings['publisher']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>
             
-            <div>
+            <!-- <div>
                 <label class="block font-semibold mb-2">সম্পাদক</label>
                 <input type="text" name="editor" value="<?php echo e($settings['editor']); ?>" 
                        class="w-full px-3 py-2 border rounded">
-            </div>
+            </div> -->
             
             <div>
-                <label class="block font-semibold mb-2">অনলাইন ইনচার্জ</label>
+                <label class="block font-semibold mb-2">নির্বাহী সম্পাদক</label>
                 <input type="text" name="online_inc" value="<?php echo e($settings['online_inc']); ?>" 
                        class="w-full px-3 py-2 border rounded">
             </div>

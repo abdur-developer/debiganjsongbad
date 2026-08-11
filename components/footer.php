@@ -1,7 +1,7 @@
 
 <?php
     $publisher = $conn->query("SELECT value FROM settings WHERE key_name = 'publisher'")->fetch_assoc()['value'];
-    $editor = $conn->query("SELECT value FROM settings WHERE key_name = 'editor'")->fetch_assoc()['value'];
+    // $editor = $conn->query("SELECT value FROM settings WHERE key_name = 'editor'")->fetch_assoc()['value'];
     $online_inc = $conn->query("SELECT value FROM settings WHERE key_name = 'online_inc'")->fetch_assoc()['value'];
     $address = $conn->query("SELECT value FROM settings WHERE key_name = 'address'")->fetch_assoc()['value'];
     $phone = $conn->query("SELECT value FROM settings WHERE key_name = 'phone'")->fetch_assoc()['value'];
@@ -37,9 +37,9 @@
                     <button class="bg-red-600 px-3 rounded-r text-xs hover:bg-red-700 transition">সাবস্ক্রাইব</button>
                 </div> -->
                 <ul class="space-y-1 text-gray-300">
-                    <li><a href="#" class="text-blue-400 hover:text-white">প্রকাশকঃ <?=$publisher?></a></li>
-                    <li><a href="#" class="hover:text-white">সম্পাদকঃ <?=$editor?></a></li>
-                    <li><a href="#" class="hover:text-white">অনলাইন ইনচার্জঃ <?=$online_inc?></a></li>
+                    <li><a href="#" class="text-blue-400 hover:text-white">প্রকাশক ও সম্পাদকঃ <?=$publisher?></a></li>
+                    <!-- <li><a href="#" class="hover:text-white">সম্পাদকঃ <=$editor?></a></li> -->
+                    <li><a href="#" class="hover:text-white">নির্বাহী সম্পাদক: <?=$online_inc?></a></li>
                     <li><a href="#" class="hover:text-white"><?=$address?></a></li>
                 </ul>
             </div>
